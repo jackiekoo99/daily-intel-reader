@@ -807,7 +807,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
       "enTitle": "The End of the Internet",
       "zhTitle": "互联网的终结",
       "enDeck": "The old Internet, where anyone could host a server is over, but it’s just the final blow in an ending that has been coming for years. The future, though, is brighter than it appears.",
-      "zhDeck": "那个任何人都能在公网上自己架一台服务器的旧互联网已经结束了。AI 自动化攻击与内容泛滥加速了公共广场的瓦解，但独立订阅、私密群聊与几人用微软件正在指向同一个出路：把规模做小。",
+      "zhDeck": "那个任何人都能在公网上自己架一台服务器的旧互联网已经结束了。AI 自动化攻击与内容泛滥加速了公共广场的瓦解，但付费订阅、私密群聊与小团队定制软件正指向同一条出路：把规模做小。",
       "score": {
         "total": 95.3,
         "rel": 95,
@@ -825,9 +825,9 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "I was thinking back to those days last week when news broke that every version of PHP had a critical bug that allowed for remote code execution on the host machine; Stratechery today still runs on WordPress, but that WordPress is managed by Pressable, an Automattic company. That meant that my site was patched before the vulnerability was disclosed, and it would be crazy for me — or anyone else — to do it any other way. It’s kind of insane to think that twenty-some years ago I was doing everything by hand without having any idea what I was doing, and that it was totally fine. That’s the Internet, though: an insane invention from a time that is, sadly, gone forever."
           ],
           "zh": [
-            "2003 年夏天，动身搬去台湾前几周，我打算建个博客记录这段行程。那是我的第四次尝试——前三次分别用了 GeoCities、Blogspot，以及微软 FrontPage 写的一个网页（直到第七次尝试才做出 Stratechery）。当时一款刚发布不久的开源软件吸引了我的注意，宣传语写着“五分钟安装完毕”，名字叫 WordPress。",
-            "实际花的时间远不止五分钟。我得先摸索怎么建 MySQL 数据库，怎么手动配置 PHP。把这些前置工作全部弄好之后，安装步骤才确实只要五分钟。",
-            "上周的一则安全通报让我又想起那个夏天：PHP 所有版本曝出一项高危漏洞，攻击者可以在宿主机上远程执行代码〔注1〕。今天的 Stratechery 依然跑在 WordPress 上，但交给了 Automattic 旗下的 Pressable 托管。漏洞公开前，我的站点就已经在后台自动打好了补丁；放到今天，无论是我还是其他站长，如果还自己手动维护裸服务器，那就太不理智了。二十多年前我对安全一无所知，全凭自己在公网上搭起网站，居然也平安无事。那就是当年的互联网——特定时间与空间的产物，如今已经一去不返。"
+            "2003 年夏天，动身搬去台湾前几周，我打算建个博客记录那趟行程。那是我的第四次尝试——前三次分别用了 GeoCities、Blogspot，以及微软 FrontPage 写的一个网页（直到第七次尝试才做出 Stratechery）。当时一款刚发布不久的开源软件吸引了我的注意，宣传语写着“五分钟安装完毕”，名字叫 WordPress。",
+            "实际花的时间远不止五分钟。我得先摸索怎么建 MySQL 数据库，怎么手动配置 PHP。把这些前置工作全部弄妥之后，安装过程才确实只要五分钟。",
+            "上周的一则安全通报让我又想起那个夏天：PHP 所有版本曝出一项高危漏洞，攻击者可以在宿主机上远程执行代码〔注1〕。今天的 Stratechery 依然跑在 WordPress 上，但交给了 Automattic 旗下的 Pressable 托管。漏洞公开前，我的站点就已经在后台自动打好了补丁；放到今天，无论是我还是其他站长，如果还自己手动维护裸服务器，那就太不理智了。二十多年前我对网络安全一无所知，全凭自己在公网上搭起网站，居然也相安无事。那就是当年的互联网——特定时间与空间的产物，如今已经一去不返。"
           ]
         },
         {
@@ -841,7 +841,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "博客的终结",
-            "2003 年前后正是“博客圈”兴起的起点。更早的先行者当然不少：常被称为“博客之父”的 Dave Winer 在做完 DaveNet 后，于 1997 年创办了 Scripting News；Justin Hall 在 1994 年上线 Links.net；Jorn Barger 1997 年在 Robot Wisdom 上造出了“weblog”一词；颇具影响力的 kottke.org 则始于 1998 年。但博客真正集中爆发，尤其是时政博客的涌现，还是在 2000 年代初：",
+            "2003 年前后正是“博客圈”兴起的起点。更早的先行者当然不少：常被称为“博客之父”的 Dave Winer 在做完 DaveNet 后，于 1997 年创办了 Scripting News；Justin Hall 在 1994 年上线 Links.net；Jorn Barger 1997 年在 Robot Wisdom 上造出了“weblog”一词；颇具影响力的 kottke.org 则始于 1998 年。但博客真正集中涌现，尤其是时政博客的爆发，还是在 2000 年代初：",
             "• 2000 年：Talking Points Memo、Andrew Sullivan 与 Boing Boing 上线；",
             "• 2001 年：Instapundit、Little Green Footballs 与 Dooce 上线；",
             "• 2002 年：Matt Yglesias、Daily Kos、Eschaton、The Volokh Conspiracy、Power Line，以及科技和媒体博客 Gizmodo、Gawker、paidContent 与 John Gruber 的 Daring Fireball 上线；",
@@ -854,8 +854,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "Originally these new publications were novel; what soon became clear, however, is that they were the tip of a wave of content that would dramatically expand the web. Newspapers had influence by being geographic monopolies; early bloggers gained influence by being the first to a new medium. Ultimately, however, the real winner of the web was Google: as the amount of content became abundant, Google offered not distribution — which was free — but rather discovery; indeed, it’s because distribution was free that discovery became the most important part of the value chain."
           ],
           "zh": [
-            "时政博客之所以格外显眼，恰恰体现了互联网第一次转型时的潜力与隐患。此前网上的原住民大多是技术人员，习惯在 BBS、论坛和邮件列表里同侪切磋编辑器与编程语言的细节；对政治感兴趣的人率先意识到，无需任何人批准就能办一份面向全球的出版物意味着什么。他们写博客起初只为施加公共影响，没想过赚钱。",
-            "这批早期站点起初只是新鲜事物，但很快演变成改写整个万维网的内容洪流。传统报纸靠地域垄断维持话语权，早期博主靠先发优势攒下声量；然而万维网内容爆发的真正赢家却是谷歌。当内容变得唾手可得，分发本来就是免费的，谷歌真正提供的是稀缺的“发现”〔注2〕。正因为分发免费，发现才拿走了最大一块价值。"
+            "时政博客之所以格外显眼，恰恰体现了互联网第一次转型时的潜力与隐患。此前网上的原住民大多是程序员，习惯在 BBS、论坛和邮件列表里跟同行争论哪款编辑器、哪种编程语言更好；而关心政治的人率先意识到，不用任何人审批就能办一份面向全球的刊物到底意味着什么。他们写博客起初只为施加公共影响，没想过赚钱。",
+            "这批早期站点起初只是新鲜事物，但很快演变成改写整个万维网的内容洪流。传统报纸靠地域垄断维持话语权，早期博主靠先发优势攒下声量；然而万维网内容爆发的真正赢家却是谷歌。当内容唾手可得、分发成本降为零时，谷歌掌握了真正稀缺的能力——帮用户“发现”内容〔注2〕。正因为分发免费，帮人发现内容的入口才拿走了大头利润。"
           ]
         },
         {
@@ -864,8 +864,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "For many years I rued the fact I wasn’t one of those early bloggers; a decade later, however, I realized that I was actually just in time for a much more sustainable business model: subscriptions. I wrote in 2015’s Blogging’s Bright Future:"
           ],
           "zh": [
-            "不少早期博主曾靠谷歌 AdSense 广告赚过一笔。但到 2000 年代末，网页广告越来越烦人，单价却一路缩水：一方面全网内容无休止扩张，摊薄了展示单价；另一方面转化率高的优质广告全都集中到了谷歌自己的搜索结果页上。这是互联网失灵的第一个样本：零门槛导致供给无限涌入，最终冲垮了商业变现。",
-            "我曾多年懊悔自己没赶上 2000 年代初那波博客红利；十年后才明白，我入场的时点刚好赶上另一种可持续得多的商业模式：付费订阅。我在 2015 年《博客的光明未来》一文中写过："
+            "不少早期博主曾靠谷歌 AdSense 广告赚过一笔。但到 2000 年代末，网页广告越来越烦人，广告单价却一路下跌：一方面全网内容无休止扩张，摊薄了展示单价；另一方面转化率高的优质广告全都集中到了谷歌自己的搜索结果页上。这是互联网失灵的第一个样本：零门槛导致供给无限涌入，最终砸穿了广告变现模式。",
+            "我曾懊悔多年，觉得自己错过了 2000 年代初那波博客红利；十年后才明白，我入场的时点刚好赶上另一种可持续得多的商业模式：付费订阅。我在 2015 年《博客的光明未来》一文中写过："
           ]
         },
         {
@@ -886,8 +886,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "社交媒体的终结",
-            "谷歌并非唯一的聚合器。十年后，第二种内容发现机制兴起：社交媒体。你不用再去搜网站，链接会直接出现在时间线里，推给你的是你主动关注的人；在很长一段时间里，关注关系还能变成真正的朋友。Stratechery 当年能做起来，一是赶上了订阅支付工具成熟，二是当年的 Twitter 还是个真正的社区，很像早年的互联网：有价值的讨论就发生在公共广场上，新人靠在行业大V推文下认真写回复，就能一步步攒出自己的读者群。",
-            "但发社交动态同样是免费的，而且比搭博客容易得多，内容供给量再次失控。算法推荐接管了信息流（Facebook 很早就切了算法流，Twitter 晚得多），稍微有点名气的人在公开发言时都不得不处处设防。社区经不起无限扩张；向所有人敞开的平台，起初都有灵气，做大后都会变味。最终，公共社交媒体演变成围绕停留时长和互动率调优的单人娱乐工具，终点就是 TikTok——挂着社交媒体的名号，实际上跟社交关系已经没什么关系。"
+            "谷歌并非唯一的聚合器。十年后，第二种内容发现机制兴起：社交媒体。你不用再去主动搜网站，你关注的人会把链接直接推到你的时间线里；在很长一段时间里，线上关注的对象还能处成真正的朋友。Stratechery 当年能做起来，一是赶上了订阅支付工具成熟，二是当年的 Twitter 还是个真正的社区，很像早年的互联网：有价值的讨论就发生在公共广场上，新人靠在行业名人的推文下认真写回复，就能一步步攒出自己的读者群。",
+            "但发社交动态同样是免费的，而且比搭博客容易得多，内容供给量再次失控。算法推荐接管了信息流（Facebook 很早就切了算法流，Twitter 晚得多），稍微有点名气的人在公开发言时都不得不处处设防。社区经不起无限扩张；向所有人敞开的平台，起初都有灵气，做大后都会变味。最终，公共社交媒体演变成围绕停留时长和互动率调优的单人娱乐工具，终点就是 TikTok——虽然还挂着社交媒体的名号，但跟社交已经毫不相干。"
           ]
         },
         {
@@ -896,7 +896,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "In other words, the redemption of social media was — just like blogging — to become smaller. The scaling that mattered for most people was not an ever larger audience, but a proliferation of infinite finite groups. Social media 1.0, even at its best, followed the 90-9-1 rule: one percent spoke, nine percent commented, and 90 percent lurked; the magic of group chats is not in giving everyone a voice, but a place where you feel safe to talk."
           ],
           "zh": [
-            "但这不代表社交网络消失了。事实上，今天的社交连接比以往任何时候都更紧密，只是退出了公共广场，全面搬进了私密群聊。群聊里是熟人，有信任基础，保留了早年互联网的精神：哪怕数字技术把人切得更碎，你依然能在群里跟真正在乎的人随时说话。",
+            "但这不代表社交网络消失了。事实上，今天的社交连接比以往任何时候都更紧密，只是退出了公共广场，全面转入了私密群聊。群聊里是熟人，有信任基础，保留了早年互联网的精神：哪怕数字技术把社会切得再零散，你依然能在群里跟真正在乎的人随时聊上几句。",
             "换句话说，社交媒体的自我救赎和博客一样，也是变小。对大多数人来说，真正有意义的规模化，是裂变出无数个有人数上限的小群组。Web 1.0 和早期社交媒体哪怕在黄金年代，也受制于“90-9-1 法则”〔注4〕：1% 的人创作，9% 的人互动，90% 的人潜水只看不说。群聊的价值不在于给全世界递话筒，而在于让人敢放心开口。"
           ]
         },
@@ -911,7 +911,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           "zh": [
             "开放互联网的终结",
             "开篇提到的 PHP 漏洞，只是上周集中爆发的一连串安全事故之一。仅过去一周披露的重大事故还包括：",
-            "• 中间证书颁发机构（Intermediate CA）私钥泄露（这起事故源于管理方操作失职，倒不是 AI 攻击）；",
+            "• 一家中间证书颁发机构的私钥泄露（这起事故源于管理方失职，并非 AI 攻击所致）；",
             "• Node.js、GitLab、Java 与思科产品曝出多项高危新漏洞；",
             "• LiteLLM 软件供应链遭投毒，以及开发者云平台 Railway 被黑客攻破。"
           ]
@@ -922,8 +922,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "The saving factor previously is that attackers were limited by human time and ingenuity as well; AI, however, has limitless time and the ability to substitute iteration for cleverness — and it’s getting pretty clever as well! It’s not a surprise that this wave of vulnerabilities is coming to light, and it’s going to get worse before it gets better — which I do, for the record, expect to happen; after all, the good guys have AI as well, and in the long run software will be better when it is (re)written by AI, and defended by agents continuously."
           ],
           "zh": [
-            "信不信由你，上面还只是部分名单，而且情况只会继续恶化。现代社会的软件底座原本就搭在一层脆弱的手工地基上。在人工写代码的年代，软件交付的第一标准永远是“功能跑通了没有”，顾不上排查所有潜在的权限提升或竞态条件漏洞〔注5〕，更别提穷尽各种极端边界下的异常反应。",
-            "过去这套底座没塌，纯粹是因为攻击者也受制于人类的精力与脑力上限。但 AI 有无限的时间，能靠不知疲倦的穷举替代灵光一现，何况 AI 挖漏洞的能力本身也在飞速演进。近期漏洞集中爆发绝非巧合，情况在好转之前还会经历更剧烈的恶化。长远看局面终会收敛，因为防守方手里也有 AI：未来的软件底座会被 AI 重写，并由防御型 Agent 全天候巡检修复。"
+            "信不信由你，上面还只是部分名单，而且情况只会继续恶化。现代社会的软件底座原本就搭在一层脆弱的手工地基上。在人工写代码的年代，软件交付的第一标准永远是“功能跑通了没有”，顾不上排查所有潜在的权限提升或竞态条件漏洞〔注5〕，更别提穷尽各种极端边界情况了。",
+            "过去这套底座没塌，纯粹是因为攻击者也受制于人类的精力与脑力上限。但 AI 有无限的时间，能靠不知疲倦的穷举替代灵光一现，何况 AI 挖漏洞的能力本身也在飞速演进。近期漏洞集中爆发绝非巧合，在好转之前，局面还会糟糕得多。长远看态势终会收敛，因为防守方手里也有 AI：未来的软件底座会被 AI 重写，并由防御型智能体全天候巡检修复。"
           ]
         },
         {
@@ -944,8 +944,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "但新东西正在长出来，方向同样是变小。当谁都能借 AI 写应用时，出路绝不是涌进公共应用商店赚快钱——AI 批量生成的劣质应用只会把应用商店塞满垃圾。真正有生命力的做法，是只为你自己和身边三五个信任的朋友、同事写工具。",
-            "Stratechery 内部已经在这么干了：我们用 AI 写了一批内部工具，管播客制作、管任务追踪、管排期，这些软件永远不会对外发布。我自己也写了好几个私人小程序，用来管家里智能设备和查体育赛事转播。以前日常里到处是这种“缺个小软件”的缝隙，只是开发太贵只能凑合；现在不用求任何人，随手就能填上。",
-            "软件和实体商品最大的区别是复制成本为零，天然适合卖给海量用户；但过去写软件的前置研发投入太高，逼得开发者必须找足够大的受众来摊薄成本〔注6〕。AI 改写了这个前提：现在专门为一个人或几人小团队写套软件完全划算。把受众做小，不仅避开了公网安全风险，还打开了一个人人都参与其中的定制软件市场。软件行业也进入了“私密群聊时代”，而且比过去的大一统通用软件好用得多。"
+            "Stratechery 内部已经在这么干了：我们用 AI 写了一批内部工具，管播客制作、管任务追踪、管排期，这些软件永远不会对外发布。我自己也写了好几个私人小程序，用来管家里智能设备和查体育赛事转播。以前日常生活里到处是这种“缺个小工具”的缝隙，只是开发成本太高只能凑合；现在不用求任何人，随手就能补上。",
+            "软件和实体商品最大的区别是复制成本为零，天然适合卖给海量用户；但过去写软件的前置研发投入太高，逼得开发者必须找足够大的受众来摊薄成本〔注6〕。AI 改写了这个前提：现在专门为一个人或几人小团队写套软件完全划算。把受众做小，不仅避开了公网安全风险，还打开了一个人人都参与其中的定制软件市场。软件也进入了“私密群聊时代”，用起来比过去大一统的通用软件顺手得多。"
           ]
         },
         {
@@ -956,8 +956,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "市场的过去与未来",
-            "Venkatesh Rao 上周末写了一篇必读长文《认知重商主义》（Cognitive Mercantilism）〔注7〕。大意是说，早期重商主义建立在存量稀缺与管控的假设上；而现代资本主义的繁荣靠的是需求爆发。当人口从勉强糊口的生存型农业中解放出来，无数前所未有的细分欲望和市场才随之诞生。Rao 认为，当人类大脑从“生存型认知”中解放出来时，同样的历史还会重演：",
-            "“人们忽略了一种可能：我们正经历一场堪比农业社会向工商业社会跃迁的转型——从 80% 脑力锁死在日常维持性认知上，转向 95% 心智用于满足以前根本顾不上的高阶认知需求。农业革命最重要的结果，是让绝大多数人不必再亲自种地谋生，全新的经济与文化形态才得以涌现，种地效率提升反在其次。同理，AI 革命的关键或许在于让绝大多数心智（包括人类与未来的机器心智）摆脱为糊口而机械运转的束缚，去探索真正想做的事，单纯压低生产智力的成本倒在其次。面对这一幕，认知重商主义者看到的是智力过剩与无用脑力冗余；AI 马尔萨斯主义者看到的是智能产出超过社会消纳极限、引发失业动荡；唯有认知资本主义者看到的是需求侧无限延展的空间。”"
+            "Venkatesh Rao 上周末写了一篇必读长文《认知重商主义》〔注7〕。大意是说，早期重商主义建立在存量稀缺与管控的假设上；而现代资本主义的繁荣靠的是需求爆发。当人口从勉强糊口的生存型农业中解放出来，无数前所未有的细分欲望和市场才随之诞生。Rao 认为，当人类大脑从“生存型认知”中解放出来时，同样的历史还会重演：",
+            "“人们忽略了一种可能：我们正经历一场堪比农业社会向工商业社会跃迁的转型——过去 80% 的脑力锁死在日常维持性工作上，未来 95% 的心智将用来满足以前根本顾不上的高阶认知需求。农业革命最重要的结果，是让绝大多数人不必再亲自种地谋生，全新的经济与文化形态才得以涌现，种地效率的提升反在其次。同理，AI 革命的关键或许在于让绝大多数心智（包括人类与未来的机器心智）摆脱为糊口而机械运转的束缚，去探索真正想做的事，单纯压低脑力生产的成本倒在其次。面对这一幕，认知重商主义者看到的是智力过剩与脑力闲置；AI 马尔萨斯主义者看到的是智能产出超过社会消纳极限、引发失业动荡；唯有认知资本主义者看到的是需求侧无限延展的空间。”"
           ]
         },
         {
@@ -966,7 +966,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "The political associations which exist in the United States are only a single feature in the midst of the immense assemblage of associations in that country. Americans of all ages, all conditions, and all dispositions, constantly form associations. They have not only commercial and manufacturing companies, in which all take part, but associations of a thousand other kinds — religious, moral, serious, futile, extensive, or restricted, enormous or diminutive. The Americans make associations to give entertainments, to found establishments for education, to build inns, to construct churches, to diffuse books, to send missionaries to the antipodes; and in this manner they found hospitals, prisons, and schools. If it be proposed to advance some truth, or to foster some feeling by the encouragement of a great example, they form a society. Wherever, at the head of some new undertaking, you see the government in France, or a man of rank in England, in the United States you will be sure to find an association. I met with several kinds of associations in America, of which I confess I had no previous notion; and I have often admired the extreme skill with which the inhabitants of the United States succeed in proposing a common object to the exertions of a great many men, and in getting them voluntarily to pursue it. I have since travelled over England, whence the Americans have taken some of their laws and many of their customs; and it seemed to me that the principle of association was by no means so constantly or so adroitly used in that country. The English often perform great things singly; whereas the Americans form associations for the smallest undertakings. It is evident that the former people consider association as a powerful means of action, but the latter seem to regard it as the only means they have of acting."
           ],
           "zh": [
-            "我理解为什么现在的人很难想象这种未来。过去半个世纪，资本主义越来越向巨头规模倾斜，跨国大公司成了经济活动的中介，早期互联网更把全球推向单一的同质化市场。但资本主义萌芽时的英国，尤其是早期的美国，完全是另一番模样。托克维尔在《论美国的民主》里写过一段著名的观察〔注8〕：",
+            "我理解为什么现在的人很难想象这种未来。过去半个世纪，资本主义越来越向巨头倾斜，跨国大公司成了经济活动的中介，早期互联网更把全球推向单一的同质化市场。但资本主义萌芽时的英国，尤其是早期的美国，完全是另一番模样。托克维尔在《论美国的民主》里写过一段著名的观察〔注8〕：",
             "“美国的政治结社，只是这个国家无数民间结社中的一个分支。不同年龄、不同阶层、不同性情的美国人，随时随地都在组建社团。他们不仅办工商业公司，还组建了成千上万种其他团体——宗教的、道德的、严肃的、消遣的、公开的、私密的、庞大的、三五人的。美国人靠结社办庆典、建学校、修旅舍、盖教堂、印书、派传教士，也靠结社建医院、修监狱。哪怕只是宣扬某种理念或倡导某种风尚，他们也会立刻成立一个协会。在法国由政府出头、在英国由贵族乡绅领衔的新事业，到了美国，领头的一定是个民间社团。英国人往往习惯凭个人力量办大事，美国人哪怕操办最小的事也会先组个社团。英国人把结社当成一种有力的工具，美国人则几乎把结社当成行动的唯一方式。”"
           ]
         },
@@ -978,7 +978,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "我迄今为止的人生是开放互联网塑造的：我亲历了它的演进，靠它谋生，也为它的消逝感到惋惜。",
-            "但我对拉下来的新图景依然乐观。无论是内容、社交还是软件，唯一走得通的方向都是变小；“规模化的微小”（smallness at scale）意味着世界不再只有一个全球大市场，而是裂变出无数个局部市场——既可以是地理上的社区，也可以是基于信任的私密网络。市场数量成倍增加，创造的机会也成倍增加，因为这里的胜负手在于满足具体结社内部才会浮现的细分需求。",
+            "但我对接下来的新局面依然乐观。无论是内容、社交还是软件，唯一走得通的方向都是变小；当小圈层规模化普及后，世界不再只有一个全球大市场，而是裂变出无数个局部市场——既可以是地理上的社区，也可以是基于信任的私密网络。市场数量成倍增加，创造的机会也成倍增加，因为成败取决于能否满足具体社群内部才会长出来的细分需求。",
             "所以我才重读托克维尔。互联网是一项美国发明，骨子里透着美式个人主义；能在公网浪潮里出头的超级个体，不管来自哪国，身上都带着点美式的反叛与张扬。但在个人之上还有结社；在成千上万个结社之间，存在着无穷个细分市场。市场说到底就是人类的需求、欲望及其满足方式——旧互联网的终结，或许意味着真正的创造才刚刚开始。"
           ]
         }
@@ -1115,7 +1115,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "Finally, Some Anthropic Numbers. Monday morning brought us Anthropic’s S-1, and not a moment too soon. After four years of arguments about the economics at frontier labs, we now have some real numbers to sink our teeth into, and Ben did just that with his Update on Tuesday. Come for that analysis, and then head over to this week’s Sharp Tech where we talked in depth about what Anthropic is telling investors, questions that remain unanswered, plus why the SEC forced Anthropic to help us understand Meta’s Muse bet.— Andrew Sharp"
           ],
           "zh": [
-            "终于看到 Anthropic 的真实财务数字了：周一早上，Anthropic 递交了 S-1 招股书〔注1〕。围绕前沿实验室的经济模型争论了整整四年，我们手头终于有了实打实的财务数字。Ben Thompson 在周二的日更专栏中做了拆解；本周的《Sharp Tech》播客也深入聊了 Anthropic 向投资人讲述的故事、尚未解答的疑问，以及为什么 SEC 强制要求披露的数据反而帮我们看懂了 Meta 对 Muse 模型的投入。—— Andrew Sharp"
+            "终于看到 Anthropic 的真实账目了：周一早上，Anthropic 递交了 S-1 招股书〔注1〕。围绕前沿实验室的盈利模式争论了整整四年，我们手头总算有了实打实的财务数据。Ben Thompson 在周二的日更专栏中做了拆解；本周的《Sharp Tech》播客也深入聊了 Anthropic 向投资人讲述的故事、尚未解答的疑问，以及为什么 SEC 强制要求披露的数据反而帮我们看懂了 Meta 对 Muse 模型的投入。—— Andrew Sharp"
           ]
         },
         {
@@ -1131,7 +1131,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "Autocracies Then and Now. On Sharp China this week, we began with an extended look at the climate of fear across the Chinese bureaucracy as Xi Jinping continues an anti-corruption crackdown that was absolutely necessary but may be going further than Xi’s earlier proponents ever expected. Then, we turn to a glorious mess surrounding Mao Zedong and international soccer star Kylian Mbappé. On both that episode and in this week’s Sharp Text, I make the point that connipitions like this one, anchored in a bizarre debate over Mao’s governing history, are evidence that rumors of a Chinese century have been greatly exaggerated. — AS"
           ],
           "zh": [
-            "专制体制的今与昔：本周《Sharp China》播客先聊了持续反腐之下官僚体系内部的谨慎与寒蝉氛围——这场反腐固然必要，但力度已超出许多早期支持者的预期。随后我们聊到了围绕毛泽东历史评价与法国球星姆巴佩（Kylian Mbappé）引发的一场舆论风波。无论在播客还是本周的《Sharp Text》专栏里，我的观点都很明确：这种动辄大动干戈的舆论过敏，说明外界关于“中国世纪”的说法有些夸大其词了。—— Andrew Sharp"
+            "威权体制的今与昔：本周《Sharp China》播客先聊了持续反腐之下官僚体系内部的谨慎与寒蝉氛围——这场反腐固然必要，但力度已超出许多早期支持者的预期。随后我们聊到了由毛泽东历史评价与法国球星姆巴佩引发的一场舆论风波。无论在播客还是本周的《Sharp Text》专栏里，我的观点都很明确：这种草木皆兵的舆论敏感，说明外界关于“中国世纪”的说法未免言过其实。—— Andrew Sharp"
           ]
         },
         {
@@ -1147,7 +1147,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "• 《互联网的终结》：那个谁都能自己架服务器的旧互联网结束了，近期的安全漏洞只是最后一击；但未来的图景比表面看起来更光明。",
             "• 《Anthropic S-1、算力成本与谁在买单？》：Anthropic 的 IPO 终于来了；其核心业务其实很赚钱〔注2〕，但同行竞争可能会吃光全部利润，投资人则面临无休止的股权稀释〔注3〕。",
             "• 《Meta 财报、Muse 与前沿模型、Musebook》：扎克伯格兑现了业绩承诺；如果投资人认可 Muse 模型，就必须支持 Meta 在算力上的投入。",
-            "• 《对话 Palantir CTO Shyam Sankar：AI 宗教战争》：探讨 AI 扩散与安全、前线部署工程师（FDE），以及科技界路线之争的实质〔注4〕。"
+            "• 《对话 Palantir CTO Shyam Sankar：AI 宗教战争》：探讨 AI 扩散与安全、前线部署工程师，以及科技界路线之争的实质〔注4〕。"
           ]
         }
       ],
@@ -1223,7 +1223,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
       "enTitle": "An Interview with Palantir CTO Shyam Sankar About the AI Religious War",
       "zhTitle": "对话 Palantir CTO Shyam Sankar：AI 宗教战争、前线部署工程师与工业底座",
       "enDeck": "An interview with Palantir CTO Shyam Sankar about AI diffusion and safety, forward-deployed engineer, and what the battle in tech is actually about.",
-      "zhDeck": "为什么说 AI 行业在“造模型”上投入过多，而在“工作流扩散”上投入不足？为什么靠 AI 裁员省钱的公司几乎全败，做大营收的客户却能跑通？Shyam Sankar 详解企业状态机与运营数据主权、前线部署工程（FDE）的产品战略，并复盘 Anthropic 与五角大楼冲突。",
+      "zhDeck": "为什么说 AI 行业在“造模型”上投入过多，而在“工作流扩散”上投入不足？为什么靠 AI 裁员省钱的公司几乎全败，做大营收的客户却能跑通？Shyam Sankar 详解企业状态机与运营数据主权、前线部署工程的产品战略，并复盘 Anthropic 与五角大楼冲突。",
       "score": {
         "total": 91.7,
         "rel": 92,
@@ -1240,8 +1240,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "To that end, in this interview we discuss why Sankar thinks the industry is insufficiently focused on AI diffusion, why companies focused on the top-line have more success adopting AI, and why he is frustrated at the labs refusal to take a systems engineering approach to AI safety. Then we discuss what Palantir has learned from AI, how companies can preserve alpha instead of the median, and whether or not we need more models. Sankar also explains exactly what a forward-deployed engineer is, why tech is in a religious war, and his retrospective on Anthropic’s battle with the U.S. government."
           ],
           "zh": [
-            "今天访谈的嘉宾是 Palantir 首席技术官 Shyam Sankar。Sankar 在 Palantir 工作了 20 年，近年来日益活跃于公共思想界，写下了《Mobilize》一书，呼吁“重启美国工业底座以阻止第三次世界大战”。我曾在 2023 年 6 月采访过他，那次对话很适合用来了解 Palantir 的基本盘；而今天的访谈重点围绕 AI 展开。",
-            "在这次访谈中，我们聊到了为什么 Sankar 认为行业对 AI 的落地扩散关注不足、为什么聚焦营收增长的公司更容易用好 AI，以及为什么他对模型实验室拒绝用系统工程方法解决 AI 安全问题感到不满。随后我们探讨了 Palantir 从 AI 中学到的教训、企业如何保住超额优势（Alpha）而非退化为行业均值（Beta），以及我们是否还需要更多模型。Sankar 还详细解释了什么是前线部署工程师（FDE）、为什么科技界正处于一场宗教战争中，并复盘了 Anthropic 与美国政府的冲突。"
+            "今天访谈的嘉宾是 Palantir 首席技术官 Shyam Sankar。Sankar 在 Palantir 工作了 20 年，近年来日益活跃于公共思想界，写下了《动员》一书，呼吁“重启美国工业底座以阻止第三次世界大战”。我曾在 2023 年 6 月采访过他，那次对话很适合用来了解 Palantir 的基本盘；而今天的访谈重点围绕 AI 展开。",
+            "在这次访谈中，我们聊到了为什么 Sankar 认为行业对 AI 的落地扩散关注不足、为什么聚焦营收增长的公司更容易用好 AI，以及为什么他对模型实验室拒绝用系统工程方法解决 AI 安全问题感到不满。随后我们探讨了 Palantir 从 AI 中学到的教训、企业如何保住超额优势而非退化为行业均值，以及我们是否还需要更多模型。Sankar 还详细解释了什么是前线部署工程师、为什么科技界正处于一场宗教战争中，并复盘了 Anthropic 与美国政府的冲突。"
           ]
         },
         {
@@ -1267,7 +1267,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "SS：至少得从拉各斯讲起。我父亲二十出头去了尼日利亚拉各斯，建起了全非洲最早的一批制药厂之一，在那里安家生活了小十年。我虽然出生在印度，但三岁前是在拉各斯长大的。",
-            "后来家里遭遇了一场可怕的持枪抢劫——歹徒砍死了家里的狗，用枪托打伤我父亲，还拿枪威胁我母亲。我们抛下所有家当，搬到美国奥兰多从头再来。奥兰多是个极好的成长环境：有迪士尼世界的乐观氛围，又紧挨着肯尼迪航天中心所在的太空海岸。读小学时，我们常跑到院子里看航天飞机发射，心里笃信技术必然会让世界变得更好。如果从 80 年代快进二十年，那一代孩子从小看的是《终结者》和《侏罗纪公园》式的说教——“大自然总会找到出路”、“人类怎敢妄图制造进步？”——而奥兰多的乐观底色正是一切的起点。",
+            "后来家里遭遇了一场可怕的持枪抢劫——歹徒砍死了家里的狗，用枪托打伤我父亲，还拿枪威胁我母亲。我们抛下所有家当，搬到美国奥兰多从头再来。奥兰多是个很好的成长环境：有迪士尼世界的乐观氛围，又紧挨着肯尼迪航天中心所在的太空海岸。读小学时，我们常跑到院子里看航天飞机发射，心里笃信技术必然会让世界变得更好。如果从 80 年代快进二十年，那一代孩子从小看的是《终结者》和《侏罗纪公园》式的说教——“大自然总会找到出路”、“人类怎敢妄图制造进步？”——而奥兰多的乐观底色正是一切的起点。",
             "BT：这么看，人类改造自然最彻底的例子倒不是航天飞机，反而是建在沼泽地里的迪士尼世界吧？",
             "SS：（笑）还真是！每年有几千万人跑到一片沼泽地中央去玩，而且开心极了。"
           ]
@@ -1280,8 +1280,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "SS: They overlap profoundly. Being an American is this profound belief in your own human agency, and the community you’re in, and the ability to create a more perfect union — the recognition, the ability to hold the contradiction, that not everything is perfect today but it’s incumbent on us to make it better. That may sound a little Pollyannish and even corny, but that doesn’t exist anywhere else. Everywhere else, people are profoundly cynical — things are the way they are — and there’s a very thin line between cynicism and nihilism, and you kind of give up on everything. That’s the death spiral, that’s how you get the Dark Ages."
           ],
           "zh": [
-            "BT：“唯才制”（meritocracy）对你意味着什么？我读了最近《Colossus》写你的特稿，开篇引用了 Palantir CEO Alex Karp 对唯才制的看法，并结合了你在奥兰多靠入学考试考进三一高中、由此改变人生的经历。这是 Alex 的观点，还是你自己的体会？",
-            "SS：这是我们俩共同的体会，只是原因不同。我们俩在很多方面都不算主流讨喜的人；能活在一个按你结出的果实评判你、而不看你无法控制的出身维度的世界里，显然更好。我认为这是美国梦的前提。",
+            "BT：“唯才制”对你意味着什么？我读了最近《Colossus》写你的特稿，开篇引用了 Palantir CEO Alex Karp 对唯才制的看法，并结合了你在奥兰多靠入学考试考进三一高中、由此改变人生的经历。这是 Alex 的观点，还是你自己的体会？",
+            "SS：这是我们俩共同的体会，只是原因不同。我们俩在很多方面都不算主流讨喜的人；如果一个社会看重你做出了什么成绩，而不是看你出身如何，那显然对我们更有利。我认为这就是美国梦的前提。",
             "BT：我正想问这个。你出生在印度，早年住在拉各斯，后来到美国。“身为美国人”对你意味着什么？这跟刚才是一个问题，还是两者之间存在某种张力？",
             "SS：两者高度重合。身为美国人，意味着笃信人的主观能动性，笃信自己所在的社区，笃信我们有能力建立一个更完善的联邦——既清醒承认今天并不完美，又认为把它改得更好是我们的责任。这话听着可能有点天真甚至老套，但在别的地方真不多见。在很多地方，人们骨子里透着犬儒主义，觉得世道本来就这样；而犬儒和虚无只有一线之隔，跨过去就什么都放弃了。那是死亡螺旋，黑暗时代就是这么来的。"
           ]
@@ -1308,10 +1308,10 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "SS: Because at the margin, it’s true. At the margin, you can hire WuXi as a cheap set of hands at the lab bench to do a little bit of work. But at the limit, that’s a transfer of knowledge. At every increment it seems to make sense — you’re still doing the innovation — until one day you wake up and realize, “Oh, I don’t have it anymore”."
           ],
           "zh": [
-            "更大的问题在于全球化的谎言。全球化算错的一笔总账，就是以为“我们可以只管创新，让他们去管生产”——他们造东西，我们搞创新。问题在于，创新本身是生产实践的产物；一旦你停止亲手制造某样东西，就会丢掉围绕这件东西做下一代创新的源头刺激〔注1〕。",
-            "我常给年轻的计算机学者举一个例子：你们觉得当初是什么促使谷歌团队做出《Attention Is All You Need》背后的研究的？如果你去问那个团队，他们当时只是想把谷歌翻译的准确率提高 3%。最平淡无奇的工程需求，引出了最深远的技术突破。所以我们太迷信比较优势了，轻易放弃了对生产的刺激。",
+            "更大的问题在于全球化的谎言。全球化算错的一笔总账，就是以为“我们可以只管创新，让他们去管生产”——他们造东西，我们搞创新。问题在于，创新来自生产实践；一旦你不再亲手制造某样东西，也就失去了围绕这件东西做下一代创新的源头动力〔注1〕。",
+            "我常问年轻的计算机学者：你们觉得谷歌团队当年为什么能写出《Attention Is All You Need》这篇论文？要是去问那个团队，他们当时只是想把谷歌翻译的准确率提高 3%。往往是最不起眼的日常工程需求，催生了最重大的技术突破。我们过去太迷信比较优势理论，把生产外包出去，结果连带着把创新的源头也丢了。",
             "BT：为什么大家会犯这种错误，以为只要管住研发输入、不用操心制造输出就行？",
-            "SS：因为在边际上它是成立的。在边际上，你可以雇药明康德（WuXi）作为实验室里廉价的双手帮你做点基础工作。但在极限处，这就是知识转移。每一步增量外包在当时看都很合理——你觉得自己还在搞创新——直到某天早上醒来，才发现：“糟了，我已经不会做了。”"
+            "SS：因为单看眼前一步，外包确实划算。拿医药行业来说，每次把一点实验室基础工作外包给药明康德，看着都只是找了双便宜的帮手；但日积月累下来，核心技术能力就彻底转移过去了。每一步增量外包在当下看都很合理，你以为自己还握着创新能力，直到某天早上醒来才发现：“糟了，我已经不会做了。”"
           ]
         },
         {
@@ -1325,11 +1325,11 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "智能的扩散",
-            "BT：你是唯一一位让我当场想发工作邀请的 Stratechery 访谈嘉宾。你事先发来了一份想聊的问题清单，写得极好——我发邮件问你愿不愿意以后包揽我所有访谈的提纲准备，好像没收到回音，不知是不是邮件丢了。",
+            "BT：你是唯一一位让我当场想发工作邀请的 Stratechery 访谈嘉宾。你事先发来了一份想聊的问题清单，写得很好——我发邮件问你愿不愿意以后包揽我所有访谈的提纲准备，好像没收到回音，不知是不是邮件丢了。",
             "SS：（笑）我正在考虑呢。",
             "BT：好，那我们就顺着你的提纲聊。顺便问一句，你发来这么长一封详细列明访谈要点的邮件，算不算一颗典型的“Shyam 炸弹”？",
             "SS：言辞还远不够辛辣，算放过你了。",
-            "BT：明白。第一个问题：AI 行业是不是在解决错误的瓶颈？你认为我们在“智能的供给”上投入了过多智力，而在“智能的扩散”（diffusion）上投入不足。展开讲讲。"
+            "BT：明白。第一个问题：AI 行业是不是在解决错误的瓶颈？你认为我们在“智能的供给”上投入了过多智力，而在“智能的扩散”上投入不足。展开讲讲。"
           ]
         },
         {
@@ -1340,7 +1340,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "SS: I think the labs are, but in general the entire market structure. People are being rewarded — and it’s very rational, if you’re a lab, you’ve been in your own reinforcement-learning loop, you do fundamental research, you make a more powerful model, and your valuation doubles or quadruples and every year it seems to keep working. Baked into that is the idea that eventually this stuff will diffuse, eventually there will be economic value."
           ],
           "zh": [
-            "SS：如果拿电力打个粗浅的比方：当年有人负责发电、生产电子；但电力要想对经济产生真正影响，还得有另一批人造出靠电力驱动的机床。这引发了一场深刻的革命——你不仅是在工厂里加一台新机器，而是会围绕“有了电”这一事实，彻底重新设计整座工厂〔注2〕。",
+            "SS：如果拿电力打个粗浅的比方：当年有人负责发电、生产电子；但电力要想对经济产生真正影响，还得有另一批人造出靠电力驱动的机床。这引发了一场深刻的革命——你不仅是在工厂里加一台新机器，而是围绕“有了电”这一事实，彻底重新设计整座工厂〔注2〕。",
             "把这个过程叫作“扩散”：电力的奇迹是怎么扩散进实体经济的？AI 也面临同样的问题。现在大家一门心思扑在怎么造出更好的模型、更强的机器智能上——这当然要继续做；但我们在“如何加速扩散”这件事上投入严重不足。经济价值到底在哪儿产生？怎么把消耗掉的 Token 更快、更划算地转化为经济价值？我对此非常着迷，因为技术红利只有真正扩散出去，行业在社会中才有立足的合法性，而我们现在的侧重点偏了。",
             "BT：你说的“我们”指谁？是谁对扩散关注不够？你想说服谁？",
             "SS：首先是模型实验室，但更广义上说是整个市场激励结构。大家都在按这套激励行事——如果你是一家实验室，你处在一个正反馈循环里：做基础研究、造出更强的模型，公司估值就能翻倍甚至翻四倍，而且每一年这套逻辑都在奏效。背后隐含的假设是：这些技术迟早会自动扩散，迟早会产生经济价值。"
@@ -1352,8 +1352,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "There are some roles where the cardinality collapses — the knowledge worker is the workflow, like coding — so you have perfect product-market fit for those things, and you can chase unbounded productivity. But that’s a very small part of everything we do in the real economy."
           ],
           "zh": [
-            "但这里头有个未必正确的预设：撇开消费端不谈，企业的最小原子单元到底是什么？从各大实验室的产品策略可以看出，他们默认企业的原子单元是“知识工作者”——以为只要让每个白领员工效率更高，就能拿到投资回报率（ROI）。这并不符合事实。企业的最小原子单元是“工作流”（workflow）。你就算让某一个供应链分析师效率提高，也产生不了增量回报；你必须让整条供应链工作流实现可量化的效率提升，才能真正拿到价值〔注3〕。",
-            "只有极少数岗位“个人与工作流完全重合”，比如写代码（coding）。在这些岗位上产品天然契合市场，可以一路追求无上限的效率提升；但它在整个实体经济里只占很小一部分。"
+            "但这里有个预设未必成立：撇开消费端不谈，企业运转的基本单元到底是什么？从各大实验室的产品策略可以看出，他们默认企业的基本单元是单个“知识工作者”——以为只要让每个白领员工干活更快，企业就能拿到投资回报。事实并非如此。企业的基本单元是“工作流”。单让某一个供应链分析师效率提高，并不会带来多少新增回报；只有让整条供应链工作流的效率实现可量化的提升，才能真正拿到价值〔注3〕。",
+            "只有极少数岗位“个人与工作流完全重合”，比如写代码。在这些岗位上产品天然契合市场，可以一路追求无上限的效率提升；但它在整个实体经济里只占很小一部分。"
           ]
         },
         {
@@ -1366,8 +1366,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "BT：我还是不太明白你的受众是谁。在市场分工里，模型厂商专心把模型造好，其他公司拿模型去做扩散落地——Palantir 不就在干这个吗？你这番话到底是劝谁的？",
-            "SS：是说给那些正在犯嘀咕的人听的：“我们砸了几万亿美元搞出这些东西，回报到底在哪儿？为什么最好的代表作只是个挺好用的 AI 助手，却拉动不了 GDP 拐点？”如果把视野拉远到全球化之外：1971 年，美国 GDP 增长与工资增长之间的挂钩断了。在那之前，经济每增长一分，工资就跟着涨一分；而自 1971 年以来，扣除通胀后的实际工资一直停滞不前。",
-            "这是个深层问题，我们眼下的许多困境都处在它的下游。给繁荣的中产阶级下定义有很多种方式，最打动我的定性标准是：你相信自己孩子的未来会比你过得更好。如果连续两代人都兑现不了这张支票，社会就会陷入剧烈动荡。",
+            "SS：是说给那些正在犯嘀咕的人听的：“我们砸了几万亿美元搞出这些东西，回报到底在哪儿？为什么最好的代表作只是个挺好用的聊天助手，却没能让 GDP 增长出现拐点？”如果把视野拉远到全球化之外：1971 年，美国 GDP 增长与工资增长之间的挂钩断了。在那之前，经济每增长一分，工资就跟着涨一分；而自 1971 年以来，扣除通胀后的实际工资一直停滞不前。",
+            "这是个深层问题，我们眼下的许多困境都处在它的下游。给繁荣的中产阶级下定义有很多种方式，最打动我的定性标准是：你相信自己孩子的未来会比你过得更好。如果连续两代人都兑现不了这一预期，社会就会陷入剧烈动荡。",
             "BT：这为什么重要？做这场访谈，是因为担心公众对科技行业的看法、担心 AI 失去公众支持、或者担心大家抵制建数据中心吗？从理论探讨落到现实行动，你到底希望看到什么改变？",
             "SS：AI 到底只是一项很酷的技术，还是真能用来改善社会？我是倒推着想这个问题：要想让社会变得更好，AI 必须做到什么？AlphaFold 够酷了吧？但直到今天，因为 AlphaFold 而上市的新药数量还是零。如果 AI 最后只停留在一堆很酷的演示上，那就太可惜了。"
           ]
@@ -1398,10 +1398,10 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           "zh": [
             "BT：怎么个不同法？",
             "SS：在具体工作流里，两者干的事情并不完全重合。如果你花心思去“删掉某个岗位的人”，从定义上说，AI 就必须包揽这个人原本干的所有事——哪怕它能做到 98%，只要差那 2%，你裁员的目标就失败了〔注4〕。",
-            "换个问法：“既然我现在有了这种机器智能，我该怎么围绕它能干的事重新搭建工作流，而不是非要把它硬塞进人类与 AI 的能力误差里？”——当然，AI 至上主义者会说：“我接着训更强的模型就行了。”",
+            "换个问法：“既然我现在有了这种机器智能，我该怎么围绕它真正擅长的事重新设计工作流，而不是非要拿它去硬套人类的岗位、死磕人类与 AI 能力不重合的那部分缺口？”——当然，AI 至上主义者会说：“我接着训更强的模型就行了。”",
             "但我想问：眼下我们面对的问题里，有多少其实不需要超越现有的模型边界就能解决？因为大家对扩散想得不够，没去发挥 AI 真正擅长的地方，反而总拿“怎么把人替掉”来衡量 AI——从成功客户的经验看，替掉人本身可能根本没那么大价值。",
-            "BT：重营收增长（top line）而非重成本削减（bottom line）这个规律，是你在 AI 时代才学到的，还是在大模型出现之前服务企业时就有的体会？",
-            "SS：在 AI 时代这一点被急剧放大了。以前你会说冲营收更让人兴奋、成功率更高，但搞削减运营成本（OpEx）通常也能拿到成果；而在 AI 时代，结果高度两极分化——一边是大赢家，另一边则觉得这东西根本不管用。"
+            "BT：重营收增长而非重成本削减这个规律，是你在 AI 时代才学到的，还是在大模型出现之前服务企业时就有的体会？",
+            "SS：在 AI 时代这一点被急剧放大了。以前你会说冲营收更让人兴奋、成功率更高，但搞削减运营成本通常也能拿到成果；而在 AI 时代，结果高度两极分化——一边是大赢家，另一边则觉得这东西根本不管用。"
           ]
         },
         {
@@ -1414,8 +1414,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           "zh": [
             "安全与系统工程",
             "BT：第三条：谁来挑起系统工程的担子？一个能力强大的模型不等于一套能用的系统——尽管实验室普遍存在盲视，觉得世上除了模型之外别无他物。把概率性的模型与确定性的软件、人类判断、权限管控及现实后果结合起来，这事归谁管？",
-            "SS：刚过去的周末又有篇文章说，大模型能利用虚拟机里 CPU 缓存的时间差互相通信。这再次暴露出完全缺乏系统工程思维：大家总在问“我们能不能测出模型会出什么乱子？”，却不反过来想“我们在外围需要建什么护栏，才能安全地把它用起来、拿到经济价值？”。这是在系统工程问题上放弃了人的主观能动性与责任。",
-            "看看真正的工程企业是怎么处理事故的：出了事，大家会写“五个为什么”（Five Whys）复盘报告，不仅记录发生了什么，还会列出接下来要改什么、建什么，确保问题绝不再犯。"
+            "SS：刚过去的周末又有篇文章说，大模型能利用虚拟机里 CPU 缓存的微小时间差互相通信。这再次暴露出行业缺乏系统工程思维：大家总在问“我们能不能测出模型会出什么乱子？”，却不反过来想“我们在外围需要建什么防护体系，才能安全地把它用起来、拿到经济价值？”。这是在系统工程问题上放弃了人的主观能动性与责任。",
+            "看看真正的工程企业是怎么处理事故的：出了事，大家会写“五个为什么”复盘报告，不仅记录发生了什么，还会列出接下来要改什么、建什么，确保问题绝不再犯。"
           ]
         },
         {
@@ -1430,7 +1430,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           "zh": [
             "想想当年 Hyman Rickover 海军上将是怎么建美国核潜艇舰队的，再对比苏联核潜艇舰队：苏联潜艇兵每隔六个月就得拉去索契休养，让体内的白细胞重新长出来，因为苏联人把核辐射当成无解的问题（“反正就这样了”）；而 Rickover 给美国核潜艇设计的安全标准，比当时科学家认为必要的水平高出整整 100 倍〔注5〕。这就是主动扛起系统工程责任、坚持持续改进的典范。",
             "我认为应用企业和提供 AI 的厂商都得扛起这份责任。这些问题都是可解的。我们当然可以搓着手空谈这项新技术有多危险——当年汽车刚发明时也可以这么干。自 1899 年以来有 400 万美国人死于车祸，但人类还是继续往前走，靠安全带、安全气囊、防抱死刹车一步步用系统工程降低风险，更别说飞机了。可今天在 AI 讨论里你几乎看不到这种思路——除了英伟达推出过 Power Shelf 等安全工具链外，本该到处都是这类工程探索才对。",
-            "BT：你觉得这事该由模型厂商来做，还是该由 Palantir、微软这类公司来做？或者说，把问题定义为系统工程，在多大程度上刚好符合 Palantir 和微软的利益——因为这样一来，你们套在模型外面的那层东西就变得无比值钱了？",
+            "BT：你觉得这事该由模型厂商来做，还是该由 Palantir、微软这类公司来做？或者说，把问题定义为系统工程，在多大程度上刚好符合 Palantir 和微软的利益——因为这样一来，你们套在模型外面的那层东西就变得很值钱了？",
             "SS：客观上我们确实建起了这样的业务，你完全可以说这里头有我们的私利。但我还是很难理解实验室对这件事的漠视。根源在于“模型盲视症”——他们有种审美洁癖，觉得只要模型之外还需要别的东西，就是对纯粹 AI 信仰的折损。如果他们更关心怎么帮客户把实际效益做出来，就不会这么想了。模型公司到底是在卖“技术进步”，还是在卖“产品”？",
             "BT：这对你不是好事吗？",
             "SS：对我好极了！"
@@ -1446,7 +1446,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           "zh": [
             "Palantir 的 AI 经验与教训",
             "BT：那我问个问题：你强调要盯着营收增长、要围绕模型的能力重建流程。这对 Palantir 自己意味着什么？你们早就做出了“本体层”（Ontology），把各种零散数据源汇集起来；2023 年我们聊的时候，你说 AI 就像架在这些数据之上的用户界面。一边告诉客户“你们必须围绕 AI 彻底重构做法”，一边又说“我们 Palantir 以前做的东西刚好完全契合 AI”，这是不是太巧了点？AI 到底在多大程度上让 Palantir 重构了自己服务客户的方式？",
-            "SS：改得非常多。在宏观大方向上，我们确实走对了。本体层的长期价值得到了验证——前几天我刚见了一家大客户，对方感叹正是靠本体层卡着，才没让 AI 生成的垃圾内容（AI slop）在公司里堆积起来，也才能在上面搭建供应链应用。",
+            "SS：改得非常多。在宏观大方向上，我们确实走对了。本体层的长期价值得到了验证——前几天我刚见了一家大客户，对方感叹正是靠本体层卡着，才没让 AI 生成的垃圾内容在公司里堆积起来，也才能在上面搭建供应链应用。",
             "但如果说 AI 没让我们重新思考大量具体做法，那就是自欺欺人了。最直观的变化是干活的方式：现在我们平台上绝大部分配置与开发工作，都是通过内部称为“AI FDE”的工具完成的——直接用模型本身来加速平台的编程工作。"
           ]
         },
@@ -1460,8 +1460,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "Perhaps the most important question, even as someone who is an AI maximalist, is knowing when not to use AI. It’s been very interesting, when you ask the AI to design ontologies for enterprises, Going back to the alpha-beta frame — when you ask the AI to design ontologies for an enterprise, it does a mid job. Going back to the alpha/beta frame, it’s all beta, it models you like it would model anyone else, smoothing over everything that makes you special or different. A reversion to the mean."
           ],
           "zh": [
-            "把视野拉远看，我们把企业视为一台“状态机”（state machine）〔注6〕。在 AI 出现之前，每一次状态转换都得靠某个人类去操作，而且要跟大量老旧系统打交道。所以本体层从一开始就不只是企业数据的静态语义映射（名词），它还对业务动作（动词）进行了建模，把企业变成可编程的系统——相当于给人类提供了一副操控企业的缰绳（harness）。",
-            "AI 带来的机会、也是我们重金投入的地方，就是把这副缰绳改造成模型也能调用的接口，而且必须做到“幂等”（idempotent）。因为企业不可能一夜之间把人全撤掉、完全交给 AI 运行；有些工作流由人发起、交给 AI，中间还会来回交接。所以底层的状态机不能受“发起者是哺乳动物还是 AI”的影响，必须按统一规则管控状态跃迁和允许执行的动作。",
+            "把视野拉远看，我们把企业视为一台“状态机”〔注6〕。在 AI 出现之前，每一次状态转换都得靠人去操作，而且要跟大量老旧系统打交道。所以本体层从一开始就不只是企业数据的静态语义映射（名词），它还对业务动作（动词）进行了建模，把企业变成可编程的系统——相当于给人类提供了一副操控企业的缰绳。",
+            "AI 带来的机会、也是我们重金投入的地方，就是把这副缰绳改造成模型也能调用的接口，而且必须满足“幂等性”。因为企业不可能一夜之间把人全撤掉、完全交给 AI 运行；有些工作流由人发起、交给 AI，中间还会来回交接。所以不管发起动作的是人类还是 AI，底层的状态机都必须按同一套规则管控状态流转与操作权限。",
             "BT：如果 2006 年你就知道大语言模型会成为最终的交互界面，你会改变当年做本体层的方式吗？",
             "SS：核心本体层本身很耐造，我倒觉得未必会改。真正改变的是怎么从本体层里提取价值——你在上面搭什么应用、应用之间怎么联动，以及怎么把数据和模型接进本体层。",
             "反倒有个很反直觉的教训：大概一年半前，我规定所有新员工入职第一周必须通过 AI FDE 工具来学习使用我们的平台，心想“既然这是未来，那就一步到位”。结果时间一长，这产生了严重的副作用：很多年轻员工只懂得通过顶层的抽象层用平台，完全不理解平台底层的构建模块是怎么组合运转的。",
@@ -1476,7 +1476,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "You can juxtapose that to our entire approach to software has been solving for, “What software must exist to solve the problems I care about?”, it’s building software through backpropagation. That both lets you continuously up-level the ambition of the problem you’re trying to solve, and allows you to think through the abstractions you want to codify in software versus the parts you leave as what is going to be unique to the customer. That’s allowed us to pierce the trade-off between alpha and beta, “How do I build software that makes each customer more different, not more similar?”, and therefore is a strategic weapon they can use in the market."
           ],
           "zh": [
-            "Alpha（独特优势）vs Beta（行业均值）",
+            "独特优势（Alpha）vs 行业均值（Beta）",
             "BT：提纲第五条（第四条我们一会儿再聊）：传统企业软件是不是让公司变得越来越像，而 AI 会让这种情况更严重？你多次提出，传统企业软件只能提供 Beta 而非 Alpha——因为软件研发太贵，必须卖给尽可能多的客户才能收回成本，结果所有客户都用上了同一套工作流。但这有什么问题吗？大多数工作流本来就不直接决定营收，软件本来就是用来降本提效的，大家用一样的标准流程不挺好吗？",
             "SS：在旧世界里确实只能这样。但你回想一下疫情期间的财报电话会：当时 CEO 们津津乐道的技术成功案例是什么？全是 Zoom 和 Teams。与此同时，我认识的好几家刚花 50 亿美元上了大型 ERP 系统的公司，疫情开始两周系统就像纸老虎一样垮了。整个软件工业复合体里，到底有几块是真管用的？我无意贬低同行，但他们本质上优化的目标是“我能不能把软件卖给你”，至于“软件到底管不管用、解不解决核心问题”则是另一回事。",
             "对比之下，我们做软件的思路一直是倒推：“为了解决我真正在乎的问题，必须存在什么样的软件？”这既能不断拉高解决问题的野心，也能让你想清楚哪些部分该抽象成通用软件、哪些部分该留给客户做差异化。这帮我们打破了 Alpha 和 Beta 之间的取舍——做出能让每家客户变得更独特、而非更雷同的软件，变成他们在市场上的战略武器。"
@@ -1503,9 +1503,9 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "If you talk to the Mercor’s or the data companies of the world, they’ll tell you the way they sell to a frontier lab is they generate a dataset that they post-train an open-weight model on to be provably past the existing frontier of the model the lab is selling. So if that’s how this game is happening, every company has this exhaust as a unique asset, why should they sit around and wait? And then as a consequence have a bigger question of, “If everyone has access to this, what is my alpha as a firm? Is everything reduced to beta?”."
           ],
           "zh": [
-            "所以我们一直在推“主权 AI”（Sovereign AI），客户非常认可。这不是非黑即白的选择，你不需要离开实验室生态；但对核心工作流而言，你最宝贵的资产其实是自己的后训练流水线（post-training pipeline）——关键不在于用哪个开源模型，而在于你拥有一条装满企业自身“运营尾气”（operational exhaust）的后训练流水线。员工每天在软件系统里做出的真实业务决策，都会产生数据；你可以每个月用这些数据训出一个新的模型权重，并跟历史决策做比对评测，确保这个模型真正属于你自己。",
+            "所以我们一直在推“主权 AI”，客户非常认可。这不是非黑即白的选择，你不需要离开实验室生态；但对核心工作流而言，你最宝贵的资产其实是自己的后训练流水线——关键不在于用哪个开源模型，而在于建起一条能把企业日常“运营数据副产物”转化为模型能力的后训练流水线。员工每天在软件系统里做出的真实业务决策都会留下数据；你可以每个月用这些数据训出一个新的模型权重，并拿历史决策做比对评测，让这个模型真正归你自己所有。",
             "在政府和国防领域，这么做的必要性显而易见——你绝不会去租一个对手也能租到的大脑。但在商业世界里同样如此，因为越往前沿走，能力高低越取决于有没有独特的数据把你推过能力边界。",
-            "你去问 Mercor 这类数据公司就知道，他们向头部大模型实验室推销数据的办法，就是先生成一批垂直数据，拿去对一个开源模型做后训练，直接证明它在特定领域超过了实验室正在卖的旗舰模型。既然行业玩法是这样的，每家企业自己手里都有这种独一无二的运营尾气，为什么要干等着？一旦大家都只调公共模型，企业的独特优势（Alpha）岂不都退化成行业均值（Beta）了？"
+            "你去问 Mercor 这类数据公司就知道，他们向头部大模型实验室推销数据的办法，就是先生成一批垂直数据，拿去对一个开源模型做后训练，直接证明它在特定领域超过了实验室正在卖的旗舰模型。既然行业玩法是这样的，每家企业自己手里都有这种独一无二的日常运营数据，为什么要干等着？一旦大家都只调公共模型，企业的独特优势岂不都退化成行业均值了？"
           ]
         },
         {
@@ -1516,8 +1516,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "BT：这逻辑说得通——如果把所有数据都喂给 Anthropic 或 OpenAI，训练成果会惠及所有人，把你的独特知识变成全行业的 Beta。但为什么企业不自己干，非得找 Palantir 当合作伙伴？为什么你们比模型厂商更值得信任？",
-            "SS：你可以把我们的平台看作一座“模型工厂”。你今天用什么系统做日常业务决策？哪个系统在记录你的决策过程与现实约束、从而天然构成一个可用于模型后训练的强化学习（RL）环境？训出模型后，怎么对照历史真实决策做评测？又怎么管理生产环境的部署？",
-            "把整条垂直链路打通、让它开箱即用至关重要。我们现在重点投入的方向是“自动化研究”（auto-research）：不需要客户自己养一个庞大的后训练团队，系统直接利用他们在供应链或生产排程中做出的日常决策尾气，在后台自动训练模型，然后直接把结果推给客户：“这里有个新训出来的模型，比你现在用的效果更好。”每次调用大模型都会留下一条轨迹，反哺回闭环里实现持续改进——每家客户都想进入这个复利循环。"
+            "SS：你可以把我们的平台看作一座“模型工厂”。你今天用什么系统做日常业务决策？哪个系统在记录你的决策过程与现实约束、从而天然构成一个可用于模型后训练的强化学习环境？训出模型后，怎么对照历史真实决策做评测？又怎么管理生产环境的部署？",
+            "把整条垂直链路打通、让它开箱即用至关重要。我们现在重点投入的方向是“自动化研究”：不需要客户自己养一个庞大的后训练团队，系统直接利用他们在供应链或生产排程中积累的日常决策数据，在后台自动训练模型，然后直接把结果推给客户：“这里有个新训出来的模型，比你现在用的效果更好。”每次调用大模型都会留下一条轨迹，反哺回闭环里实现持续改进——每家客户都想进入这个复利循环。"
           ]
         },
         {
@@ -1531,9 +1531,9 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           "zh": [
             "BT：客户怎么看时间窗口问题？也许长远看通用模型给的只是概率分布的中位数、全是 Beta；但如果我第一个用上 Beta，照样能赚大钱。会不会有客户想：“哪怕通用模型平庸，只要我比对手先用上就行？”",
             "SS：我先确认一下，你说的“平庸方案”是指直接调前沿实验室的通用模型，还是指较弱的后训练模型？",
-            "BT：假设一家公司在看竞争对手的动向，跟你说：“Palantir，你们这套逻辑长远看是对的，我们不该把知识喂给实验室，应该建自己的内生迭代能力。但这套东西搭起来太慢了。我现在直接调现成的大模型，对手还没用，我第一个用就能拿到短期优势——就像美联航率先给飞机装星链（Starlink）一样，虽然以后每家航司都会装，但第一个装的能吃尽早期红利。”",
-            "SS：我当然主张客户今天就赢，赢在当下最重要。但我要反驳的是：“搭这套后训练闭环到底要花多久？”连我自己都很惊讶——只要你的日常业务决策已经在平台上跑、已经攒下了现成的运营尾气，训出一个能直接投产的后训练模型只需要**一周**。",
-            "从实测结果看，在具体业务任务上，这样做出来的效果直接超过了通用前沿模型。举个例子：假设我的业务是卖电子元器件，客户询价时发来的是复杂的电气工程图纸——非常专业，完全在通用前沿模型的训练分布之外（out of distribution），需要用到视觉语言模型。而我手里有过去 10 到 20 年的历史数据：客户发来的图纸规格是什么，人类工程师最终核算出并报价的物料清单（BOM）是什么。训这样一个模型只需要一周时间，之后你给客户响应报价的速度就能远远甩开对手——因为对手还得花好几周靠人工慢慢啃同一份图纸。"
+            "BT：假设一家公司在看竞争对手的动向，跟你说：“Palantir，你们这套逻辑长远看是对的，我们不该把知识喂给实验室，应该建自己的内生迭代能力。但这套东西搭起来太慢了。我现在直接调现成的大模型，对手还没用，我第一个用就能拿到短期优势——就像美联航率先给飞机装星链一样，虽然以后每家航司都会装，但第一个装的能吃尽早期红利。”",
+            "SS：我当然主张客户今天就赢，赢在当下最重要。但我要反驳的是：“搭这套后训练闭环到底要花多久？”连我自己都很惊讶——只要你的日常业务决策已经在平台上跑、已经攒下了现成的运营数据，训出一个能直接投产的后训练模型只需要**一周**。",
+            "从实测结果看，在具体业务任务上，这样做出来的效果直接超过了通用前沿模型。举个例子：假设我的业务是卖电子元器件，客户询价时发来的是复杂的电气工程图纸——非常专业，完全在通用前沿模型的常规训练分布之外，需要用到视觉语言模型。而我手里有过去 10 到 20 年的历史数据：客户发来的图纸规格是什么，人类工程师最终核算出并报价的物料清单是什么。训这样一个模型只需要一周时间，之后你给客户响应报价的速度就能远远甩开对手——因为对手还得花好几周靠人工慢慢啃同一份图纸。"
           ]
         },
         {
@@ -1561,11 +1561,11 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "I’ve had these two out-of-body experiences, probably bad form to talk about, with each of the frontier labs, where different people were saying, “You should really see the work that we, the lab, have done at this company”, but the reality is it was work I did. Yes, I’m spinning the token meter, but the translation of the model to economic value for that company required someone who actually had a sharp opinion on diffusion and the realization of that value."
           ],
           "zh": [
-            "BT：为什么前沿实验室不能干脆把从顶层聪明模型到底层简单模型的整条推理层（inference layer）全包揽了？如果推理最终变成标准化商品，他们拥有最强的 AI，成本结构不是更有优势吗？",
-            "SS：如果只拼通用推理的单位成本，确实可能。问题在于，现实中会不会有越来越多处于通用训练分布之外（out of distribution）的场景，唯有企业自己掌控的模型才能跑出最佳效果？而在真正代表企业核心竞争力（Alpha）的场景上，企业又敢不敢完全依赖外部公共模型？",
+            "BT：为什么前沿实验室不能干脆把从顶层聪明模型到底层简单模型的整条推理层全包揽了？如果推理最终变成标准化商品，他们拥有最强的 AI，成本结构不是更有优势吗？",
+            "SS：如果只拼通用推理的单位成本，确实可能。问题在于，现实中会不会有越来越多超出通用训练分布的专业场景，唯有企业自己掌控的模型才能跑出最佳效果？而在真正代表企业核心竞争力的场景上，企业又敢不敢完全依赖外部公共模型？",
             "BT：所以这才是你的核心诉求？你出来呼吁企业别把数据白给模型厂商，是因为一旦数据拉平，模型厂商就会通吃？",
             "SS：我确实这么认为。一方面是想告诉企业，面对眼下还没跑通的业务痛点，其实有另一条路可走；另一方面，很多人在问“投资回报率到底在哪儿？为什么真正用起来的好像只有写代码？”。",
-            "我跟两家头部前沿实验室分别有过一次让人哭笑不得的经历（这么说可能不太礼貌）：实验室的人跑来跟我炫耀，“你真该去看看我们实验室在某某企业客户那里做出的成果”——但实际上那个项目从头到尾是我带队做的！没错，后台的 Token 计费表确实在飞速转，但真正把模型转化为那家企业的经济价值的，是对技术扩散和业务落地有清晰章法的人。"
+            "我跟两家头部前沿实验室分别有过一次让人哭笑不得的经历（这么说可能不太礼貌）：实验室的人跑来跟我炫耀，“你真该去看看我们实验室在某某企业客户那里做出的成果”——但实际上那个项目从头到尾是我带队做的！没错，后台的 Token 计费表确实在飞转，但真正帮那家企业跑出实际业务价值的，是懂怎么把技术揉进业务流程的人。"
           ]
         },
         {
@@ -1579,11 +1579,11 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "BT：DeepSeek 是目前最厉害的中国公司吗？尤其是他们用了宽松的 MIT 开源协议，最近还把整套推理栈都开源了。你们用不用 DeepSeek？怎么忍住不用的？",
-            "SS：我们自己内部不用，但在商业板块允许客户自由选择模型。虽然出于多方面考量我鼓励客户优先用西方技术栈——而且西方开源与商业生态已经足够好用——但现在行业里有个问题：大家过度迷信公开基准测试（benchmarks），陷入了全员“应试刷榜”（bench-maxxing）〔注8〕。",
-            "当英伟达发布未经特定后训练的原版 Nemotron 3 时，我们把它接进管理内部运营的系统里实测，结果在五个真实业务场景里它的表现直接超过了前沿大模型！如果公开跑分真能如实反映模型在锯齿状能力边界（jaggedness）上的真实水平，这种事根本不该发生。从那以后我就不再轻信公开跑分了，在公司内部发起了从“刷榜（bench-maxxing）”转向“自己出题（bench-making）”的运动。",
+            "SS：我们自己内部不用，但在商业板块允许客户自由选择模型。虽然出于多方面考量我鼓励客户优先用西方技术栈——而且西方开源与商业生态已经足够好用——但现在行业里有个问题：大家过度迷信公开基准测试，陷入了全员“应试刷榜”〔注8〕。",
+            "当英伟达发布未经特定后训练的原版 Nemotron 3 时，我们把它接进管理内部运营的系统里实测，结果在五个真实业务场景里它的表现直接超过了前沿大模型！如果公开榜单真能准确反映模型参差不齐的实际能力，这种事根本不该发生。从那以后我就不再轻信公开跑分了，转而在公司内部发起了从“刷公开榜单”转向“自己出题评测”的运动。",
             "评估基准的数量，至少应该和全世界企业客户的数量一比一对齐——你自己的基准是什么？你真正在乎什么业务指标？你怎么围绕这些指标评估模型？这能帮企业跳出“哪个新模型最酷”的噱头，转而关注“在我的业务里到底提升了多少，怎么在延迟、成本和准确率之间做取舍”。",
             "BT：那你们为什么不自己训基座模型？",
-            "SS：如果我觉得有必要，我就会去训。但我们是围绕客户业务存在的，目前重点是帮客户做模型的后训练来解决实际问题。我也琢磨过要不要做一些内嵌在产品里的专用模型分发给所有客户，或者提供一套预微调好的起点权重（starter checkpoint），帮客户在完全超出常规分布的特殊行业场景里抢跑。"
+            "SS：如果我觉得有必要，我就会去训。但我们是围绕客户业务存在的，目前重点是帮客户做模型的后训练来解决实际问题。我也琢磨过要不要做一些内嵌在产品里的专用模型分发给所有客户，或者提供一套预微调好的初始权重，帮客户在完全超出常规分布的特殊行业场景里抢跑。"
           ]
         },
         {
@@ -1594,10 +1594,10 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "SS: I’m not worried — I think it will. Partly my exhortation is around, if we’re in a rush to realize the value of this genie of AI, are we actually putting all our emphasis and chips in the right place? We should be careful not to think of the Chinese as being ten feet tall but if you juxtaposed it with the profound focus the Chinese have on AI is about productive forces — how do we actually get economic value out of this? You can say that even the commoditization — one there’s an aspect of economic warfare through distillization attacks, we’re going to release an open-weight model and destroy a huge amount of U.S. market cap but the other part is, it serves as a stimulus and subsidy for the rest of their ecosystem, where they want to get better or are really good, from power to chips and I think it won’t be that long before the Chinese models are not open-weight."
           ],
           "zh": [
-            "BT：我们之前聊过，咱俩都喜欢从价值链分布看行业。我故意唱个反调：我完全认同数据和本体层的价值，也认同芯片和数据的投入逻辑；但你在访谈开头刚讲了全球化外包的教训——在边际上外包很划算，放到全局却丢掉了根本。既然你这么忌惮模型厂商（无论是意识形态分歧、怕他们吸走你的运营尾气，还是怕他们向后整合抢你生意），为什么你们不亲自投资扶植备选基座模型？我相信扎克伯格或者黄仁勋肯定乐意收这笔钱，你们为什么不真金白银投进去？",
+            "BT：我们之前聊过，咱俩都喜欢从价值链分布看行业。我故意唱个反调：我完全认同数据和本体层的价值，也认同芯片和数据的投入逻辑；但你在访谈开头刚讲了全球化外包的教训——单看眼前一步外包很划算，放到全局却丢掉了根本。既然你这么忌惮模型厂商（无论是意识形态分歧、怕他们吸走你的运营数据，还是怕他们向后整合抢你生意），为什么你们不亲自投资扶植备选基座模型？我相信扎克伯格或者黄仁勋肯定乐意收这笔钱，你们为什么不真金白银投进去？",
             "SS：从商业回报看，我并不确信最终价值会沉淀在通用基座模型层；真正能产生持续复利价值的，恰恰是我们给客户提供的这一层。",
             "BT：既然价值反正也不会留在模型层，那你还操什么心？市场自己不就会把这些问题解决掉吗？",
-            "SS：我倒不是担心我们自己，我相信市场会给出答案。我之所以大声疾呼，是想问：既然大家都急着把 AI 的价值释放出来，我们目前的精力和筹码押对地方了吗？我们固然不必把中国对手神化得像三米高的巨人，但对比一下就能看到，中国对 AI 的重心极其明确地放在“生产力”（productive forces）上——也就是怎么从 AI 里榨出实际的经济价值。甚至中国厂商推动模型白菜化也有两层作用：一是通过蒸馏攻击（distillation attacks）免费放出开源权重模型，蒸发掉美股科技巨头的大把市值；二是作为对本国下游生态（从电力到芯片）的变相补贴与刺激。不过我认为，用不了多久中国模型也会停止开源。"
+            "SS：我倒不是担心我们自己，我相信市场会给出答案。我之所以大声疾呼，是想问：既然大家都急着把 AI 的价值释放出来，我们目前的精力和筹码押对地方了吗？我们固然不必把中国对手神化得像三米高的巨人，但对比一下就能看到，中国对 AI 的重心极其明确地放在“生产力”上——也就是怎么从 AI 里榨出实际的经济价值。甚至中国厂商推动模型白菜化也有两层作用：一是通过蒸馏攻击免费放出开源权重模型，蒸发掉美股科技巨头的大把市值；二是作为对本国下游生态（从电力到芯片）的变相补贴与刺激。不过我认为，用不了多久中国模型也会停止开源。"
           ]
         },
         {
@@ -1617,9 +1617,9 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "SS：因为一旦他们觉得自己摸到了最前沿、或者试图超越前沿时，就会想要商业化变现，把模型关起来。",
             "BT：你觉得他们现在到最前沿了吗？",
             "SS：没有，目前还在身后追赶。",
-            "BT：作为一家中国模型厂商，有可能完全不依赖蒸馏（distillation）吗？如果不靠蒸馏，跟同行比岂不是毫无竞争力？",
+            "BT：作为一家中国模型厂商，有可能完全不依赖蒸馏吗？如果不靠蒸馏，跟同行比岂不是毫无竞争力？",
             "SS：确实如此。而且硬币的另一面是，监管层也会把失控的大模型视为对自身安全与稳定的威胁。",
-            "BT：我今年夏天写过一篇《谁在害怕中国模型？》：大家总盯着包含利润空间的 API 标价，而我只关心真实的单次推理服务成本（cost to serve）。前沿实验室因为技术领先，推理效率很高；而跑一个庞大的中国开源模型同样要烧真金白银，不可能白送。同理，看到中国模型追到只差六个月或三个月，很多人就外推觉得他们必然反超——但“蒸馏”本身就足以解释他们为什么能追得这么快，也决定了只要继续依赖蒸馏，就建立不起独自探索最前沿的能力。既然如此，我们为什么不能放轻松点？",
+            "BT：我今年夏天写过一篇《谁在害怕中国模型？》：大家总盯着包含利润空间的 API 标价，而我只关心真实的单次推理服务成本。前沿实验室因为技术领先，推理效率很高；而跑一个庞大的中国开源模型同样要烧真金白银，不可能白送。同理，看到中国模型追到只差六个月或三个月，很多人就外推觉得他们必然反超——但“蒸馏”本身就足以解释他们为什么能追得这么快，也决定了只要继续依赖蒸馏，就建立不起独自探索最前沿的能力。既然如此，我们为什么不能放轻松点？",
             "SS：因为赢下 AI 竞赛靠的不只是手握最强的模型。也许这就是我前面没彻底挑明的地方：我为什么对我们的技术扩散速度这么焦虑？因为整场竞赛拼的就是谁能最快实现经济价值、谁能率先跑通核心业务的复利闭环，而不是实验室里又多了一个更酷、更强的模型。",
             "BT：明白，绕了一大圈，我总算让你把开篇第一个问题彻底答圆了。"
           ]
@@ -1635,11 +1635,11 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "前线部署工程（FDE）",
-            "BT：各大实验室现在是在抄你们的“前线部署工程”（Forward-Deployed Engineering），还是只抄了个职位名称？Palantir 靠这个成名，而你本人就是这套模式的创立者——你当年定义的“前线部署工程师”（FDE）到底是什么？现在各家实验室组建团队派驻企业帮客户落地 AI，跟你们是一回事吗？",
+            "BT：各大实验室现在是在抄你们的“前线部署工程”，还是只抄了个职位名称？Palantir 靠这个成名，而你本人就是这套模式的创立者——你当年定义的“前线部署工程师”（FDE）到底是什么？现在各家实验室组建团队派驻企业帮客户落地 AI，跟你们是一回事吗？",
             "SS：眼下这已经成了全行业最火的职位头衔，早就不止实验室在用了。",
             "BT：真是风水轮流转啊？",
             "SS：过去整整 17 年里，我一直被外界骂作“因为发明了 FDE 这个糟糕概念而毁掉 Palantir 的罪人”，结果现在它居然成了最时髦的词。但问题在于，在问“什么是前线部署工程师（岗位）”之前，你得先搞清楚“什么是前线部署工程”——它本质上是一套产品研发战略，而不只是一个岗位。岗位当然有，但它只是这套产品战略下游的产物。",
-            "我之所以觉得同行很难抄走，是因为在 Palantir 整个历史上，真正吃透这套战略、有能力在别处把它从头搭出来的人，加起来大概不超过五个。你随便去挖几个当过 FDE 的员工是搞不起来的。哪怕只看最基本的组织归属：前线部署工程师根本不属于销售与市场部门（go-to-market），他们隶属于产品研发部门〔注9〕。"
+            "我之所以觉得同行很难抄走，是因为在 Palantir 整个历史上，真正吃透这套战略、有能力在别处把它从头搭出来的人，加起来大概不超过五个。你随便去挖几个当过 FDE 的员工是搞不起来的。哪怕只看最基本的组织归属：前线部署工程师根本不属于销售与市场部门，他们隶属于产品研发部门〔注9〕。"
           ]
         },
         {
@@ -1652,7 +1652,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           "zh": [
             "BT：对，他们在现场亲眼看到客户卡在什么问题上，直接反馈给产品团队（或者自己就是产品团队一员），从而决定下一步产品开发什么。",
             "SS：这里头有好几层逻辑，容我拆开讲讲。",
-            "第一层：如果你的产品功能服从正态分布（Gaussian distribution）——“我把几千家客户的需求信号取个平均值，就能决定下一步开发什么功能”——那前线部署工程根本不适合你。相反，如果你的客户群服从幂律分布（power law）——在你解决的问题域里，只有极少数客户正面对着最极端、最棘手的难题（他们活在未来），只要你能把这个最难的版本攻克，就能顺势拿下整个市场（因为其他客户迟早也会撞上同样的问题，只是现在还没意识到）——那你就必须走一条“从具体特例走向通用产品”（from specific to general）的路子。",
+            "第一层：如果你的产品功能服从正态分布——也就是说，把几千家客户的需求信号取个平均值，就能决定下一步开发什么功能——那前线部署工程根本不适合你。相反，如果你的客户群服从幂律分布：在你解决的问题域里，只有极少数客户正面对最极端、最棘手的难题（他们活在未来）；只要你能把这个最难的版本攻克，就能顺势拿下整个市场，因为其他客户迟早也会撞上同样的问题，只是现在还没意识到。面对这种市场，你就必须走一条“从具体特例走向通用产品”的路子。",
             "从具体特例走向通用产品非常难，因为工程师天生痛恨“做无用功”。但只有当你亲手做完第一家、第二家、第三家客户，你才能攒够足够的认知接触面，看清真正适用于所有客户的通用解法长什么样。这是一套非正统的产品战略，也要求对参与其中的工程师做不同的人格搭配。"
           ]
         },
@@ -1666,10 +1666,10 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "SS: No, 80% + 80%, the whole point is the math doesn’t math, because everyone thinks they’re doing the majority of the work."
           ],
           "zh": [
-            "工程师分布在一条很宽的光谱上（这里我故意用点漫画式的夸张来说明）：光谱的一端是“黑客”、是《百战天龙》里的马盖先（MacGyver）——他们的多巴胺完全来自于在现实世界里当场把问题解决掉。",
+            "工程师分布在一条很宽的光谱上（这里我故意用点漫画式的夸张来说明）：光谱的一端是“黑客”、是《百战天龙》里的马盖先——他们的兴奋感完全来自于在现实世界里当场把问题解决掉。",
             "BT：他们是全世界最会用万能胶带救急的人。",
             "SS：一点没错！管它代码只能跑一两次，只要能跑通，“这事能成全靠我”。他们天生擅长嗅出哪些问题真正值得解决——这本身极难，我们姑且称之为前 80% 的工作。",
-            "而光谱的另一端则是另一种技能，姑且称之为“艺术家”——这类工程师的人生多巴胺来自于把系统架构搭得无比优雅漂亮。哪怕这套东西没解决任何人在乎的实际问题，他也会说“难道你看不出这架构有多优雅吗？”。把前线方案重构成通用平台，这是后 80% 的工作。这两种极端的工程师都低估对方的贡献，所以必须把他们维持在一种危险而不稳定的动态平衡中。",
+            "而光谱的另一端则是另一种技能，姑且称之为“艺术家”——这类工程师的成就感来自于把系统架构搭得无比优雅漂亮。哪怕这套东西没解决任何人在乎的实际问题，他也会说“难道你看不出这架构有多优雅吗？”。把前线方案重构成通用平台，这是后 80% 的工作。这两种极端的工程师都低估对方的贡献，所以必须把他们维持在一种危险而不稳定的动态平衡中。",
             "BT：如果我算术没问题的话，这加起来都 96% 了，最后那 4% 是什么？",
             "SS：不对，是 80% 加 80%！关键就在这儿——这笔算术本来就凑不拢，因为两边都觉得自己干了绝大部分的活。"
           ]
@@ -1682,8 +1682,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "BT：所以核心在于：有人在现场发现了问题，不仅知道怎么修，还能从系统层面把它修好，让它不仅对眼前这一家客户管用，还能长期对所有客户管用。",
-            "SS：对，而且要靠实战攒出精准的判断力：到底该把抽象层放在软件栈的哪一位置，才能真正实现通用化？因为如果你直接做个端到端的定制方案，就会对单一客户过度拟合（overfit）。到底哪些部分该抽成通用组件，哪些部分留给客户自己定制？这是一个天生充满泥泞的磨合过程。",
-            "我看现在很多公司招 FDE，其实就是把售前工程师包装得好看点：招几个聪明工程师派去客户现场干活，但公司内部根本没有“把 FDE 在前线感受到的剧痛消化转化为标准产品”的机制。没有这套转化机制，就不叫 FDE——那只是包装得亮晶晶的售前工程（sparkling sales engineering）。"
+            "SS：对，而且要靠实战攒出精准的判断力：到底该把抽象层放在软件栈的哪一位置，才能真正实现通用化？因为如果你直接做个端到端的定制方案，就会对单一客户过度拟合。到底哪些部分该抽成通用组件，哪些部分留给客户自己定制？这是一个天生充满泥泞的磨合过程。",
+            "我看现在很多公司招 FDE，其实就是把售前工程师包装得好看点：招几个聪明工程师派去客户现场干活，但公司内部根本没有“把 FDE 在前线感受到的剧痛消化转化为标准产品”的机制。没有这套转化机制，就不叫 FDE——那只是包装得亮晶晶的售前工程而已。"
           ]
         },
         {
@@ -1697,13 +1697,13 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "SS: I’m actually not worried about that now, this goes back to my experience of, “Let’s just have AI FDE be the entry point for everyone in our platform”, it’s all a mean reversion. There’s a lot of value in getting the problem decomp right, and if you get only an okay problem decomp, you leave a lot of the alpha on the table. That’s probably the part I’m least worried about going away."
           ],
           "zh": [
-            "BT：顺着问两个问题。你刚才说服从正态分布的需求适合“做一个通用方案解决所有人的问题”，这其实很像消费级软件——做面向 80 亿人的软件没法搞焦点小组，全靠产品领导者自己的直觉。早年企业 IT 圈流行过一个词叫“IT 的消费化”（consumerization of IT）：以前企业 IT 都是自己写贴合业务的内部应用，后来 SaaS 兴起，为了把昂贵的研发成本分摊给尽可能多的客户，变成了“一套标准软件卖给所有公司”（one-size-fits-all）。你反对的其实是这种一刀切吧？",
+            "BT：顺着问两个问题。你刚才说服从正态分布的需求适合“做一个通用方案解决所有人的问题”，这其实很像消费级软件——做面向 80 亿人的软件没法搞焦点小组，全靠产品领导者自己的直觉。早年企业 IT 圈流行过一个词叫“IT 的消费化”：以前企业 IT 都是自己写贴合业务的内部应用，后来 SaaS 兴起，为了把昂贵的研发成本分摊给尽可能多的客户，变成了“一套标准软件卖给所有公司”。你反对的其实是这种一刀切吧？",
             "SS：我同意这个总结。但最理想的状态其实是处在两极之间的动态平衡上：基层业务人员永远需要反抗那些坐在总部、自以为设计出了完美流程的“大祭司”——因为那些完美流程在现实里往往跑不通。",
             "BT：过去搞一刀切有它的经济合理性：因为开发软件太贵了，必须分摊给所有客户；靠着规模杠杆做出一个 80 分的通用软件，也比企业自己手搓强。但 AI 出现后的逻辑变了：现在完全可以用很小的工程投入做出解决 98% 痛点的定制项目，回到 1970、80 年代企业 IT 那种“百花齐放”的状态。",
-            "SS：确实如此，你会看到钟摆正在往回摆。现在很多企业内部全员上阵用 Codex 或 Claude Code 写代码，一下子冒出无数个互不相通的小应用——几乎成了“消耗性软件”（attritional software）：为了解决眼前一个问题随手写出来，要么很快废弃，要么随着时间推移攒下一堆技术债。",
-            "那么靠什么来管住这种无序的熵增？这正是本体层（Ontology）的作用。本体层提供了一个可治理的约束底座，让这些小应用能互相打通；业务人员依然可以自由地搞“氛围编程”（vibe-code），在企业内部运行的成本极低，用完扔掉的成本也极低。既放权给一线创造者，又保住了企业操作系统的整体统一。",
+            "SS：确实如此，你会看到钟摆正在往回摆。现在很多企业内部全员上阵用 Codex 或 Claude Code 写代码，一下子冒出无数个互不相通的小应用——几乎成了“消耗性软件”：为了解决眼前一个问题随手写出来，要么很快废弃，要么随着时间推移攒下一堆技术债。",
+            "那么靠什么来管住这种无序的混乱？这正是本体层的作用。本体层提供了一个可治理的约束底座，让这些小应用能互相打通；业务人员依然可以自由地凭直觉让 AI 写代码，在企业内部运行的成本极低，用完扔掉的成本也极低。既放权给一线创造者，又保住了企业操作系统的整体统一。",
             "BT：那我替 AI 实验室招 FDE 的做法辩护一句（或者提个问题）：有没有可能，真正的前线部署工程师根本不是他们派去的人，而是 AI 模型本身？实验室解决客户问题的办法，就是让模型把客户的全部数据吸进去——所以人不是 FDE，模型自己才是 FDE，而这才是你真正担心的对手？",
-            "SS：我现在一点也不担心这个。这就回到我前面讲的内部教训——当我们试图让“AI FDE”成为所有新员工操作平台的唯一入口时，结果全是向平庸均值回归。把复杂业务问题做精准拆解（problem decomp）依然最值钱；如果问题拆解做得一般，就会把大量超额价值（Alpha）漏在桌面上。这是我最不担心被通用模型替代的部分。"
+            "SS：我现在一点也不担心这个。这就回到我前面讲的内部教训——当我们试图让“AI FDE”成为所有新员工操作平台的唯一入口时，结果全是向平庸均值回归。把复杂业务问题做精准拆解依然最值钱；如果问题拆解做得一般，就会把大量超额价值漏在桌面上。这是我最不担心被通用模型替代的部分。"
           ]
         },
         {
@@ -1718,7 +1718,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "Anthropic 与美国政府的冲突",
             "BT：那你现在最担心什么？从 2023 年我们上次聊天到 2026 年的今天，模型比你预想的更强还是更弱？你看世界的方式有什么变化？",
             "SS：模型能力确实更强了。我也不知道当年自己有什么具体预期——在 AI 真正爆发前很难去凭空预设——但每次看到新模型发布、亲自上手试玩、看到新的可能性，我依然觉得非常兴奋。",
-            "我现在更笃定的一点是：人类智能和机器智能并非一比一重合的关系；我们越是愿意围绕机器智能的特点、让它与人类并肩协作来重构体系，释放的价值就越大。这体现在很多微妙的地方。举个看似不相关、实则很说明问题的例子：我们服务的一家潜艇工业底座零部件制造商，过去每次做排产计划要花整整两周，期间产线只能停工；用上 AI 后，排产只需不到十分钟。结果他们突然多出了大量以前根本没人力去消化的订单需求，于是新招了第三班倒（third shift）的工人。",
+            "我现在更笃定的一点是：人类智能和机器智能并非一比一重合的关系；我们越是愿意围绕机器智能的特点、让它与人类并肩协作来重构体系，释放的价值就越大。这体现在很多微妙的地方。举个看似不相关、实则很说明问题的例子：我们服务的一家潜艇工业底座零部件制造商，过去每次做排产计划要花整整两周，期间产线只能停工；用上 AI 后，排产只需不到十分钟。结果他们突然多出了大量以前根本没人力去消化的订单需求，于是新招了第三班倒的工人。",
             "有一大群蓝领工人是因为 AI 才有了这份工作的——尽管他们自己平时既不用 AI、也不关心 AI，永远不会把这两件事联系起来。这正是实体经济里还没有被充分挖掘的机会。"
           ]
         },
@@ -1733,11 +1733,11 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "BT：问个直接的问题：今天我们的很多讨论，听起来最终都指向 Anthropic。你们曾是最紧密的合作伙伴——当年把 Anthropic 引入美国国家安全体系的正是 Palantir。你后悔吗？后来 Anthropic 跟美国战争部（国防部）彻底闹翻、正面对决的时候，你们是夹在中间左右为难，还是果断站在了某一边〔注10〕？",
-            "SS：Ben 专挑硬核问题问啊。没错，当时我们确实被夹在中间。但我不后悔，我们现在依然和 Anthropic 合作，也和各家前沿实验室合作。那场风波正好撞上了“AI 主权”最核心的问题：到底谁有权决定这些工具怎么用？我认为这里头需要一点认知上的谦逊（epistemic humility）。",
+            "SS：Ben 专挑硬核问题问啊。没错，当时我们确实被夹在中间。但我不后悔，我们现在依然和 Anthropic 合作，也和各家前沿实验室合作。那场风波正好撞上了“AI 主权”最核心的问题：到底谁有权决定这些工具怎么用？我认为这里头需要一点认知上的谦逊。",
             "客户必须自己决定能不能接受某款模型的使用条款，市场最终也会做出选择。我认为模型公司没法长期跟客户没完没了地抠字眼争论“你到底打算怎么用这个模型”——未来的选择会更干脆：你到底愿不愿意跟这家机构合作？在这些问题上，你必须在一定程度上信任你的客户。",
-            "那场风波里各方处理得或许都不算完美，但它确实把一个关键问题摆到了台面上：当智能来自外部单一源头时，无论是在工厂车间还是在政府机构，你到底需要什么保障条件，才能在关键任务（mission-critical）环境里放心地依赖它？",
+            "那场风波里各方处理得或许都不算完美，但它确实把一个关键问题摆到了台面上：当智能来自外部单一源头时，无论是在工厂车间还是在政府机构，你到底需要什么保障条件，才能在关键任务环境里放心地依赖它？",
             "BT：那次事件有没有改变你们选择合作模型的标准？还是说依然完全由客户定？",
-            "SS：我希望永远由客户自己定。那件事真正改变我们的，是让我们投入了巨大精力去开发“安全热插拔替换模型”的能力，帮客户真正行使这种主权。无论是在两家前沿实验室的模型之间切换，还是在前沿实验室模型与客户自己后训练的开源模型之间切换，都需要这套能力。搭好这套脚手架给了客户底气：如果换个模型要花两年时间，那你当初选模型时迈进的就是一扇不可逆的“单向门”；而如果对着特定工作流的评测集（eval set）只需两分钟就能安全完成切换，客户就不用再为此提心吊胆了。这为客户腾出了很大的回旋余地。"
+            "SS：我希望永远由客户自己定。那件事真正改变我们的，是让我们投入了巨大精力去开发“安全热插拔替换模型”的能力，帮客户真正行使这种主权。无论是在两家前沿实验室的模型之间切换，还是在前沿实验室模型与客户自己后训练的开源模型之间切换，都需要这套能力。搭好这套脚手架给了客户底气：如果换个模型要花两年时间，那你当初选模型时迈进的就是一扇不可逆的“单向门”；而如果对着特定工作流的评测集只需两分钟就能安全完成切换，客户就不用再为此提心吊胆了。这为客户腾出了很大的回旋余地。"
           ]
         },
         {
@@ -1752,13 +1752,13 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "SS: I’ll give you the inside baseball. Before Alex’s CNBC interview, it was the end of the quarter, he’d probably visited sixty customers, and every customer in private was telling him this, but none wanted to say it in public. It was very clear that there was this underlying frustration and belief that no one was willing to put their finger on. That’s part of why it had so much resonance, and why he delivered it with so much conviction and certainly, if you look at what we’re saying, we see the world in very similar ways to Microsoft."
           ],
           "zh": [
-            "BT：促使你们开发这套热插拔能力的最大推手，究竟是跟战争部/国防部那次冲突，还是后来模型厂商搞出“取消零数据留存（Zero Data Retention）——我发誓留存数据只是为了安全审查”那件事？哪件事真正把大家震醒了？",
+            "BT：促使你们开发这套热插拔能力的最大推手，究竟是跟战争部/国防部那次冲突，还是后来模型厂商搞出“取消零数据留存——我发誓留存数据只是为了安全审查”那件事？哪件事真正把大家震醒了？",
             "SS：第二件事震醒了整个商业世界，因为在那之前，企业界觉得五角大楼那事只是政府部门的特殊纠纷，“跟我有什么关系？”。而第一件事让我们提前造好了热插拔产品，所以当第二件事爆出来、客户突然惊醒问“天哪，刚发现这现实，我该怎么办？”时，我们当场就能给他们提供切换选项。",
             "BT：你们自己当时也是这种反应吗？“天哪，刚看清这现实——我们该怎么办？”",
             "SS：对，百分之百是。",
             "BT：那这岂不是发生在你们身上最好的一件事？",
             "SS：是不是最好的一件事不好说，但我们确实觉得自己提前看清了世界演进的方向，也提前备好了客户需要的回旋空间。",
-            "BT：我注意到一个明显的变化：最近你们 CEO Alex Karp 和微软 CEO Satya Nadella 讲的话高度一致。顺便问一句，长远看微软其实是你们的竞争对手吧？你们两家都在讲做“模型缰绳（harness-makers）”的概念——无论是叫 Ontology 还是叫 Microsoft Graph——核心都是把数据管在自己手里、建立企业自己的内生迭代能力，把学到的经验留在内部而不是喂给外部模型。但大概半年前，我还没听你们两家把这话挑得这么明，当时好像也没人真正在意这件事。",
+            "BT：我注意到一个明显的变化：最近你们 CEO Alex Karp 和微软 CEO Satya Nadella 讲的话高度一致。顺便问一句，长远看微软其实是你们的竞争对手吧？你们两家都在讲给模型造“操控缰绳”的概念——无论是叫 Ontology 还是叫 Microsoft Graph——核心都是把数据管在自己手里、建立企业自己的内生迭代能力，把学到的经验留在内部而不是喂给外部模型。但大概半年前，我还没听你们两家把这话挑得这么明，当时好像也没人真正在意这件事。",
             "SS：我给你透个幕后细节：在 Alex 去上 CNBC 那次访谈之前，正好是季度末，他大概密集拜访了 60 家企业客户。每一家客户在私下里都在跟他倒苦水讲这件事，但没有一家愿意公开站出来说。大家心底里都攒着这股强烈的不满与共识，只是没人敢去捅破它。这正是为什么 Alex 在采访里讲出那番话时底气那么足、引发了那么大共鸣。至于微软，从公开表态看，我们两家看世界的方式确实非常接近。"
           ]
         },
@@ -1773,11 +1773,11 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "AI 宗教",
-            "BT：第四条，回到前面跳过的那个问题：有效利他主义（Effective Altruism）是不是已经把 AI 安全变成了一门世俗宗教？",
+            "BT：第四条，回到前面跳过的那个问题：有效利他主义是不是已经把 AI 安全变成了一门世俗宗教？",
             "SS：显然是的。回到前面系统工程的讨论，我最担心的一点就是行业里那种怪异的论调——他们一边宣称“AI 将创造人间乌托邦”，一边又说“但同时有 0 到 20% 的概率毁灭全人类（即反乌托邦）”。这两句话听着好像自相矛盾——",
             "BT：一点也不矛盾，它们本来就是同一枚硬币的两面。这是对任何温和务实的中间工程路径的彻底拒绝，直接奔向绝对极端——只是极端主义的两种不同表现形式而已。",
             "SS：看来我是班门弄斧了。这种论调彻底抹杀了人类在眼下现实中的主观能动性，从而也推卸了做系统工程的责任。它甚至扭曲了人们看待安全测试的方式，让你不去想外围本来该建什么防护体系。",
-            "我不反对任何人拥有自己的信仰信条；但当你把自己的宗教信条包装成客观的“技术安全批评”推向全世界时，就非常危险了。外界公众会想：“人家可是亲手做大模型的人，谁还能比他们更懂？”——如果那是纯粹的工程技术批评，这话没错；但它其实是从某种特殊世界观里长出来的宗教视角，是“千禧年末日教派”（millenarian cult）与“弥赛亚救世主情结”（messianic complex）的结合体。翻译过来就是：“这东西随时会毁灭全人类——但只要交给我来做，人类就还有一线生机。”〔注11〕"
+            "我不反对任何人拥有自己的信仰信条；但当你把自己的宗教信条包装成客观的“技术安全批评”推向全世界时，就非常危险了。外界公众会想：“人家可是亲手做大模型的人，谁还能比他们更懂？”——如果那是纯粹的工程技术批评，这话没错；但它其实是从某种特殊世界观里长出来的宗教视角，是“千禧年末日教派”与“弥赛亚救世主情结”的结合体。翻译过来就是：“这东西随时会毁灭全人类——但只要交给我来做，人类就还有一线生机。”〔注11〕"
           ]
         },
         {
@@ -1792,8 +1792,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "BT：你这完全是说到了我心坎上，我之前写文章专门批过这个。面对这种话术，必须彻底拒绝它的预设框架——别去跟他们争论乌托邦和毁灭人类的概率各是多少，而是直接追问：凭什么未来只有这两个极端选项？",
-            "但我也得反问你：过去很多年里，外界看 Palantir 也觉得你们像个宗教组织。今天国防科技（defense tech）成了香饽饽，但当年 Palantir 刚成立时可一点都不讨喜，去那儿上班的人都是怀着强烈信仰的信徒。正是这种共同信仰，撑着你们扛过了当年的无数难关。回头看，这套信仰体系对 Palantir 的成功有多重要？",
-            "SS：至关重要。我之所以能把对面看得这么清楚，正是因为“同类最懂同类”（cult recognizes cult）！但我们是完全不同性质的“教派”：我们信奉的是服务西方、服务民主制度、提升国家治理能力（state capacity）——相信民选机构的合法性，取决于当选者手头有没有趁手的工具去兑现选民或股东的意志；相信国家安全与经济繁荣是一体两面，国家安全本身不是目的，而是通向经济繁荣与人类蓬勃发展的手段。尤其在后反恐时代，每次安全危机往往都会变成单向棘轮，让自由更少、安全也更少。所以那套信念对我们确实至关重要，这也是为什么我们一眼就能认出对面的教派底色——尽管两边的教义截然不同。",
+            "但我也得反问你：过去很多年里，外界看 Palantir 也觉得你们像个宗教组织。今天国防科技成了香饽饽，但当年 Palantir 刚成立时可一点都不讨喜，去那儿上班的人都是怀着强烈信仰的信徒。正是这种共同信仰，撑着你们扛过了当年的无数难关。回头看，这套信仰体系对 Palantir 的成功有多重要？",
+            "SS：至关重要。我之所以能把对面看得这么清楚，正是因为“同类最懂同类”！但我们是完全不同性质的“教派”：我们信奉的是服务西方、服务民主制度、提升国家治理能力——相信民选机构的合法性，取决于当选者手头有没有趁手的工具去兑现选民或股东的意志；相信国家安全与经济繁荣是一体两面，国家安全本身不是目的，而是通向经济繁荣与社会发展的手段。尤其在反恐战争之后，每次爆发安全危机，往往都会变成有去无回的单向锁死——人们既让渡了自由，也没换来真正的安全。所以那套信念对我们确实至关重要，这也是为什么我们一眼就能认出对面的教派底色——尽管两边的教义截然不同。",
             "BT：所以你批评的重点是“这是一场宗教运动”，还是“他们信的那门宗教是错的”？",
             "SS：是他们信的那门宗教本身错了。",
             "BT：所以这是一场宗教战争。（懂的人能听出这里反恐战争的梗。）",
@@ -1811,11 +1811,11 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "SS: Thanks, Ben. Thanks for having me."
           ],
           "zh": [
-            "BT：不过有意思的是，刚才我一直在逗你：你今天讲的所有论点——虽然我相信全都发自肺腑——恰好全都跟 Palantir 的商业模式严丝合缝。让企业相信数据层最重要、必须自己掌控数据、别把运营尾气喂给通用模型以免沦为平庸均值，这些道理都站得住脚，同时也完美符合 Palantir 的利益。",
-            "反过来看，刚递交了 S-1 招股书的 Anthropic（我还没来得及细读），他们那套狂热的末日安全论，恰好也完美符合他们自己的商业模式——甚至符合他们客户的心理：很多软件公司客户不把 Anthropic 当竞争对手，心想“他们忙着造神最好不过了，总比跑来抢我的 SaaS 应用生意强”。你们两边是不是有点“高手看高手，心照不宣”（game-recognize-game）的意思？",
+            "BT：不过有意思的是，刚才我一直在逗你：你今天讲的所有论点——虽然我相信全都发自肺腑——恰好全都跟 Palantir 的商业模式严丝合缝。让企业相信数据层最重要、必须自己掌控数据、别把日常运营数据喂给通用模型以免沦为平庸均值，这些道理都站得住脚，同时也完美符合 Palantir 的利益。",
+            "反过来看，刚递交了 S-1 招股书的 Anthropic（我还没来得及细读），他们那套狂热的末日安全论，恰好也完美符合他们自己的商业模式——甚至符合他们客户的心理：很多软件公司客户不把 Anthropic 当竞争对手，心想“他们忙着造神最好不过了，总比跑来抢我的 SaaS 应用生意强”。你们两边是不是有点“高手看高手，心照不宣”的意思？",
             "SS：应该说，我们都是由创始人掌舵、对自身业务战略拥有极高自主权的机构。把这样一家公司经营好的最佳方式，就是让业务战略忠实于自己内心真正相信的东西——因为要把这些事做成太难了。所以我认为，商业模式其实是你底层信仰的下游产物。",
             "BT：归根结底，最后什么决定谁赢？是看谁信仰更坚定、谁干活更拼，还是市场基本规律说了算？按你的逻辑，那些不甘于平庸均值、护住自身核心壁垒的企业终将胜出——既然如此，最后一切不都会好起来吗？",
-            "SS：前提是我们别招来非市场的反动干预力量。比如被末日论信仰煽动出来的错误安全监管体制、国有化冲动、或者各地叫停数据中心建设的禁令（moratoriums），导致我们没法把 AI 的效益真正落地、没法让普通人参与分享这波经济红利。从法国大革命式的社会动荡，到背弃资本主义的基本进步逻辑，这些非市场力量才是真正的最大风险。",
+            "SS：前提是我们别招来非市场的反动干预力量。比如被末日论信仰煽动出来的错误安全监管体制、国有化冲动、或者各地叫停数据中心建设的禁令，导致我们没法把 AI 的效益真正落地、没法让普通人参与分享这波经济红利。从法国大革命式的社会动荡，到背弃资本主义的基本进步逻辑，这些非市场力量才是真正的最大风险。",
             "BT：Shyam Sankar，感谢你准备的精彩访谈提纲与分享。",
             "SS：谢谢你，Ben。"
           ]
@@ -1967,7 +1967,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "现代文明大半建立在化学反应之上，无论是用高炉把氧化铁还原成金属铁，还是燃烧燃料发电。化学反应的本质，是重新排列原子最外层电子的结合方式。比如把一个钠原子和一个氯原子放在一起，钠最外层的电子会转移到氯的外层电子壳层里，通过离子键结合成氯化钠，也就是食盐。",
-            "在这类常规化学反应里，变动的只是原子和外层电子，原子内部由质子和中子构成的原子核原封不动。但只要创造出合适的物理条件，原子核内部同样可以重组：核电站里的核裂变让重原子核分裂并释放巨大能量；太阳内部的核聚变把氢原子核聚合成氦核；大型强子对撞机则用电磁场把带电粒子加速后对撞，研究撞出来的碎片。"
+            "在这类常规化学反应里，重新排列的只是原子及其外层电子，由质子和中子构成的原子核本身原封不动。但只要创造出合适的物理条件，原子核内部同样可以重组：核电站里的核裂变让重原子核分裂并释放巨大能量；太阳内部的核聚变把氢原子核聚合成氦核；大型强子对撞机则用电磁场把带电粒子加速后对撞，研究撞出来的碎片。"
           ]
         },
         {
@@ -1977,7 +1977,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "Currently, our use of isotopes is constrained by the fact that creating them is difficult and expensive. Gram for gram, isotopes are some of the most expensive materials on the planet. And the supply chains to produce them are often extremely fragile. Technetium-99m, a widely used radioactive isotope for medical imaging, is produced through the decay of another radioactive isotope, molybdenum-99. Molybdenum-99, in turn, is produced in only a few nuclear reactors around the world;there was a worldwide shortage in 2024 when some of these reactors went offline for repairs. If isotopes could be manufactured more easily and more cheaply, it could open up numerous possibilities — cheaper medical treatments, better nuclear power sources, possibly even useful new materials."
           ],
           "zh": [
-            "通过改变原子核内的质子数或中子数，核反应能造出传统化学造不出来的东西。改变中子数，会得到同一元素下不同质量的变体，即“同位素”（isotope）；改变质子数，则会直接变成另一种元素，甚至是自然界原本不存在的人造元素〔注1〕。",
+            "通过改变原子核内的质子数或中子数，核反应能造出传统化学造不出来的物质。改变中子数，会得到同一元素下不同质量的变体，即“同位素”；改变质子数，则会直接变成另一种元素，甚至是自然界原本不存在的人造元素〔注1〕。",
             "这类核反应的产物大多不稳定，会衰变成更稳定的同位素并释放射线。人类利用这种特性做了很多事：碳-14 测年法利用生物吸收的碳-14（6 个质子、8 个中子）按固定速率衰变为稳定氮-14（7 个质子、7 个中子）的规律来测定年代；工业焊缝探伤用铱-192、硒-75 发射伽马射线检查焊缝裂纹；家用烟雾报警器则装有微量人造同位素镅-241，靠辐射维持腔内微弱电流，一旦浓烟飘入阻断电流就会触发警报。",
             "目前同位素的应用受制于制造难度与高昂成本。按克计算，同位素是地球上最贵的材料之一，供应链也极其脆弱。医学显像广泛使用的锝-99m 靠母体同位素钼-99 衰变产生，而全球钼-99 只靠寥寥几座老旧核反应堆生产；2024 年其中几座停堆检修，直接引发了全球断供〔注2〕。如果能更便宜、更方便地制造同位素，就能带来更廉价的癌症疗法、更好的核能材料乃至全新的功能材料。"
           ]
@@ -1992,8 +1992,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           "zh": [
             "同位素是怎么造出来的",
             "我们都很熟悉化学元素周期表，上面列出了人类已知的所有化学元素。",
-            "元素周期表上的每个元素都有一个原子序数，代表原子核内的质子数——从含 1 个质子的氢，一直排到含 118 个质子的人造元素奥气（oganesson）。质子数决定了它是什么元素：碳原子核里永远有 6 个质子，正因为核里有 6 个质子，它才是碳。",
-            "但原子核里还有中子，中子数可以变化。地球上大多数碳是碳-12（6 个质子、6 个中子），约 1% 是碳-13（7 个中子）；最常见的氦同位素是氦-4（2 个中子），也有稀少的氦-3（1 个中子）；地球海洋中绝大多数水分子里的氢没有中子（氢-1），但每 3,200 个水分子里大约有 1 个含带 1 个中子的氘（由氘构成的水即重水）。"
+            "元素周期表上的每个元素都有一个原子序数，代表原子核内的质子数——从含 1 个质子的氢，一直排到含 118 个质子的人造元素奥气。质子数决定了它是什么元素：碳原子核里永远有 6 个质子，正因为核里有 6 个质子，它才是碳。",
+            "但原子核里还有中子，中子数可以变化。地球上大多数碳是碳-12（6 个质子、6 个中子），约 1% 是碳-13（7 个中子）；最常见的氦同位素是氦-4（2 个中子），也有稀少的氦-3（1 个中子）；地球海洋中绝大多数水分子里的氢没有中子（氢-1），但每 3,200 个水分子里，大约有 1 个水分子含有带 1 个中子的氢同位素——氘（由氘构成的水即重水）。"
           ]
         },
         {
@@ -2004,9 +2004,9 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "But many isotopes can’t be found in nature at all. There’s no natural source of the technetium-99m or molybdenum-99 used for medical imaging, or the selenium-75 used for welding inspection. It’s thus useful to be able to manufacture specific isotopes."
           ],
           "zh": [
-            "我们可以用核素图（nuclide chart）来直观展示所有同位素：横轴是原子核内的中子数，纵轴是质子数。",
-            "从核素图上可以看出，大多数元素都有好几种同位素，且大多不稳定。只有黑色方格是稳定同位素，其余最终都会衰变：红色核素发生正 β 衰变或电子俘获，把质子变成中子；蓝绿色核素发生负 β 衰变，把中子变成质子；黄色核素发射 α 粒子（2 个质子加 2 个中子）发生 α 衰变。样本衰变掉一半所需的时间叫“半衰期”：氢-5 的半衰期只有几分之一秒，铀-235 则长达数亿年。",
-            "自然界里存在的稳定或慢衰变同位素，有时可以靠物理方法分离提纯。但同位素的化学性质几乎完全一致，分离只能靠极其微小的原子重量差异。当年曼哈顿计划的一大难点就是从天然铀中富集可裂变的铀-235：天然铀里铀-235 只占约 0.72%，为了生产出一块橄榄球大小的铀-235，美国建起了一座堪比小城市的分离工厂。",
+            "我们可以用核素图来直观展示所有同位素：横轴是原子核内的中子数，纵轴是质子数。",
+            "从核素图上可以看出，大多数元素都有好几种同位素，且大多不稳定。只有黑色方格代表稳定同位素，其余最终都会衰变：红色核素发生正 β 衰变或电子俘获，把质子变成中子；蓝绿色核素发生负 β 衰变，把中子变成质子；黄色核素发射 α 粒子（2 个质子加 2 个中子）发生 α 衰变。样本衰变掉一半所需的时间叫“半衰期”：氢-5 的半衰期只有几分之一秒，铀-235 则长达数亿年。",
+            "自然界里存在的稳定或慢衰变同位素，有时可以靠物理方法分离提纯。但同位素的化学性质几乎完全一致，分离只能靠极其微小的原子质量差异。当年曼哈顿计划的一大难点就是从天然铀中富集可裂变的铀-235：天然铀里铀-235 只占约 0.72%，为了生产出一块橄榄球大小的铀-235，美国建起了一座堪比小城市的分离工厂。",
             "更有许多同位素在自然界里根本不存在。医疗显像用的锝-99m、钼-99 以及探伤用的硒-75 都没有天然矿藏，必须靠人工制造。"
           ]
         },
@@ -2017,7 +2017,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "具体怎么造？",
-            "从原理上说，造同位素就是重组原子核内部。少数情况可以靠自然放射性衰变（比如烟雾报警器里的镅-241 主要来自钚-241 的衰变）；但绝大多数目标同位素必须靠不同粒子主动轰击靶原子核。取决于入射粒子种类、粒子能量和靶原子本身的性质，会触发不同的核反应。核反应通常记作“靶核(入射粒子, 射出粒子)产物核”：比如 1917 年卢瑟福用 α 粒子轰击氮原子产生氧和氢核（质子），就记为 N-14(alpha,p)O-17。"
+            "从原理上说，造同位素就是重组原子核内部。少数情况可以靠自然放射性衰变（比如烟雾报警器里的镅-241 主要来自钚-241 的衰变）；但绝大多数目标同位素必须靠不同粒子主动轰击靶原子核。入射粒子的种类、能量以及靶原子核本身的性质不同，触发的核反应也不同。核反应通常记作“靶核(入射粒子, 射出粒子)产物核”：比如 1917 年卢瑟福用 α 粒子轰击氮原子产生氧和氢核（质子），就记为 N-14(alpha,p)O-17。"
           ]
         },
         {
@@ -2027,8 +2027,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "Particle accelerators are still used to produce isotopes today. GE Healthcare, for instance, sells several different medical cyclotrons. The GE PETtrace 800 uses a beam of hydrogen or deuterium nuclei (protons or proton + neutron) to create isotopes such as oxygen-15, nitrogen-13, and fluorine-18, which are then used for medical imaging."
           ],
           "zh": [
-            "用粒子撞击原子核有几种办法。第一种是用粒子加速器，比如 Ernest Lawrence 在 1929 年发明并获诺贝尔奖的回旋加速器（cyclotron）。它利用强电磁场让带电粒子沿螺旋轨道加速，当年 Lawrence 用一台 27 英寸的加速器就能把氦核加速到约光速的 1%。",
-            "回旋加速器问世后不久，就被用来制造各类医用与科研同位素，比如比稳定磷-31 多一个中子的放射性磷-32。生物体代谢会天然吸收并富集磷，如果注入带放射性的磷-32，既能观察代谢路径，又能做高靶向放疗。Lawrence 很快发现医学界对磷-32 的需求几乎无法满足，到 1939 年已有十多名癌症患者接受了治疗。",
+            "用粒子撞击原子核有几种办法。第一种是用粒子加速器，比如 Ernest Lawrence 在 1929 年发明并获诺贝尔奖的回旋加速器。它利用强电磁场让带电粒子沿螺旋轨道加速，当年 Lawrence 用一台 27 英寸的加速器就能把氦核加速到约光速的 1%。",
+            "回旋加速器问世后不久，就被用来制造各类医用与科研同位素，比如比稳定磷-31 多一个中子的放射性磷-32。生物体代谢会天然吸收并富集磷，如果注入带放射性的磷-32，既能观察代谢路径，又能做靶向放疗。Lawrence 很快发现医学界对磷-32 的需求几乎无法满足，到 1939 年已有十多名癌症患者接受了治疗。",
             "粒子加速器今天依然用于生产同位素。例如 GE 医疗销售多款医用回旋加速器，其 GE PETtrace 800 型加速器用氢核或氘核束流制造氧-15、氮-13 和氟-18，供医院做医学显像。"
           ]
         },
@@ -2039,7 +2039,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "粒子加速器的短板是很难高效量产。一台医用加速器售价数百万美元，配套厂房还得再花几百万美元，但开机运行一小时只能造出一粒灰尘大小的材料〔注3〕。",
-            "根源在于加速器的工作原理：它靠电磁场加速，因此只能加速带电粒子（电子、质子或带正电的原子核）。电子不参与强核力，很难触发核反应，打在靶上大半变成废热；质子或 α 粒子虽然能触发反应，但它们带正电，会被同样带正电的靶原子核排斥，转化效率同样很低并产生大量废热。当 PETtrace 800 用质子轰击氧-18 制造氟-18 时，每 800 个质子里平均只有 1 个能进入氧原子核。"
+            "根源在于加速器的工作原理：它靠电磁场加速，因此只能加速带电粒子（电子、质子或带正电的原子核）。电子不参与强核力，很难触发核反应，打在靶上大半变成废热；质子或 α 粒子虽然能触发核反应，但它们带正电，会受到同样带正电的靶原子核排斥，绝大部分能量同样化作废热，转化效率极低。当 PETtrace 800 用质子轰击氧-18 制造氟-18 时，每 800 个质子里平均只有 1 个能进入氧原子核。"
           ]
         },
         {
@@ -2052,8 +2052,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           "zh": [
             "第二种制造粒子碰撞的办法是利用核裂变：不稳定的原子核被中子击中后分裂。一条路是直接提取核裂变自然生成的产物，比如钼-99 就是铀-235 和钚-239 裂变的天然产物，锶-90 也常从乏燃料中提取。",
             "另一条路是把核裂变当成粒子源。铀-235 裂变会释放中子，可用来轰击靶材制造同位素。例如广泛用作辐射源的钴-60，就是把钴-59 放进裂变堆里，让部分原子通过中子俘获吸收一个中子生成的。",
-            "用裂变堆生产放射性同位素的历史，几乎跟核反应堆本身一样早。早在建起第一座核电站之前，美国原子能委员会（AEC）就已经在向全美和全球发运反应堆生产的同位素了；到 1956 年（比美国首座民用核电站希平港并网还早一年多），AEC 的同位素年采购量已达 5 万笔。",
-            "但裂变堆也有明显局限：一是裂变堆监管严苛、建造难度大且造价高昂；二是裂变产生的中子能量不够高，而且在发电堆里还会被慢化剂刻意减速以维持链式反应。裂变中子产生时的平均能量约为 1.5～2 兆电子伏特（MeV，约光速的 6.5%），在发电堆里被减速到约 0.025 电子伏特。即便不减速，偏低的中子能量也让许多核反应速率太慢，甚至根本无法触发。"
+            "用裂变堆生产放射性同位素的历史，几乎跟核反应堆本身一样早。早在建起第一座核电站之前，美国原子能委员会就已经在向全美和全球发运反应堆生产的同位素了；到 1956 年（比美国首座民用核电站希平港并网还早一年多），该委员会的同位素年发运量已达 5 万笔。",
+            "但裂变堆也有明显局限：一是裂变堆监管严苛、建造难度大且造价高昂；二是裂变产生的中子能量不够高，而且在发电堆里还会被慢化剂刻意减速以维持链式反应。裂变中子产生时的平均能量约为 1.5～2 兆电子伏特（对应速度约为光速的 6.5%），在发电堆里会被减速到约 0.025 电子伏特。即便不减速，偏低的中子能量也让许多核反应速率太慢，甚至根本无法触发。"
           ]
         },
         {
@@ -2063,7 +2063,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "要想高效制造同位素，最理想的是找到一种能产生大量高能中子的方法——既能触发各类核反应，又能避开粒子加速器的低效率。",
-            "实现这一点的办法是核聚变。外界总谈论建聚变发电厂有多难，但聚变难在“输出的能量大于输入的能量”；而在实验室里触发聚变反应本身早在 1930 年代就实现了，且能稳定产生高能中子。裂变中子里能量超过 10 MeV 的不到 0.1%，而氘（氢-2）和氚（氢-3）聚变产生的中子能量高达 14 MeV 以上〔注4〕。过去聚变很少用来造同位素，但如今一批初创公司正切入这条赛道：SHINE Technologies 正在建 Chrysalis 工厂，结合粒子加速器、裂变与聚变反应生产钼-99；意大利的 SORGENTINA-RF 项目同样计划用聚变中子造钼-99；Marathon Fusion 与新西兰聚变初创公司 OpenStar 则打算用聚变中子制造铽-149 和锕-225 等靶向抗癌同位素。"
+            "实现这一点的办法是核聚变。外界总谈论建聚变发电厂有多难，但聚变难在“输出的能量大于输入的能量”；而在实验室里触发聚变反应本身早在 1930 年代就实现了，且能稳定产生高能中子。裂变中子里能量超过 10 兆电子伏特的不到 0.1%，而氘（氢-2）和氚（氢-3）聚变产生的中子能量高达 14 兆电子伏特以上〔注4〕。过去聚变很少用来造同位素，但如今一批初创公司正切入这条赛道：SHINE Technologies 正在建 Chrysalis 工厂，结合粒子加速器、裂变与聚变反应生产钼-99；意大利的 SORGENTINA-RF 项目同样计划用聚变中子造钼-99；Marathon Fusion 与新西兰聚变初创公司 OpenStar 则打算用聚变中子制造铽-149 和锕-225 等靶向抗癌同位素。"
           ]
         },
         {
@@ -2075,7 +2075,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "廉价同位素的应用前景",
-            "除了能产生高能中子，聚变还有望大幅压低同位素的制造成本。粒子加速器极其耗电：GE PETtrace 运行功率约 75 千瓦（相当于 75 台微波炉同时工作），这锁死了它的成本下限。在 75 千瓦功率下，生产 1 克氟-18 需要消耗约 0.7 太瓦时（TWh）电量，相当于全美国 1.5 小时的总发电量。",
+            "除了能产生高能中子，聚变还有望大幅压低同位素的制造成本。粒子加速器极其耗电：GE PETtrace 运行功率约 75 千瓦（相当于 75 台微波炉同时工作），这锁死了它的成本下限。在 75 千瓦功率下，生产 1 克氟-18 需要消耗约 0.7 太瓦时电量，相当于全美国 1.5 小时的总发电量。",
             "在现有医用同位素生产中，电费占比其实不算高，因为单次剂量极小（60 万份氟-18 剂量加起来才有一粒盐重）。但如果要按克、按磅甚至按吨量产，能耗就会成为硬约束。而且粒子加速器只产出同位素，全部建厂和运维成本都得靠同位素售价收回；聚变反应则在造同位素的同时还能发电，可以用售电收入来分摊工厂的建设与运行成本〔注5〕。",
             "如果能大幅降低同位素的制造成本，哪些事情会成为可能？主要有以下几个方向。"
           ]
@@ -2088,7 +2088,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "医疗",
-            "同位素最大的市场之一是医疗，单价也最贵。在医学显像中，患者体内被注入极微量的放射性物质并被特定细胞吸收：比如氟-18 被嵌入类葡萄糖分子 FDG 中，身体会像吸收葡萄糖一样吸收它，医生监测其释放的射线就能观察体内病变。",
+            "同位素最大的市场之一是医疗，单价也最高。做医学显像时，医生会向患者体内注入极微量的放射性物质，让特定细胞吸收：比如把氟-18 嵌入类葡萄糖分子 FDG 后，人体会像吸收普通葡萄糖一样吸收它，医生监测它释放的射线就能看清体内的病变部位。",
             "医用同位素也用于放射治疗。某些元素会天然聚集在特定器官，比如碘聚集在甲状腺，放射性碘-131 就可用于治疗甲状腺癌；锕-225 等同位素通过发射 α 粒子衰变，α 粒子在人体组织内射程极短，非常适合做精准靶向放疗。目前锕-225 产量极少，每年只能治疗极少数患者；更好的制造工艺不仅能让现有药物降价扩产，还能开发出全新的医用同位素。"
           ]
         },
@@ -2101,9 +2101,9 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "核能原料",
-            "裂变堆和聚变堆的运行都依赖特定同位素。在聚变循环中，用于增殖宝贵氚燃料的反应需要锂的同位素锂-6（占天然锂约 7%），目前必须靠昂贵的锂富集工艺生产，且产能只在中国和俄罗斯；传统裂变堆则需要同一工艺产出的高纯度锂-7，因为天然锂中过多的锂-6 会吞噬太多中子。像 TerraPower 的熔盐堆等新型裂变堆还需要氯-37，目前只能按克生产，实际却需要按吨供应（当然这类稳定同位素价值不如医用同位素高，且可用物理分离法生产，短期内未必会用聚变来造）。",
+            "裂变堆和聚变堆的运行都依赖特定同位素。在聚变循环中，用于增殖宝贵氚燃料的反应需要锂的同位素锂-6（占天然锂约 7%），目前必须靠昂贵的锂富集工艺生产，且产能只在中国和俄罗斯；传统裂变堆则需要同一工艺产出的高纯度锂-7，因为天然锂中过多的锂-6 会吞噬太多中子。TerraPower 研发的熔盐堆等新型裂变堆还需要用到氯-37；这种同位素目前只能按克制备，实际工业应用却需要按吨供应（不过这类稳定同位素单价不如医用同位素高，又能靠物理分离法提取，短期内未必会用核聚变来造）。",
             "核电池",
-            "另一个尚未被充分开发的领域是核电池：用微量放射性物质直接产生电流。这类电池曾在心脏起搏器上用了几十年，也是航天器的动力源；如果能造出更好的电池同位素，就能衍生出许多新用途，比如永久潜伏海底监测海底光缆的水下无人机。"
+            "另一个尚未被充分开发的领域是核电池：用微量放射性物质直接产生电流。这类电池曾在心脏起搏器上用了几十年，也是航天器的动力源；如果能造出更好的电池同位素，就能衍生出许多新用途，比如长期潜伏海底监测海底光缆的水下无人机。"
           ]
         },
         {
@@ -2117,8 +2117,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           "zh": [
             "材料",
             "核化学有时还能用来制造原本昂贵稀缺的常规材料——Marathon Fusion 去年和上周备受关注，正是因为他们提出了一种用聚变中子驱动、以水银（汞）为原料制造黄金的核反应〔注6〕。",
-            "廉价核化学还能高效制造“同位素纯”（isotopically pure）材料。自然界中的大多数元素都包含多种稳定同位素，比如钢材里混杂着铁-54、56、57、58 以及碳-12 和 13；如果能廉价制造同位素，就能只用单一元素同位素来造材料，比如只含硅-28 的半导体。",
-            "这类同位素纯材料往往具备独特的物理性能：同位素纯金刚石的热导率远高于普通金刚石；而同位素纯硅因为具有不同的量子力学特性，非常适合用来制造量子计算机。",
+            "廉价核化学还能高效制造“同位素纯”材料。自然界中的大多数元素都包含多种稳定同位素，比如钢材里混杂着铁-54、56、57、58 以及碳-12 和 13；如果能廉价制造同位素，就能用单一同位素来制造材料，比如只含硅-28 的高纯半导体。",
+            "这类同位素纯材料往往具备独特的物理性能：同位素纯金刚石的热导率远高于普通金刚石；而同位素纯硅因为具有特殊的量子力学特性，非常适合用来制造量子计算机。",
             "过去同位素纯材料制备难度太大，许多特性至今仍是未知数；降低同位素制造成本有望彻底打开这一研究领域。"
           ]
         },
@@ -2233,7 +2233,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           "zh": [
             "下周二的中期选举看点颇多。",
             "目前来看，民主党有望一举夺回参议院和众议院，并在全美多场州长竞选中大有所获。",
-            "至于那些留在加州、还没搬去内华达州太浩湖畔避税地“斜坡村”（Incline Village）〔注1〕的富豪们，下周二就会知道自己是该找个理财规划师，还是该找个厉害的税务律师了。"
+            "至于那些留在加州、还没搬去内华达州太浩湖畔避税小镇“斜坡村”〔注1〕的富豪们，下周二就会知道自己是该找个理财规划师，还是该找个厉害的税务律师了。"
           ]
         },
         {
@@ -2244,10 +2244,10 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "The weakening support among voters comes after a slew of Democratic-aligned groups and trade unions have voiced opposition to Prop 40, including Planned Parenthood, the California Teachers Association and the California Medical Association. Those organizations have varied criticisms of Prop 40—one being that they think state lawmakers won’t actually get the money to healthcare and education. California Gov. Gavin Newsom has also said he opposes Prop 40."
           ],
           "zh": [
-            "下周二是加州“亿万富翁税”决断日。加州选民将投票表决 40 号提案（Proposition 40）——计划对十亿美元级富豪征收一次性 5% 的财富税，用于补贴州内医疗与教育。这项提案让科技界精英焦虑不已。虽然本专栏读者里大概没多少人支持该提案，但如果你还在摇摆甚至赞成，建议去读读 Rippling 创始人 Parker Conrad 在 X 上的分析，看看这套方案在实操中为何如此草率离谱〔注2〕。",
+            "下周二是加州“亿万富翁税”的决断日。加州选民将投票表决 40 号提案——计划对十亿美元级富豪征收一次性 5% 的财富税，用于补贴州内医疗与教育。这项提案让科技界精英焦虑不已。虽然本专栏读者里大概没多少人支持该提案，但如果你还在摇摆甚至赞成，建议去读读 Rippling 创始人 Parker Conrad 在 X 上的分析，看看这套方案在实操中为何如此草率离谱〔注2〕。",
             "目前民调咬得很紧。今年早些时候民调显示 40 号提案支持率颇高，但近期选民态度转向负面：《Politico》最新民调显示潜在选民中 45% 赞成、43% 反对、12% 未决。",
             "预测市场交易员则明显看衰 40 号提案：Polymarket 给出的通过概率只有 23%，Kalshi 也差不多（当然，预测市场最近在巴西和以色列大选里的前瞻并不准）。",
-            "选民支持率走弱，源于一批民主党阵营组织和工会公开反对 40 号提案，包括计划生育联合会、加州教师协会与加州医学协会。各方批评理由不一，其中一条是认为州议员最终并不会真把这笔钱拨给医疗和教育。加州州长纽森（Gavin Newsom）也已表态反对 40 号提案〔注3〕。"
+            "选民支持率走弱，源于一批民主党阵营组织和工会公开反对 40 号提案，包括计划生育联合会、加州教师协会与加州医学协会。各方批评理由不一，其中一条是认为州议员最终并不会真把这笔钱拨给医疗和教育。加州州长纽森也已表态反对 40 号提案〔注3〕。"
           ]
         },
         {
@@ -2258,9 +2258,9 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "Even if Prop 40 fails, Teboe believes its mere existence is a harbinger of things to come and expects to see similar measures pop up around the country over the next few years. Teboe finds that many of the donors seem disconnected from the general unease most Americans feel about the state of the economy—a discontent over high inflation and the uncertainty of AI’s impact on jobs. The most contact those donors have with more ordinary mortals, Teboe said, is in “the conversations that they have with staff on the way to their Porsche.”—Abram Brown (abe@theinformation.com)"
           ],
           "zh": [
-            "如果 40 号提案被否决，将是 Sergey Brin 与 Patrick Collison 等人的胜利。过去几个月他们投入重金打广告阻击该提案。反对派资金最雄厚的组织“建设更美好加州”已筹集 3.3 亿美元，出资人包括 Brin、Stripe 的 Collison、前谷歌 CEO Eric Schmidt、风投家 Vinod Khosla 以及凯鹏华盈的 John Doerr 等。即便 40 号提案通过，支持方和反对方也都预计会围绕其合宪性打上旷日持久的官司。",
+            "如果 40 号提案被否决，将是 Sergey Brin 与 Patrick Collison 等人的胜利。过去几个月他们投入重金打广告阻击该提案。反对派资金最雄厚的组织“建设更美好加州”已筹集 3.3 亿美元，出资人包括 Brin、Stripe 创始人 Collison、前谷歌 CEO Eric Schmidt、风投家 Vinod Khosla 以及凯鹏华盈的 John Doerr 等。即便 40 号提案通过，支持方和反对方也都预计会围绕其合宪性打上旷日持久的官司。",
             "加州民主党筹款人 Cooper Teboe 跟富豪金主沟通时，几乎场场必谈 40 号提案。“一天能提 20 次，”他说，“大家非常在意。”",
-            "40 号提案可能通过的前景，已经让部分加州富豪在民主党声势回升、正想把科技精英拉回阵营的节骨眼上，对政治捐款犹豫不决。“有些金主直接摊手对民主党说‘去他的’，”Teboe 说，“有几个人已经停止捐款了，理由是：‘行吧，这笔财富税要把我掏空了，我现在每一分钱都得攒下来交税。’”",
+            "眼下民主党声势回升，正想把科技界精英重新拉回阵营；但 40 号提案可能过关的消息，已经让不少加州富豪捂紧了钱包，对政治捐款犹豫不决。“有些金主直接摊手对民主党说‘去他的’，”Teboe 说，“有几个人已经停止捐款了，理由是：‘行吧，这笔财富税要把我掏空了，我现在每一分钱都得攒下来交税。’”",
             "即便 40 号提案这次没过，Teboe 认为它的出现本身就是个风向标，未来几年全美各地还会冒出类似法案。但他也发现，许多金主脱离了普通美国人对高通胀和 AI 冲击就业的普遍焦虑——这些大金主平时跟普通人仅有的接触，“大概就是走向自己那辆保时捷的路上，跟家里雇员聊的那几句话”。—— Abram Brown"
           ]
         },
@@ -2272,9 +2272,9 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "The story’s events unfold in real time—keeping the tension high—and Hawke is joined in the cast by Vincent D’Onofrio, Noah Centineo and Hawke’s son, Levon.—Abram Brown"
           ],
           "zh": [
-            "播客推荐：《午夜电台》（Midnight Radio）",
+            "播客推荐：《午夜电台》",
             "演员 Ethan Hawke 此前与《黑色电话》第 1、2 部及《险恶》的编剧 Scott Derrickson、C. Robert Cargill 合作愉快。如今三人再度联手推出虚构播客剧《午夜电台》，气质颇似《阴阳魔界》与《X 档案》。",
-            "Hawke 在剧中饰演一位深夜电台主播，专门探讨阴谋论与超自然现象。他主持节目已久，虽然有批死忠听众，自己却有些倦怠——直到一名自称前美国宇航员的男子打进热线，讲了个离奇故事：当年他和另一名宇航员其实抢在苏联人前面首次绕地球轨道飞行，但那趟旅程进入了跨维度空间，最后只有他一人返回地球。他之所以在电波里向一个偏远小镇的调幅电台主播抖出这段往事，是因为他破译了隐藏在多段广播里的秘密信息，坐标刚好指向这座电台。",
+            "Hawke 在剧中饰演一位深夜电台主播，专门探讨阴谋论与超自然现象。他主持节目已久，虽然有批死忠听众，自己却有些倦怠——直到一名自称前美国宇航员的男子打进热线，讲了个离奇故事：当年他和另一名宇航员其实抢在苏联人前面完成了人类首次环绕地球轨道飞行，但飞船在途中误入跨维度空间，最后只有他一人返回地球。他之所以在电波里向一个偏远小镇的调幅电台主播抖出这段往事，是因为他破译了隐藏在多段广播里的秘密信息，坐标刚好指向这座电台。",
             "故事按真实时间推进，节奏紧凑，Vincent D’Onofrio、Noah Centineo 及 Hawke 的儿子 Levon 共同参演。—— Abram Brown"
           ]
         },
@@ -2287,11 +2287,11 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "Kushner is one of two principal charactersin “Princes and Thieves.” The other is Sheikh Mohamed bin Zayed Al Nahyan (aka MBZ), the Emirati ruler. The sheikh loves a scheme—take how he ascended the throne by discrediting his older half-brother and revealing his sibling’s gay affairs to their father. (The UAE does not follow strict primogeniture.) Later, MBZ struck up a close relationship with his counterpart in Saudi Arabia, Prince Mohammed bin Salman, coaching the Saudi royal through his own ruthless climb."
           ],
           "zh": [
-            "新书阅读：Matthew Cole《王储与窃贼》（Princes and Thieves）",
-            "上周，特朗普女婿、美国中东问题核心特使库什纳（Jared Kushner）的律师威胁要起诉记者 Matthew Cole，起因是新书《王储与窃贼》提前流出的一段节选。该节选提出了一项惊人指控：在特朗普第一任期内，沙特和阿联酋曾向库什纳名下银行账户存入 20 亿美元，作为库什纳与阿拉伯王室联手影响美国外交政策、重塑中东格局的一部分。",
+            "新书阅读：Matthew Cole《王储与窃贼》",
+            "上周，特朗普女婿、美国中东问题核心特使库什纳的律师威胁要起诉记者 Matthew Cole，起因是新书《王储与窃贼》提前流出的一段节选。书中爆出了一桩猛料：在特朗普第一任期内，库什纳与阿拉伯王室联手左右美国外交政策、重塑中东格局，沙特和阿联酋为此曾向库什纳名下的银行账户打入 20 亿美元。",
             "面对法律诉讼威胁，出版商反而将《王储与窃贼》提前几天发售。",
-            "Cole 披露的细节令人咋舌（库什纳全盘否认）。按书中记述：这笔钱源于 2016 年库什纳与阿联酋方面在曼哈顿四季酒店的一次会面，此前与奥巴马政府关系冷淡的阿联酋表达了与新一届特朗普白宫合作的迫切意愿。后来库什纳与阿联酋、沙特会面讨论两国对卡塔尔的不满，两国随即对卡塔尔实施了长达数年的封锁（在他们看来，库什纳给了默许的绿灯）。封锁于 2021 年结束——恰逢卡塔尔秘密达成交易，出资解救了库什纳父亲名下深陷困境的一栋纽约办公楼〔注5〕。此外，流向库什纳的部分阿拉伯资金还转给了黑水公司创始人 Erik Prince，用于试图武装一名利比亚军阀。",
-            "库什纳是《王储与窃贼》的两大主角之一，另一位是阿联酋统治者穆罕默德·本·扎耶德（MBZ）。这位酋长深谙权谋——当年他靠揭发同父异母兄长的丑闻扳倒对方、登上大位（阿联酋不实行严格的长子继承制）；后来又与沙特王储小萨勒曼（MBS）建立起密切关系，指导这位沙特王室成员一步步铁腕掌权。"
+            "Cole 披露的细节令人咋舌（库什纳全盘否认）。按书中记述：这笔钱源于 2016 年库什纳与阿联酋方面在曼哈顿四季酒店的一次会面，此前与奥巴马政府关系冷淡的阿联酋表达了与新一届特朗普白宫合作的迫切意愿。后来库什纳与阿联酋、沙特会面讨论两国对卡塔尔的不满，两国随即对卡塔尔实施了长达数年的封锁（在他们看来，库什纳给了默许的绿灯）。封锁于 2021 年结束——恰逢卡塔尔秘密达成交易，出资解救了库什纳父亲名下深陷困境的一栋纽约办公楼〔注5〕。此外，流向库什纳的部分阿拉伯资金还转给了黑水公司创始人 Erik Prince，用于武装一名利比亚军阀等行动。",
+            "库什纳是《王储与窃贼》的两大主角之一，另一位是阿联酋统治者穆罕默德·本·扎耶德（简称 MBZ）。这位酋长深谙权谋——当年他靠向父亲揭发同父异母兄长的私生活丑闻扳倒对方、登上大位（阿联酋不实行严格的长子继承制）；后来又与沙特王储小萨勒曼建立起密切关系，一步步指导这位沙特王室成员铁腕掌权。"
           ]
         },
         {
@@ -2302,7 +2302,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           ],
           "zh": [
             "两人最想要的都是削弱被他们视为重大威胁的伊朗。MBZ 有时会把以色列拉进反伊行动，书中称以色列央行曾协助管理过一个为库什纳设立的银行账户；而库什纳本人对以色列事务高度热衷，在特朗普第一任期内曾力推以巴和解协议。",
-            "“库什纳需要海湾王室支持他施压巴勒斯坦人与以色列达成协议，”Cole 写道，“作为回报，海湾王室要求美国对伊朗采取强硬政策。”提供给库什纳账户的资金则是推动交易的润滑剂。",
+            "“库什纳需要海湾王室支持他施压巴勒斯坦人与以色列达成协议，”Cole 写道，“作为回报，海湾王室要求美国对伊朗采取强硬政策。”打入库什纳账户的资金则是推动交易的润滑剂。",
             "Cole 并不清楚那些专门留给库什纳的账户资金最终去了哪里，也不知道特朗普对库什纳的行动知情多少。虽然《王储与窃贼》的调查主要截止于 2021 年特朗普卸任，但 Cole 点出了当下特朗普白宫头顶的阴影：库什纳如今再次以不受国会监督的身份重返中东——恰逢特朗普挑起对伊朗的战火。这一结局正是 MBZ 当年想要的。—— Abram Brown"
           ]
         },
@@ -2313,9 +2313,9 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "“Below” has a pleasant, winky off-kilteredness to it, a tone that reminded me a little of Apple’s “Widow’s Bay,” another horror-comedy mashup about the strange happenings on a weird island—though, yes, it is impossible to imagine Snook’s Arm ever becoming the next Martha’s Vineyard. The show moves fast: By the end of the first episode, a giant mass of tentacles has already ripped apart one of Calvin’s iceberg-hunting rivals. (Yeah, gross.) With all the melted ice bobbing around, “Below” is determined to have something to say about the world’s climate crisis. Hartnett’s innate appeal and the presence of that fearsome beastie from, uh, below keep it quite entertaining.—A.B."
           ],
           "zh": [
-            "剧集推荐：Netflix《深渊之下》（Below）",
-            "在加拿大海岸外的虚构偏远小岛 Snook’s Arm 上，居民们勉强维持生计。当局希望他们搬迁，但包括面容沧桑的 Calvin Penney（Josh Hartnett 饰）在内的一些当地人坚持留守。Calvin 靠打捞冰川碎块卖给镇上唯一红火的企业谋生——那是一家靠纯正融化冰山酿造伏特加而小有名气的酒厂。某天他拖回一块发臭的冷冻团块，酒厂拒收；他拉去给当地科学家（Mackenzie Davis 饰）化验，对方很快发现那根本不是冰，而是一大块黏膜组织。与此同时，Calvin 还得操心劝女儿 Mary 回家、管教游手好闲的儿子 Wade（《怪奇物语》男星 Charlie Heaton 饰），以及同样惹上麻烦的第三个孩子 Jay。",
-            "《深渊之下》带着点黑色幽默，基调让人想起 Apple TV+ 的另一部海岛恐怖喜剧《寡妇湾》。节奏很快：第一集结尾，一团巨大的触手就已经撕碎了 Calvin 的一个捞冰对手。借着四处漂浮的融冰，这部剧显然也想谈谈全球气候危机；Hartnett 的个人魅力加上深海怪兽的存在，让整部剧颇具观赏性。—— Abram Brown"
+            "剧集推荐：Netflix《深渊之下》",
+            "这部 Netflix 新剧将背景设在加拿大海岸外的虚构偏远小岛 Snook’s Arm，岛上居民勉强糊口度日。当局希望他们搬迁，但包括面容沧桑的 Calvin Penney（Josh Hartnett 饰）在内的一些当地人坚持留守。Calvin 靠打捞冰川碎块卖给镇上唯一红火的企业谋生——那是一家用融化的纯净冰山雪水酿造伏特加而小有名气的酒厂。某天他拖回一块发臭的冷冻团块，酒厂拒收；他拉去给当地科学家（Mackenzie Davis 饰）化验，对方很快发现那根本不是冰，而是一大块黏膜组织。Calvin 一时不知如何应对，何况家里还有一堆烦心事：他得设法劝女儿 Mary 回家，还得管住游手好闲的儿子 Wade（《怪奇物语》演员 Charlie Heaton 饰）；而他的第三个孩子 Jay 也惹上了一身麻烦。",
+            "《深渊之下》带着点荒诞冷幽默，基调让人想起 Apple TV+ 的另一部海岛恐怖喜剧《寡妇湾》——当然，谁也不会指望这座荒凉小岛变成下一个玛莎葡萄园岛度假胜地。全剧节奏很快：第一集结尾，一团巨大的触手就已经撕碎了 Calvin 的一个捞冰同行。借着四处漂浮的融冰，这部剧显然也想探讨全球气候危机；Hartnett 的个人魅力加上深海怪兽的惊悚感，让整部剧颇具看点。—— Abram Brown"
           ]
         }
       ],
@@ -2809,7 +2809,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "Amazon disclosed a new up to $80 billion loan facility to purchase technology infrastructure assets in its third quarter results filing. Amazon can borrow from the facility between the first quarter of 2027 and the third quarter of 2028, and the debt is due five years from the date Amazon ..."
           ],
           "zh": [
-            "亚马逊在第三季度财报文件（10-Q）中披露了一项最高达 800 亿美元的新型信贷安排，专门用于采购技术基础设施资产〔注1〕〔注2〕。"
+            "亚马逊在第三季度财报文件（10-Q）中披露了一项最高达 800 亿美元的新型信贷安排，专门用于采购技术基础设施资产〔注1〕。亚马逊可在 2027 年第一季度至 2028 年第三季度之间提款，每笔借款自提款日起五年到期〔注2〕。"
           ]
         }
       ],
