@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>双语伴读工作台 · The Economist 2026.10.24</title>
+  <style>
+    :root {
+      --bg-page: #F4F3EF;
+      --bg-card: #FFFFFF;
+      --bg-sidebar: #EAE8E1;
+      --bg-hover: #DFDDD4;
+      --text-main: #141413;
+      --text-en: #1E1E1C;
+      --text-muted: #66635B;
+      --border-color: #D2CFC6;
+      --border-strong: #111111;
+      --accent: #111111;
+      --wired-neon: #00E65B;
+      --wired-red: #E52521;
+      --accent-soft: #F0EFEA;
+      --star-color: #D48806;
+      --font-size-base: 18px;
+      --font-zh: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, sans-serif;
+      --font-en: "Charter", "Iowan Old Style", "Georgia", serif;
+      --font-mono: "JetBrains Mono", "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
+      --font-display: "Helvetica Neue", "Arial Black", "PingFang SC", sans-serif;
+    }
+
+    
+    .economist-logo {
+      display: inline-flex;
+      background: #E3120B;
+      color: #FFFFFF;
+      font-family: var(--font-en);
+      font-weight: 800;
+      font-size: 13.5px;
+      letter-spacing: 0.5px;
+      padding: 3px 8px;
+      border-radius: 2px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    /* 暖纸书卷风主题（可一键切换） */
+    body.theme-warm {
+      --bg-page: #F6F4EE;
+      --bg-card: #FCFBF9;
+      --bg-sidebar: #EFECE4;
+      --bg-hover: #E6E2D6;
+      --text-main: #262523;
+      --text-en: #2F2E2C;
+      --text-muted: #78746C;
+      --border-color: #DFDBD0;
+      --border-strong: #8C3B2B;
+      --accent: #8C3B2B;
+      --accent-soft: #F4EAE6;
+    }
+
+    body.font-serif-zh {
+      --font-zh: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+    }
+
+    body.size-sm { --font-size-base: 16px; }
+    body.size-md { --font-size-base: 18px; }
+    body.size-lg { --font-size-base: 20px; }
+
+    /* 隐藏插图模式 */
+    body.hide-images .hero-figure,
+    body.hide-images .inline-gallery,
+    body.hide-images .cat-thumb {
+      display: none !important;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: var(--font-zh);
+      font-size: var(--font-size-base);
+      line-height: 1.85;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 左侧目录栏 */
+    .sidebar {
+      width: 350px;
+      min-width: 350px;
+      background-color: var(--bg-sidebar);
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      transition: margin-left 0.25s ease;
+    }
+    .sidebar.collapsed { margin-left: -350px; }
+
+    .bookshelf-bar {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+      background-color: #E2DFD7;
+    }
+    body.theme-warm .bookshelf-bar { background-color: #E8E4DA; }
+
+    .bookshelf-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-transform: uppercase;
+    }
+
+    .bookshelf-select {
+      width: 100%;
+      padding: 7px 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* WIRED 标志性黑白棋盘格报头与封面区 */
+    .sidebar-header {
+      padding: 14px 16px;
+      border-bottom: 2px solid var(--border-strong);
+      background-color: var(--bg-card);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cover-thumb-wrap {
+      width: 46px;
+      height: 60px;
+      border: 1px solid #111;
+      border-radius: 2px;
+      overflow: hidden;
+      flex-shrink: 0;
+      cursor: zoom-in;
+      box-shadow: 2px 2px 0 rgba(0,0,0,0.18);
+      position: relative;
+      background: #111;
+    }
+    .cover-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .masthead-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .wired-logo {
+      display: inline-flex;
+      gap: 2px;
+      margin-bottom: 5px;
+      user-select: none;
+    }
+    .wired-logo span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 0;
+      line-height: 1;
+    }
+    .wired-logo span:nth-child(odd) {
+      background: #111111;
+      color: #FFFFFF;
+    }
+    .wired-logo span:nth-child(even) {
+      background: #FFFFFF;
+      color: #111111;
+      border: 1.5px solid #111111;
+    }
+    .sidebar-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+    .sidebar-sub {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+      line-height: 1.35;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 6px;
+      padding: 9px 16px;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 12px;
+    }
+    .filter-btn {
+      padding: 4px 10px;
+      border-radius: 3px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-muted);
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .filter-btn.active {
+      background: #111111;
+      color: #fff;
+      border-color: #111111;
+    }
+    body.theme-warm .filter-btn.active {
+      background: var(--text-main);
+      border-color: var(--text-main);
+    }
+
+    .catalog-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 8px 10px 24px;
+    }
+    .catalog-item {
+      padding: 10px 10px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      transition: all 0.15s;
+      border: 1px solid transparent;
+    }
+    .catalog-item:hover { background-color: var(--bg-hover); }
+    .catalog-item.active {
+      background-color: var(--bg-card);
+      border-color: #111111;
+      box-shadow: 2px 2px 0 rgba(0,0,0,0.08);
+    }
+    body.theme-warm .catalog-item.active {
+      border-color: var(--border-color);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .catalog-item.not-ready { opacity: 0.58; }
+
+    .cat-thumb {
+      width: 48px;
+      height: 48px;
+      border-radius: 3px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid var(--border-color);
+      background: #DCD9D0;
+      margin-top: 2px;
+    }
+
+    .item-left { flex: 1; min-width: 0; }
+    .item-meta {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .sec-tag {
+      padding: 0 4px;
+      border-radius: 2px;
+      font-weight: 700;
+      font-size: 10px;
+      background: #E0DDD3;
+      color: #222;
+    }
+    .sec-tag.sec-gear { background: #D8F3DC; color: #0B5328; }
+    .sec-tag.sec-culture { background: #F3D9FA; color: #5F1970; }
+    .sec-tag.sec-business { background: #D0EBFF; color: #0B4F82; }
+    .sec-tag.sec-special { background: #FFE3E3; color: #961616; }
+
+    .item-zh {
+      font-size: 13.8px;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.38;
+      margin-bottom: 2px;
+    }
+    .item-en {
+      font-size: 11.8px;
+      color: var(--text-muted);
+      font-family: var(--font-en);
+      line-height: 1.32;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .star-btn {
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      color: #BDB7AA;
+      padding: 2px 3px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .star-btn.starred { color: var(--star-color); }
+
+    /* 主阅读区 */
+    .main-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .topbar {
+      height: 54px;
+      border-bottom: 2px solid var(--border-strong);
+      background-color: var(--bg-page);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      flex-shrink: 0;
+    }
+    body.theme-warm .topbar {
+      border-bottom: 1px solid var(--border-color);
+    }
+    .topbar-left, .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .tool-btn {
+      padding: 5px 10px;
+      font-size: 12.5px;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-card);
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.15s;
+      font-weight: 500;
+    }
+    .tool-btn:hover { background-color: var(--bg-hover); }
+    .tool-btn.active {
+      background-color: #111111;
+      color: #fff;
+      border-color: #111111;
+    }
+    body.theme-warm .tool-btn.active {
+      background-color: var(--text-main);
+      border-color: var(--text-main);
+    }
+    .tool-btn.star-main.starred {
+      background-color: #FDF6EA;
+      border-color: var(--star-color);
+      color: #9E5E0B;
+      font-weight: 600;
+    }
+    .tool-btn.vocab-basket-btn {
+      border-color: #111111;
+      background-color: #FFFFFF;
+      font-weight: 600;
+    }
+    .divider {
+      width: 1px;
+      height: 18px;
+      background-color: var(--border-color);
+      margin: 0 2px;
+    }
+
+    .reader-scroll {
+      flex: 1;
+      overflow-y: auto;
+      padding: 38px 48px 90px;
+    }
+    .article-container {
+      max-width: 1260px;
+      margin: 0 auto;
+    }
+    .mode-zh .article-container,
+    .mode-stack .article-container {
+      max-width: 780px;
+    }
+
+    /* WIRED 画报级文章头部 */
+    .article-header {
+      margin-bottom: 32px;
+      padding-top: 18px;
+      padding-bottom: 26px;
+      border-top: 4px solid var(--border-strong);
+      border-bottom: 2px solid var(--border-strong);
+    }
+    body.theme-warm .article-header {
+      border-top: none;
+      padding-top: 0;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .article-kicker-bar {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    .kicker-badge {
+      background-color: #111111;
+      color: #FFFFFF;
+      padding: 3px 9px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 2px;
+    }
+    .kicker-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--wired-neon);
+      display: inline-block;
+    }
+    body.theme-warm .kicker-badge {
+      background-color: var(--accent);
+    }
+    body.theme-warm .kicker-dot {
+      background-color: #FFD28A;
+    }
+    .kicker-author {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .article-title-zh {
+      font-size: 31px;
+      font-weight: 800;
+      line-height: 1.32;
+      margin-bottom: 8px;
+      color: var(--text-main);
+      letter-spacing: -0.01em;
+    }
+    .article-title-en {
+      font-family: var(--font-en);
+      font-size: 21px;
+      font-weight: 500;
+      color: var(--text-muted);
+      line-height: 1.38;
+      margin-bottom: 20px;
+    }
+
+    /* 主视觉题图（Hero Figure） */
+    .hero-figure {
+      margin: 20px 0 24px;
+      background-color: #141413;
+      border: 1.5px solid #111111;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+    }
+    body.theme-warm .hero-figure {
+      border-color: var(--border-color);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+    .hero-img-box {
+      width: 100%;
+      max-height: 520px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0F0F0E;
+      overflow: hidden;
+      cursor: zoom-in;
+      position: relative;
+    }
+    .hero-img-box img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+    .hero-img-box:hover img {
+      transform: scale(1.012);
+    }
+    .zoom-hint {
+      position: absolute;
+      right: 12px;
+      bottom: 10px;
+      background: rgba(17, 17, 17, 0.78);
+      color: #F4F3EF;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 3px;
+      pointer-events: none;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .figure-meta {
+      padding: 9px 14px;
+      background-color: #181817;
+      color: #D8D5CC;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      font-size: 12.5px;
+      line-height: 1.5;
+      border-top: 1px solid #2C2B29;
+    }
+    .figure-caption {
+      font-family: var(--font-en);
+      color: #EAE7DF;
+      flex: 1;
+    }
+    .figure-credit {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #9E9A8E;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+    }
+
+    .article-deck {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--border-strong);
+      padding: 16px 22px;
+      border-radius: 0 4px 4px 0;
+      color: #33312E;
+      font-size: 0.96em;
+      line-height: 1.85;
+    }
+    .article-deck-en {
+      font-family: var(--font-en);
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 8px;
+      font-size: 0.92em;
+    }
+
+    .vocab-tip-banner {
+      margin-top: 14px;
+      font-size: 12.5px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    /* 段落块与穿插插图画廊 */
+    .pair-block {
+      border-bottom: 1px solid var(--border-color);
+      padding: 26px 0;
+    }
+    .pair-block:last-child { border-bottom: none; }
+
+    .inline-gallery {
+      margin: 8px 0 22px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .inline-gallery.pos-bottom {
+      margin: 22px 0 6px;
+    }
+    .inline-gallery.cols-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .inline-figure {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+    }
+    .inline-img-wrap {
+      width: 100%;
+      max-height: 430px;
+      background-color: #181817;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      cursor: zoom-in;
+      position: relative;
+    }
+    .inline-img-wrap img {
+      max-width: 100%;
+      max-height: 430px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+    .inline-img-wrap:hover img {
+      transform: scale(1.015);
+    }
+    .inline-fig-footer {
+      padding: 8px 14px;
+      background-color: #FAF9F5;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .inline-fig-cap {
+      font-family: var(--font-en);
+      color: var(--text-main);
+      flex: 1;
+    }
+    .inline-fig-credit {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      flex-shrink: 0;
+    }
+
+    /* 左右双语对照行 */
+    .pair-row {
+      display: grid;
+      grid-template-columns: 1fr 1.08fr;
+      gap: 44px;
+      align-items: start;
+    }
+
+    .col-en {
+      font-family: var(--font-en);
+      color: var(--text-en);
+      font-size: 0.98em;
+      line-height: 1.8;
+      padding-right: 12px;
+    }
+    .col-en p { margin-bottom: 1.15em; }
+    .col-en p:last-child { margin-bottom: 0; }
+
+    /* 预埋重点词样式 */
+    .vocab-inline {
+      border-bottom: 1.5px dashed #B84A32;
+      background-color: rgba(184, 74, 50, 0.06);
+      padding: 0 2px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .vocab-inline:hover {
+      background-color: rgba(184, 74, 50, 0.18);
+    }
+
+    .col-zh {
+      color: var(--text-main);
+      font-size: 1em;
+      line-height: 1.92;
+      letter-spacing: 0.015em;
+    }
+    .col-zh p { margin-bottom: 1.2em; }
+    .col-zh p:last-child { margin-bottom: 0; }
+
+    .mode-zh .pair-block {
+      padding: 12px 0;
+      border-bottom: none;
+    }
+    .mode-zh .pair-row { display: block; }
+    .mode-zh .col-en,
+    .mode-zh .article-deck-en { display: none; }
+    .mode-zh .col-zh p { margin-bottom: 1.35em; }
+
+    .mode-stack .pair-row { display: block; }
+    .mode-stack .col-en {
+      padding-right: 0;
+      margin-bottom: 18px;
+      padding: 14px 18px;
+      background: var(--bg-card);
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* 全屏高清看图灯箱 (Lightbox) */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 10, 0.92);
+      z-index: 10000;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 32px;
+      cursor: zoom-out;
+    }
+    .lightbox-overlay.open { display: flex; }
+    .lightbox-img {
+      max-width: 92vw;
+      max-height: 82vh;
+      object-fit: contain;
+      border: 1px solid #333;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+      background: #000;
+    }
+    .lightbox-caption {
+      margin-top: 14px;
+      max-width: 820px;
+      text-align: center;
+      color: #E6E4DD;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .lightbox-credit {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--wired-neon);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      background: #222;
+      color: #fff;
+      border: 1px solid #444;
+      padding: 6px 14px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* 查词气泡浮窗 (Popover) */
+    .vocab-popover {
+      position: fixed;
+      z-index: 9999;
+      width: 340px;
+      background-color: #181817;
+      color: #F7F5F0;
+      border-radius: 6px;
+      padding: 14px 16px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.28);
+      font-size: 13.5px;
+      line-height: 1.55;
+      display: none;
+      border: 1px solid #3D3B37;
+    }
+    .vocab-popover.visible { display: block; }
+
+    /* 交互式角标与注释 */
+    .fn-badge {
+      display: inline-block;
+      font-size: 0.78em;
+      font-weight: 700;
+      color: #E3120B;
+      background: rgba(227, 18, 11, 0.08);
+      border-radius: 3px;
+      padding: 1px 4px;
+      margin: 0 2px;
+      cursor: pointer;
+      text-decoration: none;
+      vertical-align: super;
+      transition: all 0.15s ease;
+    }
+    .fn-badge:hover {
+      background: #E3120B;
+      color: #FFFFFF;
+    }
+    /* 注释浮窗 */
+    .footnote-popover {
+      position: fixed;
+      z-index: 10000;
+      width: 420px;
+      max-width: calc(100vw - 32px);
+      background-color: #1F1E1B;
+      color: #F7F5F0;
+      border-radius: 8px;
+      padding: 16px 18px;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.38);
+      font-size: 13.5px;
+      line-height: 1.65;
+      display: none;
+      border: 1px solid #44413C;
+    }
+    .footnote-popover.visible { display: block; }
+    .fn-pop-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #38352F;
+      padding-bottom: 6px;
+    }
+    .fn-pop-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #FF8F8C;
+    }
+    .fn-pop-close {
+      background: none;
+      border: none;
+      color: #A09C92;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 0 4px;
+    }
+    .fn-pop-body {
+      font-size: 13px;
+      color: #DCD8CD;
+    }
+    /* 文末注释面板 */
+    .footnotes-section {
+      margin: 40px 0 20px;
+      padding: 24px 28px;
+      background-color: var(--bg-sidebar);
+      border-left: 4px solid #E3120B;
+      border-radius: 0 8px 8px 0;
+    }
+    .footnotes-section h3 {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .fn-item {
+      margin-bottom: 14px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-main);
+    }
+    .fn-item:last-child { margin-bottom: 0; }
+    .fn-item-badge {
+      font-weight: 700;
+      color: #E3120B;
+      margin-right: 6px;
+    }
+    .pop-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 6px;
+    }
+    .pop-term {
+      font-family: var(--font-en);
+      font-size: 16px;
+      font-weight: 700;
+      color: #FFD28A;
+    }
+    .pop-phonetic {
+      font-size: 12px;
+      color: #B5B0A6;
+      margin-left: 6px;
+      font-family: sans-serif;
+    }
+    .pop-pos {
+      font-size: 11.5px;
+      background: #333;
+      color: #E2DDD2;
+      padding: 1px 6px;
+      border-radius: 3px;
+    }
+    .pop-meaning {
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    .pop-note {
+      font-size: 12.5px;
+      color: #D0CBBF;
+      margin-bottom: 10px;
+    }
+    .pop-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid #333;
+    }
+    .pop-btn {
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: none;
+      font-size: 12px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .pop-btn-add {
+      background-color: var(--wired-neon);
+      color: #111;
+    }
+    .pop-btn-add:hover { opacity: 0.9; }
+    .pop-links a {
+      color: #A9B8C9;
+      font-size: 11.5px;
+      text-decoration: none;
+      margin-right: 8px;
+    }
+    .pop-links a:hover { text-decoration: underline; }
+
+    /* 右侧生词篮抽屉 */
+    .basket-drawer {
+      position: fixed;
+      top: 54px;
+      right: 0;
+      width: 390px;
+      height: calc(100vh - 54px);
+      background-color: var(--bg-card);
+      border-left: 2px solid var(--border-strong);
+      box-shadow: -4px 0 18px rgba(0,0,0,0.08);
+      z-index: 900;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.25s ease;
+    }
+    .basket-drawer.open { transform: translateX(0); }
+    .basket-header {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .basket-title { font-size: 15px; font-weight: 700; }
+    .basket-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 14px 18px;
+    }
+    .basket-item {
+      background: var(--bg-page);
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+    .basket-item-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .basket-word {
+      font-family: var(--font-en);
+      font-weight: 700;
+      font-size: 15px;
+      color: #B84A32;
+    }
+    .basket-del {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .basket-meaning {
+      color: var(--text-main);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .basket-context {
+      font-family: var(--font-en);
+      font-size: 12px;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.45;
+    }
+    .basket-footer {
+      padding: 14px 18px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      gap: 8px;
+    }
+    .basket-footer .tool-btn { flex: 1; text-align: center; }
+
+    .footer-nav {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 2px solid var(--border-strong);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .empty-notice {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 48px 36px;
+      text-align: center;
+      margin: 40px auto;
+      max-width: 620px;
+    }
+    .empty-notice h3 { font-size: 20px; margin-bottom: 12px; }
+    .empty-notice p { color: var(--text-muted); margin-bottom: 8px; }
+  </style>
+</head>
+<body class="size-md">
+
+  <!-- 左侧全刊目录与书架 -->
+  <aside class="sidebar" id="sidebar">
+    <div class="bookshelf-bar">
+      <div class="bookshelf-label">
+        <span>📚 ISSUE ARCHIVE // 书架切换</span>
+      </div>
+      <select class="bookshelf-select" id="bookshelfSelect" onchange="switchBook(this.value)">
+        <option value="economist_2026_10_24" selected>📰 《经济学人》The Economist · 2026.10.24</option>
+        <option value="global_biz_intel">🌐 全球商业硬核信源（FT / Bloomberg / Stratechery）</option>
+        <option value="anthropic_s1">📑 《Anthropic 招股说明书：Form S-1》（2026）</option>
+        <option value="the_infinity_machine">⚡ 《无限机器：哈萨比斯与 DeepMind》（2026）</option>
+        <option value="the_thinking_machine">📖 《思考机器：黄仁勋与英伟达》（2025）</option>
+        <option value="wired_2026_10">📰 《连线》WIRED · 2026年10月刊</option>
+        <option value="classic_essays">🏛️ 经典演说与传世美文 TOP 10</option>
+        <option value="bookshelf_hub">📚 英文原版图书视觉总书架 (23本力作)</option>
+      </select>
+    </div>
+
+        <div class="sidebar-header">
+      <div class="cover-thumb-wrap" onclick="openCoverLightbox()" title="点击查看大封面">
+        <img id="sidebarCoverImg" src="economist_2026_10_24_assets/cover.jpg" alt="Cover">
+      </div>
+      <div class="masthead-info">
+        <div class="economist-logo" id="mastheadLogo">
+          <span>The Economist</span>
+        </div>
+        <div class="sidebar-title" id="issueTitle">The Economist · 2026.10.24</div>
+        <div class="sidebar-sub" id="issueSubtitle">全刊 75 篇 · 电脑端双语伴读</div>
+      </div>
+    </div>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" id="btnFilterAll" onclick="setFilter('all', this)">全部 (58)</button>
+      <button class="filter-btn" onclick="setFilter('ready', this)">图文就绪</button>
+      <button class="filter-btn" onclick="setFilter('starred', this)">★ 待精读</button>
+    </div>
+    <div class="catalog-list" id="catalogList"></div>
+  </aside>
+
+  <!-- 右侧主阅读区 -->
+  <main class="main-area" id="mainArea">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="tool-btn" onclick="toggleSidebar()" title="收起/展开目录">☰ 目录</button>
+        <div class="divider"></div>
+        <button class="tool-btn active" id="btnModeSide" onclick="setViewMode('side')">左右对照</button>
+        <button class="tool-btn" id="btnModeZh" onclick="setViewMode('zh')">纯中文畅读</button>
+        <button class="tool-btn" id="btnModeStack" onclick="setViewMode('stack')">上下对照</button>
+        <div class="divider"></div>
+        <button class="tool-btn" id="btnToggleImg" onclick="toggleImages()">🖼 插图：显示</button>
+      </div>
+      <div class="topbar-right">
+        <button class="tool-btn" id="btnTheme" onclick="toggleTheme()">⚡ 风格：WIRED 画报</button>
+        <button class="tool-btn" onclick="toggleZhFont()" id="btnFont">字体：清爽黑体</button>
+        <div class="divider"></div>
+        <button class="tool-btn" onclick="setFontSize('sm', this)">小</button>
+        <button class="tool-btn active" onclick="setFontSize('md', this)">标准</button>
+        <button class="tool-btn" onclick="setFontSize('lg', this)">大</button>
+        <div class="divider"></div>
+        <button class="tool-btn star-main" id="btnStarCurrent" onclick="toggleStarCurrent()">☆ 记入待精读</button>
+        <button class="tool-btn vocab-basket-btn" id="btnBasket" onclick="toggleBasket()">🗂 生词篮 (0)</button>
+      </div>
+    </header>
+
+    <div class="reader-scroll" id="readerScroll">
+      <div class="article-container" id="articleContainer"></div>
+    </div>
+
+    <!-- 右侧生词篮抽屉 -->
+    <aside class="basket-drawer" id="basketDrawer">
+      <div class="basket-header">
+        <div class="basket-title">🗂 我的生词与搭配篮</div>
+        <button class="tool-btn" onclick="toggleBasket()">关闭 ✕</button>
+      </div>
+      <div class="basket-body" id="basketBody"></div>
+      <div class="basket-footer">
+        <button class="tool-btn active" onclick="copyBasketToClipboard()">📋 一键复制（发给助手精讲/制卡）</button>
+        <button class="tool-btn" onclick="clearBasket()">清空</button>
+      </div>
+    </aside>
+  </main>
+
+  <!-- 全屏高清图片灯箱 -->
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">关闭 ESC ✕</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCap"></div>
+    <div class="lightbox-credit" id="lightboxCred"></div>
+  </div>
+
+  <!-- 浮动查词气泡 -->
+  <div class="vocab-popover" id="vocabPopover"></div>
+  <!-- 交互式深度注释浮窗 -->
+  <div class="footnote-popover" id="footnotePopover"></div>
+
+  <script src="economist_2026_10_24_data.js"></script>
+  <script src="../03-网络媒体/global_biz_intel_data.js"></script>
+  <script>
+    window.BOOKSHELF_REGISTRY = window.BOOKSHELF_REGISTRY || {};
+    if (window.WIRED_ISSUE_DATA) {
+      window.BOOKSHELF_REGISTRY["wired_2026_10"] = window.WIRED_ISSUE_DATA;
+    } else if (window.BOOKSHELF_REGISTRY["wired_2026_10"]) {
+      window.WIRED_ISSUE_DATA = window.BOOKSHELF_REGISTRY["wired_2026_10"];
+    }
+
+    const PLACEHOLDER_BOOKS = {
+      economist_2026_10_03: {
+        storageKey: "economist_2026_10_03",
+        issueTitle: "The Economist · 2026.10.03",
+        issueSubtitle: "经济学人周刊 · 随时可切换开启",
+        catalog: [{ id: 1, section: "Leaders", enTitle: "Ready to unpack when you switch to this issue", zhTitle: "跟助手说一声即可按同款模板拆解本期《经济学人》", words: 0, ready: false }],
+        articles: {}
+      },
+      new_yorker_2026_10_05: {
+        storageKey: "new_yorker_2026_10_05",
+        issueTitle: "The New Yorker · 2026.10.05",
+        issueSubtitle: "纽约客周刊 · 随时可切换开启",
+        catalog: [{ id: 1, section: "The Talk of the Town", enTitle: "Ready to unpack when you switch to this issue", zhTitle: "跟助手说一声即可按同款模板拆解本期《纽约客》", words: 0, ready: false }],
+        articles: {}
+      },
+      ages_of_capitalism: {
+        storageKey: "ages_of_capitalism",
+        issueTitle: "Ages of American Capitalism",
+        issueSubtitle: "Jonathan Levy · 美国资本主义时代（原版书）",
+        catalog: [{ id: 1, section: "Introduction", enTitle: "Introduction: Ages of Capital", zhTitle: "导言：资本的时代（随时可切换迁移至此）", words: 12000, ready: false }],
+        articles: {}
+      }
+    };
+
+    let currentBookKey = 'economist_2026_10_24';
+    let DATA = window.BOOKSHELF_REGISTRY[currentBookKey] || window.ECONOMIST_ISSUE_DATA;
+
+    const BASKET_STORAGE_KEY = 'bilingual_global_vocab_basket';
+    let vocabBasket = JSON.parse(localStorage.getItem(BASKET_STORAGE_KEY) || '[]');
+
+    let starredIds = [];
+    let currentFilter = 'all';
+    let currentArticleId = 4;
+    let activePopoverContext = null;
+
+    function getStarKey() { return DATA.storageKey + '_starred_ids'; }
+    function getLastIdKey() { return DATA.storageKey + '_last_id'; }
+
+    function getSectionClass(sec) {
+      const s = (sec || '').toLowerCase();
+      if (s.includes('gear')) return 'sec-gear';
+      if (s.includes('culture')) return 'sec-culture';
+      if (s.includes('business')) return 'sec-business';
+      if (s.includes('special')) return 'sec-special';
+      return '';
+    }
+
+    function escapeHtmlAttr(str) {
+      return (str || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function loadBookState() {
+      starredIds = JSON.parse(localStorage.getItem(getStarKey()) || '[]');
+      const defaultId = currentBookKey === 'economist_2026_10_24' ? 4 : 1;
+      const savedId = parseInt(localStorage.getItem(getLastIdKey()) || String(defaultId), 10);
+      currentArticleId = DATA.catalog.some(c => c.id === savedId) ? savedId : defaultId;
+      document.getElementById('issueTitle').textContent = DATA.issueTitle;
+      document.getElementById('issueSubtitle').textContent = DATA.issueSubtitle || '';
+      const logoEl = document.getElementById('mastheadLogo');
+      const coverWrap = document.querySelector('.cover-thumb-wrap');
+      if (currentBookKey === 'global_biz_intel') {
+        if (logoEl) logoEl.innerHTML = '<span>GLOBAL BIZ INTEL</span>';
+        if (coverWrap) coverWrap.style.display = 'none';
+      } else {
+        if (logoEl) logoEl.innerHTML = '<span>The Economist</span>';
+        if (coverWrap) coverWrap.style.display = 'block';
+      }
+      document.getElementById('btnFilterAll').textContent = `全部 (${DATA.catalog.length})`;
+      document.getElementById('bookshelfSelect').value = currentBookKey;
+      renderCatalog();
+      selectArticle(currentArticleId);
+      renderBasket();
+    }
+
+    function switchBook(bookKey) {
+      const externalRoutes = {
+        wired_2026_10: 'wired_2026_10_reader.html',
+        anthropic_s1: '../02-英文书籍/Anthropic S-1 Prospectus/anthropic_s1_reader.html',
+        the_infinity_machine: '../02-英文书籍/The Infinity Machine/the_infinity_machine_reader.html',
+        the_thinking_machine: '../02-英文书籍/The Thinking Machine/the_thinking_machine_reader.html',
+        classic_essays: '../05-经典美文/classic_essays_reader.html',
+        bookshelf_hub: '../02-英文书籍/bookshelf.html'
+      };
+      if (externalRoutes[bookKey]) {
+        window.location.href = externalRoutes[bookKey];
+        return;
+      }
+      currentBookKey = bookKey;
+      localStorage.setItem('bilingual_current_book', bookKey);
+      DATA = window.BOOKSHELF_REGISTRY[bookKey] || PLACEHOLDER_BOOKS[bookKey] || window.ECONOMIST_ISSUE_DATA;
+      currentFilter = 'all';
+      document.querySelectorAll('.filter-bar .filter-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
+      loadBookState();
+    }
+
+    function saveStarred() {
+      localStorage.setItem(getStarKey(), JSON.stringify(starredIds));
+    }
+
+    function toggleStar(id, event) {
+      if (event) event.stopPropagation();
+      const idx = starredIds.indexOf(id);
+      if (idx === -1) starredIds.push(id);
+      else starredIds.splice(idx, 1);
+      saveStarred();
+      renderCatalog();
+      updateCurrentStarBtn();
+    }
+
+    function toggleStarCurrent() { toggleStar(currentArticleId); }
+
+    function updateCurrentStarBtn() {
+      const btn = document.getElementById('btnStarCurrent');
+      const isStar = starredIds.includes(currentArticleId);
+      btn.classList.toggle('starred', isStar);
+      btn.textContent = isStar ? '★ 已记入待精读' : '☆ 记入待精读';
+    }
+
+    function setFilter(filter, btnEl) {
+      currentFilter = filter;
+      document.querySelectorAll('.filter-bar .filter-btn').forEach(b => b.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+      renderCatalog();
+    }
+
+    function renderCatalog() {
+      const listEl = document.getElementById('catalogList');
+      listEl.innerHTML = '';
+      DATA.catalog.forEach(item => {
+        const isStar = starredIds.includes(item.id);
+        if (currentFilter === 'ready' && !item.ready) return;
+        if (currentFilter === 'starred' && !isStar) return;
+
+        const div = document.createElement('div');
+        div.className = 'catalog-item' +
+          (item.id === currentArticleId ? ' active' : '') +
+          (!item.ready ? ' not-ready' : '');
+        div.onclick = () => selectArticle(item.id);
+
+        const numStr = String(item.id).padStart(2, '0');
+        const secClass = getSectionClass(item.section);
+        const thumbHtml = item.thumb
+          ? `<img class="cat-thumb" src="${item.thumb}" alt="" loading="lazy">`
+          : '';
+        const scoreTag = (item.score && item.score.total)
+          ? `<span style="background:#990F3D;color:#fff;padding:0 5px;border-radius:3px;font-weight:800;font-size:10px;">${item.score.total}分</span>`
+          : '';
+
+        div.innerHTML = `
+          ${thumbHtml}
+          <div class="item-left">
+            <div class="item-meta">
+              <span>#${numStr}</span>
+              ${scoreTag}
+              <span class="sec-tag ${secClass}">${item.section}</span>
+              <span>· ${item.words}W</span>
+            </div>
+            <div class="item-zh">${item.zhTitle}</div>
+            <div class="item-en">${item.enTitle}</div>
+          </div>
+          <button class="star-btn ${isStar ? 'starred' : ''}" onclick="toggleStar(${item.id}, event)" title="记入待精读">
+            ${isStar ? '★' : '☆'}
+          </button>
+        `;
+        listEl.appendChild(div);
+      });
+    }
+
+    // 为英文段落注入预埋重点词高亮
+    function highlightVocabInText(text, vocabList) {
+      if (!vocabList || !vocabList.length) return text;
+      let result = text;
+      vocabList.forEach((v, idx) => {
+        const escaped = v.term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(`\\b(${escaped})\\b`, 'i');
+        result = result.replace(regex, `<span class="vocab-inline" data-vocab-idx="${idx}">$1</span>`);
+      });
+      return result;
+    }
+
+    function renderInlineGallery(imgs, posClass) {
+      if (!imgs || !imgs.length) return '';
+      const colClass = imgs.length >= 2 ? 'cols-2' : '';
+      const figs = imgs.map(img => {
+        const hasFooter = img.caption || img.credit;
+        const capAttr = escapeHtmlAttr(img.caption || img.alt || '');
+        const credAttr = escapeHtmlAttr(img.credit || '');
+        return `
+          <figure class="inline-figure">
+            <div class="inline-img-wrap" onclick="openLightbox('${img.src}', '${capAttr}', '${credAttr}')">
+              <img src="${img.src}" alt="${escapeHtmlAttr(img.alt)}" loading="lazy">
+              <span class="zoom-hint">🔍 放大</span>
+            </div>
+            ${hasFooter ? `
+              <figcaption class="inline-fig-footer">
+                <div class="inline-fig-cap">${img.caption || ''}</div>
+                ${img.credit ? `<div class="inline-fig-credit">${img.credit}</div>` : ''}
+              </figcaption>
+            ` : ''}
+          </figure>
+        `;
+      }).join('');
+      return `<div class="inline-gallery ${posClass} ${colClass}">${figs}</div>`;
+    }
+
+    function selectArticle(id) {
+      hidePopover();
+      currentArticleId = id;
+      localStorage.setItem(getLastIdKey(), String(id));
+      renderCatalog();
+      updateCurrentStarBtn();
+      renderArticleContent(id);
+      document.getElementById('readerScroll').scrollTop = 0;
+    }
+
+    function renderArticleContent(id) {
+      const container = document.getElementById('articleContainer');
+      const meta = DATA.catalog.find(c => c.id === id);
+      const article = DATA.articles[id];
+      const numStr = String(id).padStart(2, '0');
+
+      if (!article) {
+        container.innerHTML = `
+          <div class="empty-notice">
+            <div class="article-kicker">#${numStr} · ${meta ? meta.section : ''}</div>
+            <h3>${meta ? meta.zhTitle : ''}</h3>
+            <p style="font-family: var(--font-en); margin-bottom: 20px;">${meta ? meta.enTitle : ''}</p>
+            <p>这一篇尚未生成中英双语伴读内容。</p>
+          </div>
+        `;
+        return;
+      }
+
+      // 构建主视觉题图 Hero Figure
+      let heroHtml = '';
+      if (article.heroImage && article.heroImage.src) {
+        const h = article.heroImage;
+        const capAttr = escapeHtmlAttr(h.caption || h.alt || article.enTitle);
+        const credAttr = escapeHtmlAttr(h.credit || 'The Economist');
+        heroHtml = `
+          <figure class="hero-figure">
+            <div class="hero-img-box" onclick="openLightbox('${h.src}', '${capAttr}', '${credAttr}')">
+              <img src="${h.src}" alt="${escapeHtmlAttr(h.alt)}">
+              <span class="zoom-hint">🔍 点击全屏查看高清原图</span>
+            </div>
+            ${(h.caption || h.credit) ? `
+              <figcaption class="figure-meta">
+                <div class="figure-caption">${h.caption || h.alt || ''}</div>
+                ${h.credit ? `<div class="figure-credit">${h.credit}</div>` : ''}
+              </figcaption>
+            ` : ''}
+          </figure>
+        `;
+      }
+
+      const vocabList = article.vocab || [];
+      let pairsHtml = '';
+      let totalInlineImgs = 0;
+
+      article.pairs.forEach(pair => {
+        const enPs = pair.en.map(p => `<p>${highlightVocabInText(p, vocabList)}</p>`).join('');
+        const zhPs = pair.zh.map(p => {
+          let text = p;
+          text = text.replace(/〔注(\d+)〕/g, '<sup class="fn-badge" data-fn="$1" onclick="showFootnotePopover(event, \'$1\')">〔注$1〕</sup>');
+          return `<p>${text}</p>`;
+        }).join('');
+        const imgs = pair.images || [];
+        totalInlineImgs += imgs.length;
+
+        const topImgs = imgs.filter(im => im.pos === 'top');
+        const bottomImgs = imgs.filter(im => im.pos !== 'top');
+
+        pairsHtml += `
+          <div class="pair-block">
+            ${renderInlineGallery(topImgs, 'pos-top')}
+            <div class="pair-row">
+              <div class="col-en">${enPs}</div>
+              <div class="col-zh">${zhPs}</div>
+            </div>
+            ${renderInlineGallery(bottomImgs, 'pos-bottom')}
+          </div>
+        `;
+      });
+
+      let footnotesHtml = '';
+      if (article.footnotes && Object.keys(article.footnotes).length > 0) {
+        const items = Object.entries(article.footnotes).map(([k, fn]) => `
+          <div class="fn-item" id="fn-anchor-${k}">
+            <span class="fn-item-badge">${fn.title || `〔注${k}〕`}</span>
+            <span class="fn-item-content">${fn.content}</span>
+          </div>
+        `).join('');
+        footnotesHtml = `
+          <section class="footnotes-section">
+            <h3>📚 背景机制与深度考据注释库</h3>
+            <div class="fn-list">${items}</div>
+          </section>
+        `;
+      }
+
+      const imgCountTotal = (article.heroImage ? 1 : 0) + totalInlineImgs;
+      const prevId = id > 1 ? id - 1 : null;
+      const nextId = id < DATA.catalog.length ? id + 1 : null;
+      const s = article.score;
+      const scoreBoxHtml = s ? `
+        <div style="background:var(--bg-card);border:1px solid var(--border-color);border-left:4px solid #990F3D;padding:12px 18px;border-radius:0 4px 4px 0;margin-bottom:14px;font-size:13.5px;line-height:1.65;">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;font-family:var(--font-mono);font-size:12px;margin-bottom:6px;">
+            <span style="background:#990F3D;color:#fff;font-weight:800;padding:1px 8px;border-radius:3px;">综合加权分：${s.total}</span>
+            <span>相关性(30%)：<b>${s.rel}</b></span>
+            <span>质量与机制(25%)：<b>${s.qual}</b></span>
+            <span>写作技巧(20%)：<b>${s.craft}</b></span>
+            <span>行业影响力(15%)：<b>${s.impact}</b></span>
+            <span>讨论热度(10%)：<b>${s.buzz}</b></span>
+          </div>
+          <div style="color:var(--text-muted);font-size:13px;">📌 <b>评分与排序依据</b>：${s.reason}</div>
+        </div>
+      ` : '';
+
+      container.innerHTML = `
+        <article>
+          <header class="article-header">
+            <div class="article-kicker-bar">
+              <span class="kicker-badge"><span class="kicker-dot"></span>#${numStr} // ${article.section}</span>
+              <span class="kicker-author">BY ${article.author}</span>
+              ${imgCountTotal > 0 ? `<span class="kicker-author">· 📷 含 ${imgCountTotal} 幅原刊插图</span>` : ''}
+              ${article.link ? `<a href="${article.link}" target="_blank" style="margin-left:auto;color:#990F3D;font-weight:700;text-decoration:none;">打开原文链接 ↗</a>` : ''}
+            </div>
+            <h1 class="article-title-zh">${article.zhTitle}</h1>
+            <div class="article-title-en">${article.enTitle}</div>
+            ${scoreBoxHtml}
+            ${heroHtml}
+            <div class="article-deck">
+              <div>${article.zhDeck}</div>
+              <div class="article-deck-en">${article.enDeck}</div>
+            </div>
+            <div class="vocab-tip-banner">
+              <span>💡 <strong>伴读提示</strong>：点击英文中带<span class="vocab-inline" style="cursor:default;">虚线下划线</span>的重点词可看掌故释义；点击中文中带红色角标的<sup class="fn-badge" style="cursor:default;">〔注〕</sup>可看深度背景与机制；划选任意英文词句可即时查词；点击插图可放大。</span>
+            </div>
+          </header>
+          <section class="pairs-body">
+            ${pairsHtml}
+          </section>
+          ${footnotesHtml}
+          <footer class="footer-nav">
+            <div>
+              ${prevId ? `<button class="tool-btn" onclick="selectArticle(${prevId})">← 上一篇 (#${String(prevId).padStart(2, '0')})</button>` : ''}
+            </div>
+            <div>
+              <button class="tool-btn star-main ${starredIds.includes(id) ? 'starred' : ''}" onclick="toggleStarCurrent()">
+                ${starredIds.includes(id) ? '★ 已记入待精读清单' : '☆ 觉得有趣，记入待精读清单'}
+              </button>
+            </div>
+            <div>
+              ${nextId ? `<button class="tool-btn" onclick="selectArticle(${nextId})">下一篇 (#${String(nextId).padStart(2, '0')}) →</button>` : ''}
+            </div>
+          </footer>
+        </article>
+      `;
+
+      // 绑定预埋重点词点击事件
+      container.querySelectorAll('.vocab-inline[data-vocab-idx]').forEach(el => {
+        el.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const idx = parseInt(el.getAttribute('data-vocab-idx'), 10);
+          const v = vocabList[idx];
+          const sentence = el.closest('p') ? el.closest('p').innerText : '';
+          showVocabPopover(el.getBoundingClientRect(), {
+            term: v.term,
+            phonetic: v.phonetic || '',
+            pos: v.pos || '',
+            meaning: v.meaning,
+            note: v.note || '',
+            context: sentence
+          });
+        });
+      });
+    }
+
+    // 灯箱全屏看图
+    function openLightbox(src, caption, credit) {
+      const lb = document.getElementById('lightbox');
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightboxCap').textContent = caption || '';
+      document.getElementById('lightboxCred').textContent = credit || '';
+      lb.classList.add('open');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.getElementById('lightboxImg').src = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+        hidePopover();
+      }
+    });
+
+    // 切换画报风与暖纸风
+    function toggleTheme() {
+      const isWarm = document.body.classList.toggle('theme-warm');
+      document.getElementById('btnTheme').textContent = isWarm ? '📖 风格：暖纸书卷' : '⚡ 风格：WIRED 画报';
+    }
+
+    // 切换插图显示/隐藏
+    function toggleImages() {
+      const hidden = document.body.classList.toggle('hide-images');
+      document.getElementById('btnToggleImg').textContent = hidden ? '🖼 插图：已隐藏' : '🖼 插图：显示';
+    }
+
+    // 显示查词气泡
+    function showVocabPopover(rect, info) {
+      activePopoverContext = info;
+      const pop = document.getElementById('vocabPopover');
+      const encoded = encodeURIComponent(info.term);
+
+      pop.innerHTML = `
+        <div class="pop-head">
+          <div>
+            <span class="pop-term">${info.term}</span>
+            ${info.phonetic ? `<span class="pop-phonetic">${info.phonetic}</span>` : ''}
+          </div>
+          ${info.pos ? `<span class="pop-pos">${info.pos}</span>` : ''}
+        </div>
+        <div class="pop-meaning" id="popMeaning">${info.meaning || '正在查询词典释义...'}</div>
+        ${info.note ? `<div class="pop-note">${info.note}</div>` : '<div class="pop-note" id="popNote"></div>'}
+        <div class="pop-actions">
+          <div class="pop-links">
+            <a href="https://dictionary.cambridge.org/dictionary/english-chinese-simplified/${encoded}" target="_blank">剑桥双解 ↗</a>
+            <a href="https://www.youdao.com/result?word=${encoded}&lang=en" target="_blank">有道 ↗</a>
+          </div>
+          <button class="pop-btn pop-btn-add" onclick="addActiveToBasket()">+ 收进生词篮</button>
+        </div>
+      `;
+
+      pop.classList.add('visible');
+      const top = Math.min(window.innerHeight - pop.offsetHeight - 16, Math.max(16, rect.bottom + 8));
+      const left = Math.min(window.innerWidth - 360, Math.max(16, rect.left));
+      pop.style.top = top + 'px';
+      pop.style.left = left + 'px';
+    }
+
+    function hidePopover() {
+      document.getElementById('vocabPopover').classList.remove('visible');
+    }
+
+    function showFootnotePopover(e, fnKey) {
+      if (e) e.stopPropagation();
+      hidePopover();
+      const article = DATA.articles[currentArticleId];
+      if (!article || !article.footnotes || !article.footnotes[fnKey]) return;
+      const fn = article.footnotes[fnKey];
+      const pop = document.getElementById('footnotePopover');
+      pop.innerHTML = `
+        <div class="fn-pop-head">
+          <span class="fn-pop-title">${fn.title || `〔注${fnKey}〕`}</span>
+          <button class="fn-pop-close" onclick="hideFootnotePopover()">✕</button>
+        </div>
+        <div class="fn-pop-body">${fn.content}</div>
+      `;
+      pop.classList.add('visible');
+      const rect = e.currentTarget.getBoundingClientRect();
+      let top = rect.bottom + 8;
+      if (top + pop.offsetHeight > window.innerHeight - 16) {
+        top = Math.max(16, rect.top - pop.offsetHeight - 8);
+      }
+      let left = Math.min(window.innerWidth - 440, Math.max(16, rect.left - 20));
+      pop.style.top = top + 'px';
+      pop.style.left = left + 'px';
+    }
+
+    function hideFootnotePopover() {
+      const pop = document.getElementById('footnotePopover');
+      if (pop) pop.classList.remove('visible');
+    }
+
+    function queryYoudaoJSONP(queryText) {
+      return new Promise((resolve) => {
+        const cbName = 'yd_cb_' + Date.now() + '_' + Math.floor(Math.random() * 10000);
+        const script = document.createElement('script');
+        let timer = setTimeout(() => {
+          cleanup();
+          resolve(null);
+        }, 2500);
+
+        function cleanup() {
+          clearTimeout(timer);
+          delete window[cbName];
+          if (script.parentNode) script.parentNode.removeChild(script);
+        }
+
+        window[cbName] = (res) => {
+          cleanup();
+          if (res && res.data && res.data.entries && res.data.entries.length > 0) {
+            resolve(res.data.entries);
+          } else {
+            resolve(null);
+          }
+        };
+
+        script.referrerPolicy = 'no-referrer';
+        script.src = `https://dict.youdao.com/suggest?num=3&ver=3.0&doctype=json&cache=false&le=en&q=${encodeURIComponent(queryText)}&callback=${cbName}`;
+        script.onerror = () => {
+          cleanup();
+          resolve(null);
+        };
+        document.body.appendChild(script);
+      });
+    }
+
+    async function queryGoogleGTX(queryText) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 3000);
+      try {
+        const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh-CN&dt=t&dt=bd&dt=rm&q=${encodeURIComponent(queryText)}`;
+        const res = await fetch(url, { signal: controller.signal });
+        clearTimeout(timer);
+        if (!res.ok) return null;
+        const data = await res.json();
+        let trans = '';
+        let phonetic = '';
+        if (Array.isArray(data[0])) {
+          data[0].forEach(seg => {
+            if (seg[0]) trans += seg[0];
+            if (seg[3]) phonetic = seg[3];
+          });
+        }
+        let dictLines = [];
+        if (Array.isArray(data[1])) {
+          data[1].forEach(posBlock => {
+            const pos = posBlock[0] || '';
+            const terms = Array.isArray(posBlock[1]) ? posBlock[1].slice(0, 5).join('；') : '';
+            if (terms) dictLines.push(`${pos ? pos + '. ' : ''}${terms}`);
+          });
+        }
+        return { trans, phonetic, dictLines };
+      } catch (e) {
+        clearTimeout(timer);
+        return null;
+      }
+    }
+
+    document.addEventListener('mouseup', async (e) => {
+      const pop = document.getElementById('vocabPopover');
+      const fnPop = document.getElementById('footnotePopover');
+      if (fnPop && !fnPop.contains(e.target) && !e.target.classList.contains('fn-badge')) {
+        hideFootnotePopover();
+      }
+      if (pop.contains(e.target)) return;
+      if (e.target.classList && e.target.classList.contains('vocab-inline')) return;
+
+      const sel = window.getSelection();
+      const rawText = sel ? sel.toString().trim() : '';
+      const text = rawText.replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, '').trim();
+      if (!text || text.length < 2 || text.length > 90 || !/[a-zA-Z]/.test(text)) {
+        hidePopover();
+        return;
+      }
+
+      const anchorEl = sel.anchorNode ? (sel.anchorNode.nodeType === 1 ? sel.anchorNode : sel.anchorNode.parentElement) : null;
+      if (!anchorEl || !anchorEl.closest('.col-en, .article-title-en, .article-deck-en')) {
+        return;
+      }
+
+      const range = sel.getRangeAt(0);
+      const rect = range.getBoundingClientRect();
+      const paragraph = anchorEl.closest('p') ? anchorEl.closest('p').innerText : '';
+
+      const article = DATA.articles[currentArticleId];
+      const hit = (article && article.vocab)
+        ? article.vocab.find(v => v.term.toLowerCase() === text.toLowerCase())
+        : null;
+
+      if (hit) {
+        showVocabPopover(rect, {
+          term: hit.term,
+          phonetic: hit.phonetic,
+          pos: hit.pos,
+          meaning: hit.meaning,
+          note: hit.note,
+          context: paragraph
+        });
+        return;
+      }
+
+      const isPhrase = text.split(/\s+/).length > 2;
+      showVocabPopover(rect, {
+        term: text,
+        phonetic: '',
+        pos: isPhrase ? '短语/句段' : '词条',
+        meaning: '正在查询中文释义...',
+        note: '',
+        context: paragraph
+      });
+
+      const [ydEntries, gtxResult] = await Promise.all([
+        queryYoudaoJSONP(text),
+        queryGoogleGTX(text)
+      ]);
+
+      if (!activePopoverContext || activePopoverContext.term !== text) return;
+
+      let finalPhonetic = (gtxResult && gtxResult.phonetic) ? `/${gtxResult.phonetic}/` : '';
+      let finalMeaning = '';
+      let finalNote = '';
+
+      if (ydEntries && ydEntries.length > 0) {
+        const exact = ydEntries.find(en => en.entry.toLowerCase() === text.toLowerCase()) || ydEntries[0];
+        finalMeaning = exact.explain;
+        if (ydEntries.length > 1) {
+          finalNote = ydEntries.slice(1, 3).map(en => `• ${en.entry}：${en.explain}`).join('<br>');
+        }
+      } else if (gtxResult && (gtxResult.dictLines.length > 0 || gtxResult.trans)) {
+        if (gtxResult.dictLines.length > 0) {
+          finalMeaning = gtxResult.dictLines[0];
+          finalNote = gtxResult.dictLines.slice(1).join('<br>');
+        } else {
+          finalMeaning = gtxResult.trans;
+        }
+      }
+
+      if (!finalMeaning) {
+        try {
+          const mmRes = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|zh-CN`);
+          if (mmRes.ok) {
+            const mmData = await mmRes.json();
+            if (mmData.responseData && mmData.responseData.translatedText) {
+              finalMeaning = mmData.responseData.translatedText;
+            }
+          }
+        } catch (err) {}
+      }
+
+      if (!finalMeaning) {
+        finalMeaning = '未找到直接释义（请点击下方「剑桥双解 / 有道」查看，或点「+ 收进生词篮」交由助手精讲）';
+      }
+
+      activePopoverContext.phonetic = finalPhonetic;
+      activePopoverContext.meaning = finalMeaning;
+      activePopoverContext.note = finalNote;
+
+      const popMeaningEl = document.getElementById('popMeaning');
+      const popNoteEl = document.getElementById('popNote');
+      if (popMeaningEl) popMeaningEl.textContent = finalMeaning;
+      if (popNoteEl && finalNote) popNoteEl.innerHTML = finalNote;
+      if (finalPhonetic) {
+        const termEl = pop.querySelector('.pop-term');
+        if (termEl && !pop.querySelector('.pop-phonetic')) {
+          termEl.insertAdjacentHTML('afterend', `<span class="pop-phonetic">${finalPhonetic}</span>`);
+        }
+      }
+    });
+
+    function saveBasket() {
+      localStorage.setItem(BASKET_STORAGE_KEY, JSON.stringify(vocabBasket));
+      renderBasket();
+    }
+
+    function addActiveToBasket() {
+      if (!activePopoverContext) return;
+      const meta = DATA.catalog.find(c => c.id === currentArticleId);
+      const exists = vocabBasket.some(item => item.term.toLowerCase() === activePopoverContext.term.toLowerCase());
+      if (!exists) {
+        vocabBasket.unshift({
+          term: activePopoverContext.term,
+          meaning: activePopoverContext.meaning || '',
+          context: activePopoverContext.context || '',
+          articleTitle: meta ? `#${String(meta.id).padStart(2, '0')} ${meta.zhTitle}` : ''
+        });
+        saveBasket();
+      }
+      hidePopover();
+      document.getElementById('basketDrawer').classList.add('open');
+    }
+
+    function removeBasketItem(idx) {
+      vocabBasket.splice(idx, 1);
+      saveBasket();
+    }
+
+    function clearBasket() {
+      if (!vocabBasket.length) return;
+      vocabBasket = [];
+      saveBasket();
+    }
+
+    function renderBasket() {
+      document.getElementById('btnBasket').textContent = `🗂 生词篮 (${vocabBasket.length})`;
+      const body = document.getElementById('basketBody');
+      if (!vocabBasket.length) {
+        body.innerHTML = '<p style="color:var(--text-muted); font-size:13px; text-align:center; margin-top:40px;">生词篮还是空的。<br>点击文中带下划线的重点词，或用鼠标划选任意英文词句，即可收入此处。</p>';
+        return;
+      }
+      body.innerHTML = vocabBasket.map((item, idx) => `
+        <div class="basket-item">
+          <div class="basket-item-top">
+            <span class="basket-word">${item.term}</span>
+            <button class="basket-del" onclick="removeBasketItem(${idx})">移除 ✕</button>
+          </div>
+          <div class="basket-meaning">${item.meaning}</div>
+          <div class="basket-context">“${item.context}”</div>
+          <div style="font-size:11px; color:var(--text-muted); margin-top:4px;">来自：${item.articleTitle}</div>
+        </div>
+      `).join('');
+    }
+
+    function toggleBasket() {
+      document.getElementById('basketDrawer').classList.toggle('open');
+    }
+
+    function copyBasketToClipboard() {
+      if (!vocabBasket.length) return;
+      const lines = vocabBasket.map((item, i) =>
+        `${i + 1}. **${item.term}**（来自 ${item.articleTitle}）\n   - 原句：*${item.context}*`
+      ).join('\n');
+      const fullText = `我在阅读时标记了以下几个生词/搭配，请帮我结合原句语境讲讲（或记入词卡）：\n\n${lines}`;
+      navigator.clipboard.writeText(fullText).then(() => {
+        alert('已复制生词篮清单！直接粘贴到对话框发给助手即可。');
+      });
+    }
+
+    function toggleSidebar() { document.getElementById('sidebar').classList.toggle('collapsed'); }
+
+    function setViewMode(mode) {
+      const main = document.getElementById('mainArea');
+      main.classList.remove('mode-zh', 'mode-stack');
+      document.getElementById('btnModeSide').classList.remove('active');
+      document.getElementById('btnModeZh').classList.remove('active');
+      document.getElementById('btnModeStack').classList.remove('active');
+      if (mode === 'zh') {
+        main.classList.add('mode-zh');
+        document.getElementById('btnModeZh').classList.add('active');
+      } else if (mode === 'stack') {
+        main.classList.add('mode-stack');
+        document.getElementById('btnModeStack').classList.add('active');
+      } else {
+        document.getElementById('btnModeSide').classList.add('active');
+      }
+    }
+
+    function toggleZhFont() {
+      const isSerif = document.body.classList.toggle('font-serif-zh');
+      document.getElementById('btnFont').textContent = isSerif ? '字体：书卷宋体' : '字体：清爽黑体';
+    }
+
+    function setFontSize(size, btnEl) {
+      document.body.classList.remove('size-sm', 'size-md', 'size-lg');
+      document.body.classList.add('size-' + size);
+      document.querySelectorAll('.topbar-right .tool-btn').forEach(b => {
+        if (['小', '标准', '大'].includes(b.textContent)) b.classList.remove('active');
+      });
+      if (btnEl) btnEl.classList.add('active');
+    }
+
+    loadBookState();
+  </script>
+</body>
+</html>

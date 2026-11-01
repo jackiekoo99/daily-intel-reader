@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="双语硬核内参">
+  <title>全球商业硬核信源双语工作台 · Global Biz Intel</title>
+  <style>
+    :root {
+      --bg-page: #F4F3EF;
+      --bg-card: #FFFFFF;
+      --bg-sidebar: #EAE8E1;
+      --bg-hover: #DFDDD4;
+      --text-main: #141413;
+      --text-en: #1E1E1C;
+      --text-muted: #66635B;
+      --border-color: #D2CFC6;
+      --border-strong: #111111;
+      --accent: #111111;
+      --wired-neon: #00E65B;
+      --ft-salmon: #990F3D;
+      --accent-soft: #F0EFEA;
+      --star-color: #D48806;
+      --font-size-base: 18px;
+      --font-zh: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, sans-serif;
+      --font-en: "Charter", "Iowan Old Style", "Georgia", serif;
+      --font-mono: "JetBrains Mono", "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
+    }
+
+    body.theme-warm {
+      --bg-page: #FFF1E5;
+      --bg-card: #FFF9F5;
+      --bg-sidebar: #F2DFCE;
+      --bg-hover: #E9D1BC;
+      --text-main: #262523;
+      --text-en: #2F2E2C;
+      --text-muted: #66605C;
+      --border-color: #DFC8B4;
+      --border-strong: #990F3D;
+      --accent: #990F3D;
+      --accent-soft: #F9E8D9;
+    }
+
+    body.font-serif-zh {
+      --font-zh: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+    }
+
+    body.size-sm { --font-size-base: 16px; }
+    body.size-md { --font-size-base: 18px; }
+    body.size-lg { --font-size-base: 20px; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: var(--font-zh);
+      font-size: var(--font-size-base);
+      line-height: 1.85;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .sidebar {
+      width: 360px;
+      min-width: 360px;
+      background-color: var(--bg-sidebar);
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      transition: margin-left 0.25s ease;
+    }
+    .sidebar.collapsed { margin-left: -360px; }
+
+    .bookshelf-bar {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+      background-color: #E8D5C4;
+    }
+    .bookshelf-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .bookshelf-select {
+      width: 100%;
+      padding: 7px 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .score-pill {
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-weight: 800;
+      font-size: 10.5px;
+      background: #990F3D;
+      color: #FFFFFF;
+    }
+    .score-pill.tier-mid {
+      background: #1D4ED8;
+      color: #FFFFFF;
+    }
+    .score-pill.tier-low {
+      background: #6B7280;
+      color: #FFFFFF;
+    }
+
+    .score-panel {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid #990F3D;
+      padding: 12px 18px;
+      border-radius: 0 4px 4px 0;
+      margin-bottom: 14px;
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
+    .score-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+    .score-total-badge {
+      background: #990F3D;
+      color: #fff;
+      font-weight: 800;
+      padding: 1px 8px;
+      border-radius: 3px;
+    }
+
+    .sidebar-header {
+      padding: 16px 18px;
+      border-bottom: 2px solid var(--border-strong);
+      background-color: var(--bg-card);
+    }
+    .intel-badge {
+      display: inline-flex;
+      background: var(--border-strong);
+      color: #FFFFFF;
+      font-family: var(--font-mono);
+      font-weight: 800;
+      font-size: 11.5px;
+      letter-spacing: 0.6px;
+      padding: 2px 8px;
+      border-radius: 2px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .sidebar-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.35;
+    }
+    .sidebar-sub {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 12px;
+    }
+    .filter-btn {
+      padding: 4px 9px;
+      border-radius: 3px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-muted);
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .filter-btn.active {
+      background: var(--border-strong);
+      color: #fff;
+      border-color: var(--border-strong);
+    }
+
+    .catalog-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 8px 10px 24px;
+    }
+    .catalog-item {
+      padding: 10px 11px;
+      border-radius: 5px;
+      margin-bottom: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      transition: all 0.15s;
+      border: 1px solid transparent;
+    }
+    .catalog-item:hover { background-color: var(--bg-hover); }
+    .catalog-item.active {
+      background-color: var(--bg-card);
+      border-color: var(--border-strong);
+      box-shadow: 2px 2px 0 rgba(0,0,0,0.08);
+    }
+    .catalog-item.radar-only { opacity: 0.85; }
+
+    .item-left { flex: 1; min-width: 0; }
+    .item-meta {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 4px;
+    }
+    .sec-tag {
+      padding: 1px 5px;
+      border-radius: 2px;
+      font-weight: 700;
+      font-size: 10px;
+      background: #E0DDD3;
+      color: #222;
+    }
+    .sec-tag.sec-stratechery { background: #D0EBFF; color: #0B4F82; }
+    .sec-tag.sec-physics { background: #D8F3DC; color: #0B5328; }
+    .sec-tag.sec-ft { background: #FADBD8; color: #78281F; }
+    .sec-tag.sec-bloomberg { background: #E8DAEF; color: #4A235A; }
+    .sec-tag.sec-theinfo { background: #FCF3CF; color: #7D6608; }
+    .sec-tag.sec-nikkei { background: #D1F2EB; color: #0E6251; }
+
+    .item-zh {
+      font-size: 13.8px;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.38;
+      margin-bottom: 2px;
+    }
+    .item-en {
+      font-size: 11.8px;
+      color: var(--text-muted);
+      font-family: var(--font-en);
+      line-height: 1.32;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .star-btn {
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      color: #BDB7AA;
+      padding: 2px 3px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .star-btn.starred { color: var(--star-color); }
+
+    .main-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .topbar {
+      height: 54px;
+      border-bottom: 2px solid var(--border-strong);
+      background-color: var(--bg-page);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      flex-shrink: 0;
+    }
+    .topbar-left, .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .tool-btn {
+      padding: 5px 10px;
+      font-size: 12.5px;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-card);
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.15s;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .tool-btn:hover { background-color: var(--bg-hover); }
+    .tool-btn.active {
+      background-color: var(--border-strong);
+      color: #fff;
+      border-color: var(--border-strong);
+    }
+    .tool-btn.star-main.starred {
+      background-color: #FDF6EA;
+      border-color: var(--star-color);
+      color: #9E5E0B;
+      font-weight: 600;
+    }
+    .divider {
+      width: 1px;
+      height: 18px;
+      background-color: var(--border-color);
+      margin: 0 2px;
+    }
+
+    .reader-scroll {
+      flex: 1;
+      overflow-y: auto;
+      padding: 38px 48px 90px;
+    }
+    .article-container {
+      max-width: 1260px;
+      margin: 0 auto;
+    }
+    .mode-zh .article-container,
+    .mode-stack .article-container {
+      max-width: 780px;
+    }
+
+    .article-header {
+      margin-bottom: 32px;
+      padding-top: 18px;
+      padding-bottom: 26px;
+      border-top: 4px solid var(--border-strong);
+      border-bottom: 2px solid var(--border-strong);
+    }
+    .article-kicker-bar {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+    .kicker-badge {
+      background-color: var(--border-strong);
+      color: #FFFFFF;
+      padding: 3px 9px;
+      font-weight: 700;
+      border-radius: 2px;
+    }
+    .kicker-author {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .kicker-link {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+      margin-left: auto;
+    }
+    .kicker-link:hover { text-decoration: underline; }
+
+    .article-title-zh {
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 1.34;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+    .article-title-en {
+      font-family: var(--font-en);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text-muted);
+      line-height: 1.38;
+      margin-bottom: 20px;
+    }
+
+    .article-deck {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--border-strong);
+      padding: 16px 22px;
+      border-radius: 0 4px 4px 0;
+      color: #33312E;
+      font-size: 0.96em;
+      line-height: 1.85;
+    }
+    .article-deck-en {
+      font-family: var(--font-en);
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 8px;
+      font-size: 0.92em;
+    }
+
+    .pair-block {
+      border-bottom: 1px solid var(--border-color);
+      padding: 24px 0;
+    }
+    .pair-block:last-child { border-bottom: none; }
+
+    .pair-row {
+      display: grid;
+      grid-template-columns: 1fr 1.08fr;
+      gap: 44px;
+      align-items: start;
+    }
+    .col-en {
+      font-family: var(--font-en);
+      color: var(--text-en);
+      font-size: 0.98em;
+      line-height: 1.8;
+      padding-right: 12px;
+    }
+    .col-en p { margin-bottom: 1.15em; }
+    .col-en p:last-child { margin-bottom: 0; }
+
+    .vocab-inline {
+      border-bottom: 1.5px dashed #B84A32;
+      background-color: rgba(184, 74, 50, 0.06);
+      padding: 0 2px;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+    .vocab-inline:hover { background-color: rgba(184, 74, 50, 0.18); }
+
+    .col-zh {
+      color: var(--text-main);
+      font-size: 1em;
+      line-height: 1.92;
+      letter-spacing: 0.015em;
+    }
+    .col-zh p { margin-bottom: 1.2em; }
+    .col-zh p:last-child { margin-bottom: 0; }
+
+    .mode-zh .pair-block { padding: 12px 0; border-bottom: none; }
+    .mode-zh .pair-row { display: block; }
+    .mode-zh .col-en, .mode-zh .article-deck-en { display: none; }
+
+    .mode-stack .pair-row { display: block; }
+    .mode-stack .col-en {
+      padding-right: 0;
+      margin-bottom: 18px;
+      padding: 14px 18px;
+      background: var(--bg-card);
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+
+    .fn-badge {
+      display: inline-block;
+      font-size: 0.78em;
+      font-weight: 700;
+      color: #990F3D;
+      background: rgba(153, 15, 61, 0.08);
+      border-radius: 3px;
+      padding: 1px 4px;
+      margin: 0 2px;
+      cursor: pointer;
+      vertical-align: super;
+    }
+    .fn-badge:hover { background: #990F3D; color: #FFFFFF; }
+
+    .footnote-popover, .vocab-popover {
+      position: fixed;
+      z-index: 10000;
+      width: 400px;
+      max-width: calc(100vw - 32px);
+      background-color: #1F1E1B;
+      color: #F7F5F0;
+      border-radius: 8px;
+      padding: 16px 18px;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.38);
+      font-size: 13.5px;
+      line-height: 1.65;
+      display: none;
+      border: 1px solid #44413C;
+    }
+    .footnote-popover.visible, .vocab-popover.visible { display: block; }
+    .fn-pop-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #38352F;
+      padding-bottom: 6px;
+    }
+    .fn-pop-title { font-size: 14px; font-weight: 700; color: #FF8F8C; }
+    .fn-pop-close {
+      background: none;
+      border: none;
+      color: #A09C92;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .footnotes-section {
+      margin: 40px 0 20px;
+      padding: 24px 28px;
+      background-color: var(--bg-sidebar);
+      border-left: 4px solid var(--border-strong);
+      border-radius: 0 8px 8px 0;
+    }
+    .footnotes-section h3 {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .fn-item { margin-bottom: 14px; font-size: 14px; line-height: 1.7; }
+    .fn-item-badge { font-weight: 700; color: #990F3D; margin-right: 6px; }
+
+    .basket-drawer {
+      position: fixed;
+      top: 54px;
+      right: 0;
+      width: 390px;
+      height: calc(100vh - 54px);
+      background-color: var(--bg-card);
+      border-left: 2px solid var(--border-strong);
+      box-shadow: -4px 0 18px rgba(0,0,0,0.08);
+      z-index: 900;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.25s ease;
+    }
+    .basket-drawer.open { transform: translateX(0); }
+    .basket-header {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .basket-body { flex: 1; overflow-y: auto; padding: 14px 18px; }
+    .basket-item {
+      background: var(--bg-page);
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+    .basket-footer {
+      padding: 14px 18px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      gap: 8px;
+    }
+
+    .footer-nav {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 2px solid var(--border-strong);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* 段落级分享小按钮 */
+    .pair-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+    .pair-share-btn {
+      background: transparent;
+      border: 1px dashed var(--border-color);
+      color: var(--text-muted);
+      font-size: 11.5px;
+      padding: 2px 8px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .pair-share-btn:hover {
+      border-color: var(--border-strong);
+      color: var(--text-main);
+    }
+
+    /* 微信金句分享卡片弹窗 */
+    .share-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 14, 13, 0.78);
+      z-index: 10500;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .share-modal-overlay.open { display: flex; }
+    .share-modal-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      max-width: 440px;
+      width: 100%;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+    .share-modal-head {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .share-modal-body {
+      padding: 14px 16px;
+      overflow-y: auto;
+      text-align: center;
+      background: #222;
+    }
+    .share-modal-body img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+      margin: 0 auto;
+    }
+    .share-modal-foot {
+      padding: 12px 16px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      gap: 8px;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* 手机端遮罩与底部单手操作栏 */
+    .mobile-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 940;
+    }
+    .mobile-backdrop.open { display: block; }
+
+    .mobile-bottom-bar {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: calc(54px + env(safe-area-inset-bottom));
+      padding-bottom: env(safe-area-inset-bottom);
+      background: var(--bg-card);
+      border-top: 1.5px solid var(--border-strong);
+      z-index: 920;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .mob-btn {
+      flex: 1;
+      height: 54px;
+      border: none;
+      background: none;
+      color: var(--text-main);
+      font-size: 12.5px;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      cursor: pointer;
+    }
+    .mob-btn.starred { color: #9E5E0B; }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 86vw;
+        min-width: 280px;
+        max-width: 350px;
+        z-index: 950;
+        box-shadow: 6px 0 24px rgba(0,0,0,0.22);
+      }
+      .sidebar.collapsed { margin-left: -90vw; }
+      .topbar {
+        padding: 0 12px;
+        height: 48px;
+      }
+      .topbar-right { display: none; }
+      .reader-scroll {
+        padding: 20px 16px 96px;
+      }
+      .article-title-zh { font-size: 22px; }
+      .article-title-en { font-size: 16px; }
+      .article-deck { padding: 12px 14px; }
+      .score-panel { padding: 10px 12px; font-size: 12.5px; }
+      .score-metrics { gap: 8px; font-size: 11px; }
+      .pair-row { display: block; }
+      .col-en {
+        padding-right: 0;
+        margin-bottom: 14px;
+        padding: 12px 14px;
+        background: var(--bg-card);
+        border-radius: 6px;
+        border: 1px solid var(--border-color);
+      }
+      .basket-drawer {
+        top: 48px;
+        width: 100vw;
+        height: calc(100vh - 102px);
+      }
+      .mobile-bottom-bar { display: flex; }
+      .footnote-popover, .vocab-popover {
+        left: 12px !important;
+        right: 12px !important;
+        width: auto !important;
+        bottom: 68px !important;
+        top: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="size-md theme-warm">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="bookshelf-bar">
+      <div class="bookshelf-label">📚 ISSUE ARCHIVE // 全局双语工作台切换</div>
+      <select class="bookshelf-select" id="bookshelfSelect" onchange="switchBook(this.value)">
+        <option value="global_biz_intel" selected>🌐 全球商业硬核信源（FT / Bloomberg / Stratechery）</option>
+        <option value="economist_2026_10_24">📰 《经济学人》The Economist · 2026.10.24</option>
+        <option value="anthropic_s1">📑 《Anthropic 招股说明书：Form S-1》（2026）</option>
+        <option value="the_infinity_machine">⚡ 《无限机器：哈萨比斯与 DeepMind》（2026）</option>
+        <option value="the_thinking_machine">📖 《思考机器：黄仁勋与英伟达》（2025）</option>
+        <option value="wired_2026_10">📰 《连线》WIRED · 2026年10月刊</option>
+        <option value="classic_essays">🏛️ 经典演说与传世美文 TOP 10</option>
+        <option value="bookshelf_hub">📚 英文原版图书视觉总书架 (23本力作)</option>
+      </select>
+    </div>
+
+    <div class="sidebar-header">
+      <div class="intel-badge">GLOBAL BIZ INTEL · 每日同步</div>
+      <div class="sidebar-title" id="issueTitle">全球商业硬核信源双语工作台</div>
+      <div class="sidebar-sub" id="issueSubtitle">FT · Bloomberg · The Information · Nikkei · Stratechery · Construction Physics</div>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" id="btnFilterAll" onclick="setFilter('all', this)">全部</button>
+      <button class="filter-btn" onclick="setFilter('ready', this)">全文伴读</button>
+      <button class="filter-btn" onclick="setFilter('radar', this)">选题雷达</button>
+      <button class="filter-btn" onclick="setFilter('starred', this)">★ 待精读</button>
+    </div>
+    <div class="catalog-list" id="catalogList"></div>
+  </aside>
+
+  <main class="main-area" id="mainArea">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="tool-btn" onclick="toggleSidebar()">☰ 目录</button>
+        <div class="divider"></div>
+        <button class="tool-btn active" id="btnModeSide" onclick="setViewMode('side')">左右对照</button>
+        <button class="tool-btn" id="btnModeZh" onclick="setViewMode('zh')">纯中文畅读</button>
+        <button class="tool-btn" id="btnModeStack" onclick="setViewMode('stack')">上下对照</button>
+      </div>
+      <div class="topbar-right">
+        <button class="tool-btn" id="btnTheme" onclick="toggleTheme()">📰 风格：FT 鲑鱼粉</button>
+        <button class="tool-btn" id="btnFont" onclick="toggleZhFont()">字体：清爽黑体</button>
+        <div class="divider"></div>
+        <button class="tool-btn" onclick="setFontSize('sm', this)">小</button>
+        <button class="tool-btn active" onclick="setFontSize('md', this)">标准</button>
+        <button class="tool-btn" onclick="setFontSize('lg', this)">大</button>
+        <div class="divider"></div>
+        <button class="tool-btn star-main" id="btnStarCurrent" onclick="toggleStarCurrent()">☆ 记入待精读</button>
+        <button class="tool-btn" onclick="openShareCardModal(-1)">📤 分享卡片</button>
+        <button class="tool-btn" id="btnBasket" onclick="toggleBasket()">🗂 生词篮 (0)</button>
+      </div>
+    </header>
+
+    <div class="reader-scroll" id="readerScroll">
+      <div class="article-container" id="articleContainer"></div>
+    </div>
+
+    <aside class="basket-drawer" id="basketDrawer">
+      <div class="basket-header">
+        <div style="font-weight:700;">🗂 我的生词与搭配篮</div>
+        <button class="tool-btn" onclick="toggleBasket()">关闭 ✕</button>
+      </div>
+      <div class="basket-body" id="basketBody"></div>
+      <div class="basket-footer">
+        <button class="tool-btn active" onclick="copyBasketToClipboard()">📋 一键复制（发给助手精讲/制卡）</button>
+        <button class="tool-btn" onclick="clearBasket()">清空</button>
+      </div>
+    </aside>
+  </main>
+
+  <div class="mobile-backdrop" id="mobileBackdrop" onclick="closeSidebarOnMobile()"></div>
+
+  <nav class="mobile-bottom-bar">
+    <button class="mob-btn" onclick="toggleSidebar()"><span>☰</span><span>目录</span></button>
+    <button class="mob-btn" id="mobBtnMode" onclick="cycleMobileViewMode()"><span>🔄</span><span id="mobModeLabel">上英下中</span></button>
+    <button class="mob-btn" id="mobBtnStar" onclick="toggleStarCurrent()"><span id="mobStarIcon">☆</span><span>待精读</span></button>
+    <button class="mob-btn" onclick="openShareCardModal(-1)"><span>📤</span><span>分享卡片</span></button>
+  </nav>
+
+  <div class="share-modal-overlay" id="shareModal" onclick="if(event.target===this)closeShareModal()">
+    <div class="share-modal-box">
+      <div class="share-modal-head">
+        <span>📤 微信双语分享卡（长按图片直接转发/保存）</span>
+        <button class="fn-pop-close" onclick="closeShareModal()">✕</button>
+      </div>
+      <div class="share-modal-body">
+        <img id="shareCardImg" src="" alt="分享卡片预览">
+      </div>
+      <div class="share-modal-foot">
+        <span>📱 微信内可长按上方图片转发</span>
+        <button class="tool-btn active" onclick="copyShareSummary()">📋 复制文字+链接</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="vocab-popover" id="vocabPopover"></div>
+  <div class="footnote-popover" id="footnotePopover"></div>
+
+  <script src="global_biz_intel_data.js"></script>
+  <script>
+    const DATA = window.READER_DATA || { storageKey: 'global_biz_intel', catalog: [], articles: {} };
+    const BASKET_STORAGE_KEY = 'bilingual_global_vocab_basket';
+    let vocabBasket = JSON.parse(localStorage.getItem(BASKET_STORAGE_KEY) || '[]');
+    let starredIds = JSON.parse(localStorage.getItem(DATA.storageKey + '_starred_ids') || '[]');
+    let currentFilter = 'all';
+    let currentArticleId = 1;
+    let activePopoverContext = null;
+
+    function switchBook(bookKey) {
+      const routes = {
+        global_biz_intel: 'global_biz_intel_reader.html',
+        economist_2026_10_24: '../01-期刊杂志/economist_2026_10_24_reader.html',
+        wired_2026_10: '../01-期刊杂志/wired_2026_10_reader.html',
+        anthropic_s1: '../02-英文书籍/Anthropic S-1 Prospectus/anthropic_s1_reader.html',
+        the_infinity_machine: '../02-英文书籍/The Infinity Machine/the_infinity_machine_reader.html',
+        the_thinking_machine: '../02-英文书籍/The Thinking Machine/the_thinking_machine_reader.html',
+        classic_essays: '../05-经典美文/classic_essays_reader.html',
+        bookshelf_hub: '../02-英文书籍/bookshelf.html'
+      };
+      if (routes[bookKey] && bookKey !== 'global_biz_intel') {
+        window.location.href = routes[bookKey];
+      }
+    }
+
+    function getSectionClass(sec) {
+      const s = (sec || '').toLowerCase();
+      if (s.includes('stratechery')) return 'sec-stratechery';
+      if (s.includes('physics')) return 'sec-physics';
+      if (s.includes('ft')) return 'sec-ft';
+      if (s.includes('bloomberg') || s.includes('money stuff')) return 'sec-bloomberg';
+      if (s.includes('information')) return 'sec-theinfo';
+      if (s.includes('nikkei')) return 'sec-nikkei';
+      return '';
+    }
+
+    function saveStarred() {
+      localStorage.setItem(DATA.storageKey + '_starred_ids', JSON.stringify(starredIds));
+    }
+
+    function toggleStar(id, event) {
+      if (event) event.stopPropagation();
+      const idx = starredIds.indexOf(id);
+      if (idx === -1) starredIds.push(id);
+      else starredIds.splice(idx, 1);
+      saveStarred();
+      renderCatalog();
+      updateCurrentStarBtn();
+    }
+
+    function toggleStarCurrent() { toggleStar(currentArticleId); }
+
+    function updateCurrentStarBtn() {
+      const btn = document.getElementById('btnStarCurrent');
+      const isStar = starredIds.includes(currentArticleId);
+      btn.classList.toggle('starred', isStar);
+      btn.textContent = isStar ? '★ 已记入待精读' : '☆ 记入待精读';
+      const mobBtn = document.getElementById('mobBtnStar');
+      const mobIcon = document.getElementById('mobStarIcon');
+      if (mobBtn && mobIcon) {
+        mobBtn.classList.toggle('starred', isStar);
+        mobIcon.textContent = isStar ? '★' : '☆';
+      }
+    }
+
+    function setFilter(filter, btnEl) {
+      currentFilter = filter;
+      document.querySelectorAll('.filter-bar .filter-btn').forEach(b => b.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+      renderCatalog();
+    }
+
+    function renderCatalog() {
+      const listEl = document.getElementById('catalogList');
+      listEl.innerHTML = '';
+      document.getElementById('btnFilterAll').textContent = `全部 (${DATA.catalog.length})`;
+      DATA.catalog.forEach(item => {
+        const isStar = starredIds.includes(item.id);
+        if (currentFilter === 'ready' && !item.ready) return;
+        if (currentFilter === 'radar' && item.ready) return;
+        if (currentFilter === 'starred' && !isStar) return;
+
+        const div = document.createElement('div');
+        div.className = 'catalog-item' +
+          (item.id === currentArticleId ? ' active' : '') +
+          (!item.ready ? ' radar-only' : '');
+        div.onclick = () => selectArticle(item.id);
+
+        const numStr = String(item.id).padStart(2, '0');
+        const secClass = getSectionClass(item.section);
+        const modeTag = item.rewritten ? '✅ 已精编' : (item.ready ? '📖 全文' : '📡 雷达');
+        const sc = item.score ? item.score.total : 0;
+        const tierClass = sc >= 90 ? '' : (sc >= 83 ? 'tier-mid' : 'tier-low');
+        const scoreHtml = sc ? `<span class="score-pill ${tierClass}">${sc}分</span>` : '';
+
+        div.innerHTML = `
+          <div class="item-left">
+            <div class="item-meta">
+              <span>#${numStr}</span>
+              ${scoreHtml}
+              <span class="sec-tag ${secClass}">${item.section}</span>
+              <span>· ${modeTag}</span>
+            </div>
+            <div class="item-zh">${item.zhTitle}</div>
+            <div class="item-en">${item.enTitle}</div>
+          </div>
+          <button class="star-btn ${isStar ? 'starred' : ''}" onclick="toggleStar(${item.id}, event)" title="记入待精读">
+            ${isStar ? '★' : '☆'}
+          </button>
+        `;
+        listEl.appendChild(div);
+      });
+    }
+
+    function highlightVocabInText(text, vocabList) {
+      if (!vocabList || !vocabList.length) return text;
+      let result = text;
+      vocabList.forEach((v, idx) => {
+        const escaped = v.term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(`\\b(${escaped})\\b`, 'i');
+        result = result.replace(regex, `<span class="vocab-inline" data-vocab-idx="${idx}">$1</span>`);
+      });
+      return result;
+    }
+
+    function selectArticle(id) {
+      hideFootnotePopover();
+      hideVocabPopover();
+      currentArticleId = id;
+      localStorage.setItem(DATA.storageKey + '_last_id', String(id));
+      renderCatalog();
+      updateCurrentStarBtn();
+      renderArticleContent(id);
+      document.getElementById('readerScroll').scrollTop = 0;
+      if (window.innerWidth <= 768) {
+        closeSidebarOnMobile();
+      }
+    }
+
+    function renderArticleContent(id) {
+      const container = document.getElementById('articleContainer');
+      const article = DATA.articles[id];
+      const numStr = String(id).padStart(2, '0');
+      if (!article) return;
+
+      const vocabList = article.vocab || [];
+      let pairsHtml = '';
+      (article.pairs || []).forEach((pair, pIdx) => {
+        const enPs = pair.en.map(p => `<p>${highlightVocabInText(p, vocabList)}</p>`).join('');
+        const zhPs = pair.zh.map(p => {
+          const text = p.replace(/〔注(\d+)〕/g, '<sup class="fn-badge" onclick="showFootnotePopover(event, \'$1\')">〔注$1〕</sup>');
+          return `<p>${text}</p>`;
+        }).join('');
+        pairsHtml += `
+          <div class="pair-block">
+            <div class="pair-row">
+              <div class="col-en">${enPs}</div>
+              <div class="col-zh">${zhPs}</div>
+            </div>
+            <div class="pair-actions">
+              <button class="pair-share-btn" onclick="openShareCardModal(${pIdx})">📤 制成双语金句卡</button>
+            </div>
+          </div>
+        `;
+      });
+
+      let footnotesHtml = '';
+      if (article.footnotes && Object.keys(article.footnotes).length > 0) {
+        const items = Object.entries(article.footnotes).map(([k, fn]) => `
+          <div class="fn-item">
+            <span class="fn-item-badge">${fn.title || `〔注${k}〕`}</span>
+            <span>${fn.content}</span>
+          </div>
+        `).join('');
+        footnotesHtml = `
+          <section class="footnotes-section">
+            <h3>📚 商业机制与深度考据注释</h3>
+            <div>${items}</div>
+          </section>
+        `;
+      }
+
+      const prevId = id > 1 ? id - 1 : null;
+      const nextId = id < DATA.catalog.length ? id + 1 : null;
+      const s = article.score;
+      const scorePanelHtml = s ? `
+        <div class="score-panel">
+          <div class="score-metrics">
+            <span class="score-total-badge">综合加权分：${s.total}</span>
+            <span>相关性(30%)：<b>${s.rel}</b></span>
+            <span>质量与机制(25%)：<b>${s.qual}</b></span>
+            <span>写作技巧(20%)：<b>${s.craft}</b></span>
+            <span>行业影响力(15%)：<b>${s.impact}</b></span>
+            <span>讨论热度(10%)：<b>${s.buzz}</b></span>
+          </div>
+          <div style="color:var(--text-muted);font-size:13px;">📌 <b>评分与排序依据</b>：${s.reason}</div>
+        </div>
+      ` : '';
+
+      container.innerHTML = `
+        <article>
+          <header class="article-header">
+            <div class="article-kicker-bar">
+              <span class="kicker-badge">#${numStr} // ${article.section}</span>
+              <span class="kicker-author">${article.author || ''} · ${article.date || ''}</span>
+              ${article.link ? `<a class="kicker-link" href="${article.link}" target="_blank">打开原文链接 ↗</a>` : ''}
+            </div>
+            <h1 class="article-title-zh">${article.zhTitle}</h1>
+            <div class="article-title-en">${article.enTitle}</div>
+            ${scorePanelHtml}
+            <div class="article-deck">
+              <div>${article.zhDeck}</div>
+              ${article.enDeck ? `<div class="article-deck-en">${article.enDeck}</div>` : ''}
+            </div>
+          </header>
+          <section class="pairs-body">${pairsHtml}</section>
+          ${footnotesHtml}
+          <footer class="footer-nav">
+            <div>${prevId ? `<button class="tool-btn" onclick="selectArticle(${prevId})">← 上一篇 (#${String(prevId).padStart(2, '0')})</button>` : ''}</div>
+            <div>
+              <button class="tool-btn star-main ${starredIds.includes(id) ? 'starred' : ''}" onclick="toggleStarCurrent()">
+                ${starredIds.includes(id) ? '★ 已记入待精读清单' : '☆ 记入待精读清单'}
+              </button>
+            </div>
+            <div>${nextId ? `<button class="tool-btn" onclick="selectArticle(${nextId})">下一篇 (#${String(nextId).padStart(2, '0')}) →</button>` : ''}</div>
+          </footer>
+        </article>
+      `;
+
+      container.querySelectorAll('.vocab-inline[data-vocab-idx]').forEach(el => {
+        el.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const idx = parseInt(el.getAttribute('data-vocab-idx'), 10);
+          const v = vocabList[idx];
+          const sentence = el.closest('p') ? el.closest('p').innerText : '';
+          showVocabPopover(el.getBoundingClientRect(), {
+            term: v.term,
+            phonetic: v.phonetic || '',
+            pos: v.pos || '',
+            meaning: v.meaning,
+            note: v.note || '',
+            context: sentence
+          });
+        });
+      });
+    }
+
+    function showVocabPopover(rect, info) {
+      activePopoverContext = info;
+      hideFootnotePopover();
+      const pop = document.getElementById('vocabPopover');
+      pop.innerHTML = `
+        <div class="fn-pop-head">
+          <span class="fn-pop-title">${info.term} <small style="color:#B5B0A6;font-weight:400;">${info.phonetic}</small></span>
+          <button class="fn-pop-close" onclick="hideVocabPopover()">✕</button>
+        </div>
+        <div style="font-weight:600;margin-bottom:6px;">${info.pos ? '[' + info.pos + '] ' : ''}${info.meaning}</div>
+        ${info.note ? `<div style="font-size:12.5px;color:#D0CBBF;margin-bottom:10px;">${info.note}</div>` : ''}
+        <button class="tool-btn active" style="width:100%;" onclick="addActiveToBasket()">+ 收进生词篮</button>
+      `;
+      pop.classList.add('visible');
+      pop.style.top = Math.min(window.innerHeight - 200, rect.bottom + 8) + 'px';
+      pop.style.left = Math.min(window.innerWidth - 420, Math.max(16, rect.left)) + 'px';
+    }
+
+    function hideVocabPopover() {
+      document.getElementById('vocabPopover').classList.remove('visible');
+    }
+
+    function addActiveToBasket() {
+      if (!activePopoverContext) return;
+      const meta = DATA.catalog.find(c => c.id === currentArticleId);
+      if (!vocabBasket.some(x => x.term.toLowerCase() === activePopoverContext.term.toLowerCase())) {
+        vocabBasket.unshift({
+          term: activePopoverContext.term,
+          meaning: activePopoverContext.meaning,
+          context: activePopoverContext.context,
+          articleTitle: meta ? `#${String(meta.id).padStart(2, '0')} ${meta.zhTitle}` : ''
+        });
+        localStorage.setItem(BASKET_STORAGE_KEY, JSON.stringify(vocabBasket));
+        renderBasket();
+      }
+      hideVocabPopover();
+      document.getElementById('basketDrawer').classList.add('open');
+    }
+
+    function showFootnotePopover(e, fnKey) {
+      if (e) e.stopPropagation();
+      const article = DATA.articles[currentArticleId];
+      if (!article || !article.footnotes || !article.footnotes[fnKey]) return;
+      const fn = article.footnotes[fnKey];
+      const pop = document.getElementById('footnotePopover');
+      pop.innerHTML = `
+        <div class="fn-pop-head">
+          <span class="fn-pop-title">${fn.title || `〔注${fnKey}〕`}</span>
+          <button class="fn-pop-close" onclick="hideFootnotePopover()">✕</button>
+        </div>
+        <div>${fn.content}</div>
+      `;
+      pop.classList.add('visible');
+      const rect = e.currentTarget.getBoundingClientRect();
+      pop.style.top = Math.min(window.innerHeight - 220, rect.bottom + 8) + 'px';
+      pop.style.left = Math.min(window.innerWidth - 420, Math.max(16, rect.left - 20)) + 'px';
+    }
+
+    function hideFootnotePopover() {
+      document.getElementById('footnotePopover').classList.remove('visible');
+    }
+
+    function toggleTheme() {
+      const isWarm = document.body.classList.toggle('theme-warm');
+      document.getElementById('btnTheme').textContent = isWarm ? '📰 风格：FT 鲑鱼粉' : '⚡ 风格：冷峻白纸';
+    }
+
+    function toggleZhFont() {
+      const isSerif = document.body.classList.toggle('font-serif-zh');
+      document.getElementById('btnFont').textContent = isSerif ? '字体：书卷宋体' : '字体：清爽黑体';
+    }
+
+    function setFontSize(size, btnEl) {
+      document.body.classList.remove('size-sm', 'size-md', 'size-lg');
+      document.body.classList.add('size-' + size);
+      document.querySelectorAll('.topbar-right .tool-btn').forEach(b => {
+        if (['小', '标准', '大'].includes(b.textContent)) b.classList.remove('active');
+      });
+      if (btnEl) btnEl.classList.add('active');
+    }
+
+    function toggleSidebar() {
+      const sb = document.getElementById('sidebar');
+      const bd = document.getElementById('mobileBackdrop');
+      const isCollapsed = sb.classList.toggle('collapsed');
+      if (window.innerWidth <= 768 && bd) {
+        bd.classList.toggle('open', !isCollapsed);
+      }
+    }
+
+    function closeSidebarOnMobile() {
+      const sb = document.getElementById('sidebar');
+      const bd = document.getElementById('mobileBackdrop');
+      sb.classList.add('collapsed');
+      if (bd) bd.classList.remove('open');
+    }
+
+    function cycleMobileViewMode() {
+      const main = document.getElementById('mainArea');
+      const lbl = document.getElementById('mobModeLabel');
+      if (main.classList.contains('mode-zh')) {
+        setViewMode('stack');
+        if (lbl) lbl.textContent = '上英下中';
+      } else {
+        setViewMode('zh');
+        if (lbl) lbl.textContent = '纯中文';
+      }
+    }
+
+    function wrapCanvasLines(ctx, text, maxWidth) {
+      const lines = [];
+      const paragraphs = (text || '').split('\n');
+      paragraphs.forEach(para => {
+        let line = '';
+        for (let i = 0; i < para.length; i++) {
+          const testLine = line + para[i];
+          if (ctx.measureText(testLine).width > maxWidth && line.length > 0) {
+            lines.push(line);
+            line = para[i];
+          } else {
+            line = testLine;
+          }
+        }
+        if (line) lines.push(line);
+      });
+      return lines;
+    }
+
+    let currentSharePairIdx = -1;
+
+    function openShareCardModal(pairIdx) {
+      currentSharePairIdx = pairIdx;
+      const article = DATA.articles[currentArticleId];
+      if (!article) return;
+
+      const pair = (pairIdx >= 0 && article.pairs && article.pairs[pairIdx])
+        ? article.pairs[pairIdx]
+        : (article.pairs && article.pairs[0] ? article.pairs[0] : { en: [article.enDeck || ''], zh: [article.zhDeck || ''] });
+
+      const enText = (pair.en || []).join('\n').replace(/<[^>]+>/g, '').slice(0, 420);
+      const zhText = (pair.zh || []).join('\n').replace(/〔注\d+〕/g, '').slice(0, 420);
+
+      const canvas = document.createElement('canvas');
+      const dpr = 2;
+      const width = 720;
+      const pad = 48;
+      const contentWidth = width - pad * 2;
+      const ctx = canvas.getContext('2d');
+
+      ctx.font = 'bold 30px "PingFang SC", sans-serif';
+      const titleLines = wrapCanvasLines(ctx, article.zhTitle, contentWidth);
+
+      ctx.font = '21px Charter, Georgia, serif';
+      const enLines = wrapCanvasLines(ctx, enText, contentWidth - 28);
+
+      ctx.font = '23px "PingFang SC", sans-serif';
+      const zhLines = wrapCanvasLines(ctx, zhText, contentWidth);
+
+      const totalHeight = 140 + titleLines.length * 44 + 40 + enLines.length * 34 + 50 + zhLines.length * 40 + 130;
+      canvas.width = width * dpr;
+      canvas.height = totalHeight * dpr;
+      ctx.scale(dpr, dpr);
+
+      // FT 鲑鱼粉底色
+      ctx.fillStyle = '#FFF1E5';
+      ctx.fillRect(0, 0, width, totalHeight);
+
+      // 顶部装饰线与铭牌
+      ctx.fillStyle = '#990F3D';
+      ctx.fillRect(pad, 40, contentWidth, 5);
+      ctx.fillRect(pad, 58, 220, 30);
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = 'bold 15px monospace';
+      ctx.fillText('GLOBAL BIZ INTEL · 双语内参', pad + 10, 78);
+
+      if (article.score && article.score.total) {
+        ctx.fillStyle = '#990F3D';
+        ctx.font = 'bold 16px "PingFang SC", sans-serif';
+        ctx.fillText(`五维加权分：${article.score.total} / 100`, width - pad - 185, 78);
+      }
+
+      let y = 128;
+      ctx.fillStyle = '#141413';
+      ctx.font = 'bold 30px "PingFang SC", sans-serif';
+      titleLines.forEach(l => {
+        ctx.fillText(l, pad, y);
+        y += 44;
+      });
+
+      y += 8;
+      ctx.fillStyle = '#66605C';
+      ctx.font = '18px Charter, Georgia, serif';
+      ctx.fillText((article.enTitle || '').slice(0, 62), pad, y);
+      y += 32;
+
+      // 英文原句框
+      const enBoxH = enLines.length * 34 + 28;
+      ctx.fillStyle = '#FFF9F5';
+      ctx.fillRect(pad, y, contentWidth, enBoxH);
+      ctx.fillStyle = '#990F3D';
+      ctx.fillRect(pad, y, 4, enBoxH);
+
+      y += 28;
+      ctx.fillStyle = '#2F2E2C';
+      ctx.font = '21px Charter, Georgia, serif';
+      enLines.forEach(l => {
+        ctx.fillText(l, pad + 18, y);
+        y += 34;
+      });
+
+      y += 28;
+      ctx.fillStyle = '#1E1E1C';
+      ctx.font = '23px "PingFang SC", sans-serif';
+      zhLines.forEach(l => {
+        ctx.fillText(l, pad, y);
+        y += 40;
+      });
+
+      // 底部来源栏
+      y += 16;
+      ctx.strokeStyle = '#DFC8B4';
+      ctx.beginPath();
+      ctx.moveTo(pad, y);
+      ctx.lineTo(width - pad, y);
+      ctx.stroke();
+
+      y += 32;
+      ctx.fillStyle = '#66605C';
+      ctx.font = '16px "PingFang SC", sans-serif';
+      ctx.fillText(`来源：${article.section} · ${article.author || ''}`, pad, y);
+
+      document.getElementById('shareCardImg').src = canvas.toDataURL('image/png');
+      document.getElementById('shareModal').classList.add('open');
+    }
+
+    function closeShareModal() {
+      document.getElementById('shareModal').classList.remove('open');
+    }
+
+    function copyShareSummary() {
+      const article = DATA.articles[currentArticleId];
+      if (!article) return;
+      const pair = (currentSharePairIdx >= 0 && article.pairs && article.pairs[currentSharePairIdx])
+        ? article.pairs[currentSharePairIdx]
+        : (article.pairs && article.pairs[0] ? article.pairs[0] : null);
+      const zhSnippet = pair ? pair.zh.join('\n').replace(/〔注\d+〕/g, '') : article.zhDeck;
+      const enSnippet = pair ? pair.en.join('\n') : article.enDeck;
+      const scoreStr = article.score ? `（五维评分：${article.score.total}分）` : '';
+      const text = `【${article.zhTitle}】${scoreStr}\n${article.enTitle}\n\n${zhSnippet}\n\nEN: ${enSnippet}\n${article.link ? '\n原文：' + article.link : ''}`;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('已复制双语金句与原文链接，可直接粘贴发送至微信！');
+      });
+    }
+
+    function setViewMode(mode) {
+      const main = document.getElementById('mainArea');
+      main.classList.remove('mode-zh', 'mode-stack');
+      document.getElementById('btnModeSide').classList.remove('active');
+      document.getElementById('btnModeZh').classList.remove('active');
+      document.getElementById('btnModeStack').classList.remove('active');
+      if (mode === 'zh') {
+        main.classList.add('mode-zh');
+        document.getElementById('btnModeZh').classList.add('active');
+      } else if (mode === 'stack') {
+        main.classList.add('mode-stack');
+        document.getElementById('btnModeStack').classList.add('active');
+      } else {
+        document.getElementById('btnModeSide').classList.add('active');
+      }
+    }
+
+    function toggleBasket() {
+      document.getElementById('basketDrawer').classList.toggle('open');
+    }
+
+    function clearBasket() {
+      vocabBasket = [];
+      localStorage.setItem(BASKET_STORAGE_KEY, '[]');
+      renderBasket();
+    }
+
+    function copyBasketToClipboard() {
+      if (!vocabBasket.length) return;
+      const lines = vocabBasket.map((item, i) => `${i + 1}. **${item.term}**（${item.articleTitle}）\n   - 原句：*${item.context}*`).join('\n');
+      navigator.clipboard.writeText(lines);
+      alert('已复制生词篮清单！');
+    }
+
+    function renderBasket() {
+      document.getElementById('btnBasket').textContent = `🗂 生词篮 (${vocabBasket.length})`;
+      const body = document.getElementById('basketBody');
+      if (!vocabBasket.length) {
+        body.innerHTML = '<p style="color:var(--text-muted); font-size:13px; text-align:center; margin-top:40px;">生词篮为空。</p>';
+        return;
+      }
+      body.innerHTML = vocabBasket.map(item => `<div class="basket-item"><b>${item.term}</b><div>${item.meaning}</div></div>`).join('');
+    }
+
+    document.addEventListener('click', (e) => {
+      const fnPop = document.getElementById('footnotePopover');
+      if (fnPop && !fnPop.contains(e.target) && !e.target.classList.contains('fn-badge')) {
+        hideFootnotePopover();
+      }
+    });
+
+    if (DATA.issueTitle) document.getElementById('issueTitle').textContent = DATA.issueTitle;
+    if (DATA.issueSubtitle) document.getElementById('issueSubtitle').textContent = DATA.issueSubtitle;
+    if (window.innerWidth <= 768) {
+      document.getElementById('sidebar').classList.add('collapsed');
+      setViewMode('stack');
+    }
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramId = parseInt(urlParams.get('id'), 10);
+    if (paramId && DATA.articles && DATA.articles[paramId]) {
+      currentArticleId = paramId;
+    }
+    renderCatalog();
+    if (DATA.catalog.length) selectArticle(currentArticleId);
+    renderBasket();
+  </script>
+</body>
+</html>
