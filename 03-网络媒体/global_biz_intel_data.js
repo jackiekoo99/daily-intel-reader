@@ -859,8 +859,8 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
             "Originally these new publications were novel; what soon became clear, however, is that they were the tip of a wave of content that would dramatically expand the web. Newspapers had influence by being geographic monopolies; early bloggers gained influence by being the first to a new medium. Ultimately, however, the real winner of the web was Google: as the amount of content became abundant, Google offered not distribution — which was free — but rather discovery; indeed, it’s because distribution was free that discovery became the most important part of the value chain."
           ],
           "zh": [
-            "时政博客之所以格外显眼，恰恰体现了互联网第一次转型时的潜力与隐患。此前网上的原住民大多是技术人员，在 BBS、论坛和邮件列表里同侪切磋编辑器与编程语言的细节；对政治感兴趣的人率先意识到，无需任何人批准就能办一份面向全球的出版物意味着什么。他们写博客起初图的不是赚钱，而是影响力。",
-            "这批早期站点很快演变成改写整个万维网的内容洪流。传统报纸靠地域垄断维持权力，早期博主靠先发优势攒下声量；但万维网内容爆发的真正赢家是谷歌。当内容变得唾手可得，谷歌提供的不是本来就免费的分发，而是发现〔注2〕。正因为分发免费，发现才拿走了最大一块价值。"
+            "时政博客之所以格外显眼，恰恰体现了互联网第一次转型时的潜力与隐患。此前网上的原住民大多是技术人员，在 BBS、论坛和邮件列表里同侪切磋编辑器与编程语言的细节；对政治感兴趣的人率先意识到，无需任何人批准就能办一份面向全球的出版物意味着什么。他们写博客起初只为施加公共影响，没想过赚钱。",
+            "这批早期站点很快演变成改写整个万维网的内容洪流。传统报纸靠地域垄断维持权力，早期博主靠先发优势攒下声量；但万维网内容爆发的真正赢家是谷歌。当内容变得唾手可得，分发本来就是免费的，谷歌真正提供的是发现〔注2〕。正因为分发免费，发现才拿走了最大一块价值。"
           ]
         },
         {
@@ -1347,7 +1347,7 @@ window.READER_DATA = window.GLOBAL_BIZ_INTEL_DATA = window.BOOKSHELF_REGISTRY['g
           "zh": [
             "Shyam Sankar（下称 SS）：得从拉各斯讲起。我父亲二十出头去了尼日利亚拉各斯，建起了非洲最早的一批制药厂之一，在那里生活了小十年。我出生在印度，但三岁前是在拉各斯长大的。",
             "后来家里遭遇了一场持枪抢劫——歹徒砍死了家里的狗，用枪托打伤我父亲，还拿枪威胁我母亲。我们抛下所有家当搬到美国奥兰多重新开始。奥兰多是个很好的成长环境，有迪士尼世界的乐观氛围，又紧挨着肯尼迪航天中心所在的太空海岸。读小学时，我们常跑到操场上看航天飞机发射，心里笃信技术会让世界越来越好。再看二十年后的小孩，从小看的是《终结者》和《侏罗纪公园》，听的是“大自然总会找到出路”、“人类怎敢妄图制造进步”。",
-            "BT：人类改造自然最典型的例子，其实不是航天飞机，而是建在沼泽地里的迪士尼世界吧？\nSS：（笑）没错，每年几千万人跑到一片沼泽地中央玩得尽兴。"
+            "BT：这么看，人类改造自然最彻底的例子倒不是航天飞机，反而是建在沼泽地里的迪士尼世界吧？\nSS：（笑）没错，每年几千万人跑到一片沼泽地中央玩得尽兴。"
           ]
         },
         {
