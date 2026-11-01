@@ -18,8 +18,7 @@
       --text-muted: #66635B;
       --border-color: #D2CFC6;
       --border-strong: #111111;
-      --accent: #111111;
-      --wired-neon: #00E65B;
+      --accent: #990F3D;
       --ft-salmon: #990F3D;
       --accent-soft: #F0EFEA;
       --star-color: #D48806;
@@ -34,8 +33,8 @@
       --bg-card: #FFF9F5;
       --bg-sidebar: #F2DFCE;
       --bg-hover: #E9D1BC;
-      --text-main: #262523;
-      --text-en: #2F2E2C;
+      --text-main: #22201E;
+      --text-en: #2C2A28;
       --text-muted: #66605C;
       --border-color: #DFC8B4;
       --border-strong: #990F3D;
@@ -43,15 +42,30 @@
       --accent-soft: #F9E8D9;
     }
 
+    body.theme-dark {
+      --bg-page: #161618;
+      --bg-card: #202024;
+      --bg-sidebar: #1B1B1E;
+      --bg-hover: #2A2A30;
+      --text-main: #E6E4DF;
+      --text-en: #CFCBC2;
+      --text-muted: #949087;
+      --border-color: #333338;
+      --border-strong: #D94862;
+      --accent: #E0526B;
+      --accent-soft: #262225;
+    }
+
     body.font-serif-zh {
       --font-zh: "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
     }
 
-    body.size-sm { --font-size-base: 16px; }
-    body.size-md { --font-size-base: 18px; }
-    body.size-lg { --font-size-base: 20px; }
+    body.size-sm { --font-size-base: 15.5px; }
+    body.size-md { --font-size-base: 17.5px; }
+    body.size-lg { --font-size-base: 19.5px; }
+    body.size-xl { --font-size-base: 21.5px; }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
     body {
       background-color: var(--bg-page);
@@ -61,26 +75,28 @@
       line-height: 1.85;
       display: flex;
       height: 100vh;
+      height: 100dvh;
       overflow: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
+    /* ==================== 左侧榜单栏（电脑端固定栏 / 手机端全屏榜单页） ==================== */
     .sidebar {
-      width: 360px;
-      min-width: 360px;
+      width: 370px;
+      min-width: 370px;
       background-color: var(--bg-sidebar);
       border-right: 1px solid var(--border-color);
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      height: 100%;
       transition: margin-left 0.25s ease;
     }
-    .sidebar.collapsed { margin-left: -360px; }
+    .sidebar.collapsed { margin-left: -370px; }
 
     .bookshelf-bar {
       padding: 12px 16px;
       border-bottom: 1px solid var(--border-color);
-      background-color: #E8D5C4;
+      background-color: var(--accent-soft);
     }
     .bookshelf-label {
       font-family: var(--font-mono);
@@ -93,63 +109,19 @@
     }
     .bookshelf-select {
       width: 100%;
-      padding: 7px 10px;
-      font-size: 13px;
-      font-weight: 600;
+      padding: 8px 10px;
+      font-size: 13.5px;
+      font-weight: 700;
       color: var(--text-main);
       background-color: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 4px;
+      border-radius: 6px;
       cursor: pointer;
       outline: none;
     }
 
-    .score-pill {
-      padding: 1px 6px;
-      border-radius: 3px;
-      font-weight: 800;
-      font-size: 10.5px;
-      background: #990F3D;
-      color: #FFFFFF;
-    }
-    .score-pill.tier-mid {
-      background: #1D4ED8;
-      color: #FFFFFF;
-    }
-    .score-pill.tier-low {
-      background: #6B7280;
-      color: #FFFFFF;
-    }
-
-    .score-panel {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-left: 4px solid #990F3D;
-      padding: 12px 18px;
-      border-radius: 0 4px 4px 0;
-      margin-bottom: 14px;
-      font-size: 13.5px;
-      line-height: 1.65;
-    }
-    .score-metrics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-family: var(--font-mono);
-      font-size: 12px;
-      margin-bottom: 6px;
-      color: var(--text-main);
-    }
-    .score-total-badge {
-      background: #990F3D;
-      color: #fff;
-      font-weight: 800;
-      padding: 1px 8px;
-      border-radius: 3px;
-    }
-
     .sidebar-header {
-      padding: 16px 18px;
+      padding: 14px 16px;
       border-bottom: 2px solid var(--border-strong);
       background-color: var(--bg-card);
     }
@@ -159,22 +131,22 @@
       color: #FFFFFF;
       font-family: var(--font-mono);
       font-weight: 800;
-      font-size: 11.5px;
+      font-size: 11px;
       letter-spacing: 0.6px;
       padding: 2px 8px;
-      border-radius: 2px;
-      margin-bottom: 6px;
+      border-radius: 3px;
+      margin-bottom: 5px;
       text-transform: uppercase;
     }
     .sidebar-title {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 800;
       color: var(--text-main);
       line-height: 1.35;
     }
     .sidebar-sub {
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: 11.5px;
       color: var(--text-muted);
       margin-top: 4px;
       line-height: 1.4;
@@ -182,20 +154,25 @@
 
     .filter-bar {
       display: flex;
-      flex-wrap: wrap;
       gap: 6px;
-      padding: 10px 16px;
+      padding: 10px 14px;
       border-bottom: 1px solid var(--border-color);
-      font-size: 12px;
+      background: var(--bg-sidebar);
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
     }
+    .filter-bar::-webkit-scrollbar { display: none; }
     .filter-btn {
-      padding: 4px 9px;
-      border-radius: 3px;
+      padding: 5px 11px;
+      border-radius: 16px;
       border: 1px solid var(--border-color);
       background: var(--bg-card);
       color: var(--text-muted);
       cursor: pointer;
       font-weight: 600;
+      font-size: 12.5px;
+      flex-shrink: 0;
     }
     .filter-btn.active {
       background: var(--border-strong);
@@ -206,44 +183,57 @@
     .catalog-list {
       flex: 1;
       overflow-y: auto;
-      padding: 8px 10px 24px;
+      padding: 10px 12px 32px;
+      -webkit-overflow-scrolling: touch;
     }
     .catalog-item {
-      padding: 10px 11px;
-      border-radius: 5px;
-      margin-bottom: 6px;
+      padding: 12px 13px;
+      border-radius: 8px;
+      margin-bottom: 8px;
       cursor: pointer;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       gap: 10px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
       transition: all 0.15s;
-      border: 1px solid transparent;
     }
     .catalog-item:hover { background-color: var(--bg-hover); }
     .catalog-item.active {
-      background-color: var(--bg-card);
       border-color: var(--border-strong);
-      box-shadow: 2px 2px 0 rgba(0,0,0,0.08);
+      border-left: 4px solid var(--border-strong);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
-    .catalog-item.radar-only { opacity: 0.85; }
+    .catalog-item.radar-only { opacity: 0.9; }
 
     .item-left { flex: 1; min-width: 0; }
     .item-meta {
       font-family: var(--font-mono);
-      font-size: 10.5px;
+      font-size: 11px;
       color: var(--text-muted);
       display: flex;
       align-items: center;
       flex-wrap: wrap;
       gap: 5px;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
+    .score-pill {
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 11px;
+      background: #990F3D;
+      color: #FFFFFF;
+    }
+    .score-pill.tier-mid { background: #1D4ED8; color: #FFFFFF; }
+    .score-pill.tier-low { background: #6B7280; color: #FFFFFF; }
+
     .sec-tag {
-      padding: 1px 5px;
-      border-radius: 2px;
+      padding: 1px 6px;
+      border-radius: 3px;
       font-weight: 700;
-      font-size: 10px;
+      font-size: 10.5px;
       background: #E0DDD3;
       color: #222;
     }
@@ -255,19 +245,19 @@
     .sec-tag.sec-nikkei { background: #D1F2EB; color: #0E6251; }
 
     .item-zh {
-      font-size: 13.8px;
-      font-weight: 600;
+      font-size: 15px;
+      font-weight: 700;
       color: var(--text-main);
-      line-height: 1.38;
-      margin-bottom: 2px;
+      line-height: 1.42;
+      margin-bottom: 4px;
     }
     .item-en {
-      font-size: 11.8px;
+      font-size: 12.5px;
       color: var(--text-muted);
       font-family: var(--font-en);
-      line-height: 1.32;
+      line-height: 1.35;
       display: -webkit-box;
-      -webkit-line-clamp: 1;
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
@@ -275,20 +265,21 @@
     .star-btn {
       background: none;
       border: none;
-      font-size: 16px;
+      font-size: 20px;
       cursor: pointer;
       color: #BDB7AA;
-      padding: 2px 3px;
+      padding: 4px 6px;
       line-height: 1;
       flex-shrink: 0;
     }
     .star-btn.starred { color: var(--star-color); }
 
+    /* ==================== 右侧正文区 ==================== */
     .main-area {
       flex: 1;
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      height: 100%;
       overflow: hidden;
       position: relative;
     }
@@ -310,13 +301,13 @@
     .tool-btn {
       padding: 5px 10px;
       font-size: 12.5px;
-      border-radius: 4px;
+      border-radius: 5px;
       border: 1px solid var(--border-color);
       background-color: var(--bg-card);
       color: var(--text-main);
       cursor: pointer;
       transition: all 0.15s;
-      font-weight: 500;
+      font-weight: 600;
       text-decoration: none;
     }
     .tool-btn:hover { background-color: var(--bg-hover); }
@@ -329,7 +320,7 @@
       background-color: #FDF6EA;
       border-color: var(--star-color);
       color: #9E5E0B;
-      font-weight: 600;
+      font-weight: 700;
     }
     .divider {
       width: 1px;
@@ -338,24 +329,66 @@
       margin: 0 2px;
     }
 
+    /* 手机端专属顶部导航栏（默认隐藏，手机端阅读时显示） */
+    .mobile-topbar {
+      display: none;
+      height: 48px;
+      padding: 0 12px;
+      background-color: var(--bg-card);
+      border-bottom: 1.5px solid var(--border-strong);
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+      z-index: 910;
+    }
+    .mob-back-btn {
+      border: 1px solid var(--border-color);
+      background: var(--bg-page);
+      color: var(--text-main);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .mob-top-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+      max-width: 48vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .mob-top-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
     .reader-scroll {
       flex: 1;
       overflow-y: auto;
-      padding: 38px 48px 90px;
+      padding: 36px 44px 100px;
+      -webkit-overflow-scrolling: touch;
     }
     .article-container {
-      max-width: 1260px;
+      max-width: 1240px;
       margin: 0 auto;
     }
     .mode-zh .article-container,
-    .mode-stack .article-container {
+    .mode-stack .article-container,
+    .mode-en .article-container {
       max-width: 780px;
     }
 
     .article-header {
-      margin-bottom: 32px;
-      padding-top: 18px;
-      padding-bottom: 26px;
+      margin-bottom: 26px;
+      padding-top: 12px;
+      padding-bottom: 22px;
       border-top: 4px solid var(--border-strong);
       border-bottom: 2px solid var(--border-strong);
     }
@@ -363,56 +396,78 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 14px;
+      gap: 8px;
+      margin-bottom: 12px;
       font-family: var(--font-mono);
       font-size: 12px;
-      letter-spacing: 0.5px;
     }
     .kicker-badge {
       background-color: var(--border-strong);
       color: #FFFFFF;
       padding: 3px 9px;
       font-weight: 700;
-      border-radius: 2px;
+      border-radius: 3px;
     }
-    .kicker-author {
-      color: var(--text-muted);
-      font-weight: 600;
-    }
+    .kicker-author { color: var(--text-muted); font-weight: 600; }
     .kicker-link {
       color: var(--accent);
       font-weight: 700;
       text-decoration: none;
       margin-left: auto;
     }
-    .kicker-link:hover { text-decoration: underline; }
 
     .article-title-zh {
-      font-size: 30px;
+      font-size: 28px;
       font-weight: 800;
-      line-height: 1.34;
+      line-height: 1.35;
       margin-bottom: 8px;
       color: var(--text-main);
     }
     .article-title-en {
       font-family: var(--font-en);
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 500;
       color: var(--text-muted);
       line-height: 1.38;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+    }
+
+    .score-panel {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid #990F3D;
+      padding: 12px 16px;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 14px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .score-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+    .score-total-badge {
+      background: #990F3D;
+      color: #fff;
+      font-weight: 800;
+      padding: 1px 7px;
+      border-radius: 3px;
     }
 
     .article-deck {
       background-color: var(--bg-card);
       border: 1px solid var(--border-color);
       border-left: 4px solid var(--border-strong);
-      padding: 16px 22px;
-      border-radius: 0 4px 4px 0;
-      color: #33312E;
+      padding: 14px 18px;
+      border-radius: 0 6px 6px 0;
+      color: var(--text-main);
       font-size: 0.96em;
-      line-height: 1.85;
+      line-height: 1.8;
     }
     .article-deck-en {
       font-family: var(--font-en);
@@ -422,85 +477,159 @@
       font-size: 0.92em;
     }
 
+    /* 文章配图（兼容《经济学人》插图） */
+    .hero-figure, .inline-figure {
+      margin: 18px 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .hero-figure img, .inline-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .fig-cap {
+      padding: 8px 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ==================== 段落级 1:1 精细对照 ==================== */
     .pair-block {
       border-bottom: 1px solid var(--border-color);
-      padding: 24px 0;
+      padding: 20px 0;
     }
     .pair-block:last-child { border-bottom: none; }
 
-    .pair-row {
+    .sub-pair-row {
       display: grid;
       grid-template-columns: 1fr 1.08fr;
-      gap: 44px;
+      gap: 38px;
       align-items: start;
+      margin-bottom: 16px;
     }
+    .sub-pair-row:last-of-type { margin-bottom: 0; }
+
     .col-en {
       font-family: var(--font-en);
       color: var(--text-en);
       font-size: 0.98em;
-      line-height: 1.8;
-      padding-right: 12px;
+      line-height: 1.78;
     }
-    .col-en p { margin-bottom: 1.15em; }
-    .col-en p:last-child { margin-bottom: 0; }
-
-    .vocab-inline {
-      border-bottom: 1.5px dashed #B84A32;
-      background-color: rgba(184, 74, 50, 0.06);
-      padding: 0 2px;
-      border-radius: 2px;
-      cursor: pointer;
-    }
-    .vocab-inline:hover { background-color: rgba(184, 74, 50, 0.18); }
-
     .col-zh {
       color: var(--text-main);
       font-size: 1em;
-      line-height: 1.92;
+      line-height: 1.88;
       letter-spacing: 0.015em;
+      position: relative;
     }
-    .col-zh p { margin-bottom: 1.2em; }
-    .col-zh p:last-child { margin-bottom: 0; }
 
-    .mode-zh .pair-block { padding: 12px 0; border-bottom: none; }
-    .mode-zh .pair-row { display: block; }
-    .mode-zh .col-en, .mode-zh .article-deck-en { display: none; }
+    /* 纯中文模式下的『点按展开本段英文』按钮 */
+    .toggle-en-pill {
+      display: none;
+      margin-left: 6px;
+      padding: 1px 6px;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      cursor: pointer;
+      vertical-align: middle;
+    }
 
-    .mode-stack .pair-row { display: block; }
+    /* 上英下中单列对照模式 */
+    .mode-stack .sub-pair-row {
+      display: block;
+      margin-bottom: 22px;
+    }
     .mode-stack .col-en {
-      padding-right: 0;
-      margin-bottom: 18px;
-      padding: 14px 18px;
+      margin-bottom: 10px;
+      padding: 11px 14px;
       background: var(--bg-card);
       border-radius: 6px;
       border: 1px solid var(--border-color);
+      border-left: 3px solid var(--accent);
+      font-size: 0.95em;
+      line-height: 1.72;
+    }
+    .mode-stack .col-zh {
+      padding: 0 2px;
+    }
+
+    /* 纯中文畅读（支持单段点开看原文） */
+    .mode-zh .pair-block { padding: 12px 0; }
+    .mode-zh .sub-pair-row { display: block; margin-bottom: 16px; }
+    .mode-zh .col-en, .mode-zh .article-deck-en { display: none; }
+    .mode-zh .sub-pair-row.expand-en .col-en {
+      display: block;
+      margin-bottom: 10px;
+      padding: 10px 13px;
+      background: var(--bg-card);
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      border-left: 3px solid var(--accent);
+      font-size: 0.94em;
+    }
+    .mode-zh .toggle-en-pill { display: inline-block; }
+
+    /* 纯英文原版模式 */
+    .mode-en .sub-pair-row { display: block; margin-bottom: 16px; }
+    .mode-en .col-zh { display: none; }
+
+    .vocab-inline {
+      border-bottom: 1.5px dashed #B84A32;
+      background-color: rgba(184, 74, 50, 0.08);
+      padding: 0 2px;
+      border-radius: 2px;
+      cursor: pointer;
     }
 
     .fn-badge {
       display: inline-block;
       font-size: 0.78em;
       font-weight: 700;
-      color: #990F3D;
-      background: rgba(153, 15, 61, 0.08);
+      color: var(--accent);
+      background: rgba(153, 15, 61, 0.1);
       border-radius: 3px;
       padding: 1px 4px;
       margin: 0 2px;
       cursor: pointer;
       vertical-align: super;
     }
-    .fn-badge:hover { background: #990F3D; color: #FFFFFF; }
 
+    /* 段落级操作栏 */
+    .pair-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 8px;
+    }
+    .pair-share-btn {
+      background: transparent;
+      border: 1px dashed var(--border-color);
+      color: var(--text-muted);
+      font-size: 11.5px;
+      padding: 3px 9px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* 查词与注释卡片（手机端自动变底部半屏抽屉 Bottom Sheet） */
     .footnote-popover, .vocab-popover {
       position: fixed;
       z-index: 10000;
       width: 400px;
-      max-width: calc(100vw - 32px);
+      max-width: calc(100vw - 24px);
       background-color: #1F1E1B;
       color: #F7F5F0;
-      border-radius: 8px;
+      border-radius: 10px;
       padding: 16px 18px;
-      box-shadow: 0 14px 36px rgba(0,0,0,0.38);
-      font-size: 13.5px;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.45);
+      font-size: 14px;
       line-height: 1.65;
       display: none;
       border: 1px solid #44413C;
@@ -514,18 +643,19 @@
       border-bottom: 1px solid #38352F;
       padding-bottom: 6px;
     }
-    .fn-pop-title { font-size: 14px; font-weight: 700; color: #FF8F8C; }
+    .fn-pop-title { font-size: 14.5px; font-weight: 700; color: #FF8F8C; }
     .fn-pop-close {
       background: none;
       border: none;
       color: #A09C92;
-      font-size: 16px;
+      font-size: 18px;
       cursor: pointer;
+      padding: 2px 6px;
     }
 
     .footnotes-section {
-      margin: 40px 0 20px;
-      padding: 24px 28px;
+      margin: 32px 0 20px;
+      padding: 20px 22px;
       background-color: var(--bg-sidebar);
       border-left: 4px solid var(--border-strong);
       border-radius: 0 8px 8px 0;
@@ -533,77 +663,107 @@
     .footnotes-section h3 {
       font-size: 16px;
       font-weight: 800;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
-    .fn-item { margin-bottom: 14px; font-size: 14px; line-height: 1.7; }
-    .fn-item-badge { font-weight: 700; color: #990F3D; margin-right: 6px; }
+    .fn-item { margin-bottom: 12px; font-size: 14px; line-height: 1.7; }
+    .fn-item-badge { font-weight: 700; color: var(--accent); margin-right: 6px; }
 
+    .footer-nav {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 2px solid var(--border-strong);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* 生词篮抽屉 */
     .basket-drawer {
       position: fixed;
       top: 54px;
       right: 0;
       width: 390px;
-      height: calc(100vh - 54px);
+      max-width: 100vw;
+      height: calc(100% - 54px);
       background-color: var(--bg-card);
       border-left: 2px solid var(--border-strong);
-      box-shadow: -4px 0 18px rgba(0,0,0,0.08);
-      z-index: 900;
+      box-shadow: -4px 0 18px rgba(0,0,0,0.12);
+      z-index: 960;
       display: flex;
       flex-direction: column;
-      transform: translateX(100%);
+      transform: translateX(105%);
       transition: transform 0.25s ease;
     }
     .basket-drawer.open { transform: translateX(0); }
     .basket-header {
-      padding: 16px 18px;
+      padding: 14px 16px;
       border-bottom: 1px solid var(--border-color);
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .basket-body { flex: 1; overflow-y: auto; padding: 14px 18px; }
+    .basket-body { flex: 1; overflow-y: auto; padding: 14px 16px; }
     .basket-item {
       background: var(--bg-page);
       border: 1px solid var(--border-color);
-      border-radius: 5px;
+      border-radius: 6px;
       padding: 10px 12px;
       margin-bottom: 10px;
-      font-size: 13px;
+      font-size: 13.5px;
     }
     .basket-footer {
-      padding: 14px 18px;
+      padding: 12px 16px;
       border-top: 1px solid var(--border-color);
       display: flex;
       gap: 8px;
     }
 
-    .footer-nav {
-      margin-top: 48px;
-      padding-top: 24px;
+    /* 手机端字号与外观设置底部面板 */
+    .settings-sheet-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 10200;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .settings-sheet-overlay.open { display: flex; }
+    .settings-sheet {
+      background: var(--bg-card);
+      width: 100%;
+      max-width: 500px;
+      border-radius: 16px 16px 0 0;
+      padding: 18px 20px calc(20px + env(safe-area-inset-bottom));
       border-top: 2px solid var(--border-strong);
+      box-shadow: 0 -8px 30px rgba(0,0,0,0.2);
+    }
+    .sheet-row {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      gap: 10px;
     }
-
-    /* 段落级分享小按钮 */
-    .pair-actions {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 10px;
-    }
-    .pair-share-btn {
-      background: transparent;
-      border: 1px dashed var(--border-color);
+    .sheet-row:last-child { margin-bottom: 0; }
+    .sheet-label {
+      font-size: 13.5px;
+      font-weight: 700;
       color: var(--text-muted);
-      font-size: 11.5px;
-      padding: 2px 8px;
-      border-radius: 3px;
-      cursor: pointer;
+      min-width: 64px;
     }
-    .pair-share-btn:hover {
-      border-color: var(--border-strong);
-      color: var(--text-main);
+    .sheet-group {
+      display: flex;
+      flex: 1;
+      gap: 6px;
+    }
+    .sheet-group .tool-btn {
+      flex: 1;
+      text-align: center;
+      padding: 7px 6px;
+      font-size: 13px;
     }
 
     /* 微信金句分享卡片弹窗 */
@@ -615,13 +775,13 @@
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 16px;
+      padding: 14px;
     }
     .share-modal-overlay.open { display: flex; }
     .share-modal-box {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 10px;
+      border-radius: 12px;
       max-width: 440px;
       width: 100%;
       max-height: 90vh;
@@ -663,23 +823,14 @@
       color: var(--text-muted);
     }
 
-    /* 手机端遮罩与底部单手操作栏 */
-    .mobile-backdrop {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
-      z-index: 940;
-    }
-    .mobile-backdrop.open { display: block; }
-
+    /* 手机端底部 5 键单手操作栏 */
     .mobile-bottom-bar {
       display: none;
       position: fixed;
       left: 0;
       right: 0;
       bottom: 0;
-      height: calc(54px + env(safe-area-inset-bottom));
+      height: calc(56px + env(safe-area-inset-bottom));
       padding-bottom: env(safe-area-inset-bottom);
       background: var(--bg-card);
       border-top: 1.5px solid var(--border-strong);
@@ -689,11 +840,11 @@
     }
     .mob-btn {
       flex: 1;
-      height: 54px;
+      height: 56px;
       border: none;
       background: none;
       color: var(--text-main);
-      font-size: 12.5px;
+      font-size: 11.5px;
       font-weight: 600;
       display: flex;
       flex-direction: column;
@@ -702,66 +853,89 @@
       gap: 2px;
       cursor: pointer;
     }
-    .mob-btn.starred { color: #9E5E0B; }
+    .mob-btn .mob-ico { font-size: 16px; line-height: 1.1; }
 
+    /* ==================== 手机端原生双视图适配 (@media <= 768px) ==================== */
     @media (max-width: 768px) {
+      .topbar { display: none; }
+      .mobile-topbar { display: flex; }
+      .mobile-bottom-bar { display: flex; }
+
+      /* 手机端采用『全屏榜单页 ⇄ 全屏阅读页』切换，彻底告别狭窄侧边抽屉 */
       .sidebar {
         position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 86vw;
-        min-width: 280px;
-        max-width: 350px;
+        inset: 0;
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100vw;
         z-index: 950;
-        box-shadow: 6px 0 24px rgba(0,0,0,0.22);
+        margin-left: 0 !important;
+        transform: translateX(0);
+        transition: transform 0.22s ease;
+        border-right: none;
       }
-      .sidebar.collapsed { margin-left: -90vw; }
-      .topbar {
-        padding: 0 12px;
-        height: 48px;
+      body.mobile-reading .sidebar {
+        transform: translateX(-102%);
+        pointer-events: none;
       }
-      .topbar-right { display: none; }
+
       .reader-scroll {
-        padding: 20px 16px 96px;
+        padding: 16px 15px 96px;
       }
-      .article-title-zh { font-size: 22px; }
-      .article-title-en { font-size: 16px; }
-      .article-deck { padding: 12px 14px; }
-      .score-panel { padding: 10px 12px; font-size: 12.5px; }
-      .score-metrics { gap: 8px; font-size: 11px; }
-      .pair-row { display: block; }
+      .article-header {
+        margin-bottom: 18px;
+        padding-top: 8px;
+        padding-bottom: 16px;
+      }
+      .article-title-zh { font-size: 21px; line-height: 1.36; }
+      .article-title-en { font-size: 15px; margin-bottom: 12px; }
+      .article-deck { padding: 11px 13px; font-size: 0.94em; }
+      .score-panel { padding: 10px 12px; font-size: 12px; }
+      .score-metrics { gap: 6px 10px; font-size: 11px; }
+
+      .sub-pair-row {
+        display: block;
+        margin-bottom: 20px;
+      }
       .col-en {
-        padding-right: 0;
-        margin-bottom: 14px;
-        padding: 12px 14px;
+        margin-bottom: 10px;
+        padding: 11px 13px;
         background: var(--bg-card);
         border-radius: 6px;
         border: 1px solid var(--border-color);
+        border-left: 3px solid var(--accent);
+        font-size: 0.94em;
+        line-height: 1.68;
       }
+
       .basket-drawer {
-        top: 48px;
+        top: 0;
         width: 100vw;
-        height: calc(100vh - 102px);
+        height: calc(100% - 56px - env(safe-area-inset-bottom));
       }
-      .mobile-bottom-bar { display: flex; }
+
       .footnote-popover, .vocab-popover {
-        left: 12px !important;
-        right: 12px !important;
-        width: auto !important;
-        bottom: 68px !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: calc(56px + env(safe-area-inset-bottom)) !important;
         top: auto !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        border-radius: 14px 14px 0 0;
+        padding: 18px 18px 22px;
+        font-size: 15px;
       }
     }
   </style>
 </head>
 <body class="size-md theme-warm">
 
+  <!-- 左侧/全屏榜单视图 -->
   <aside class="sidebar" id="sidebar">
     <div class="bookshelf-bar">
-      <div class="bookshelf-label">📚 ISSUE ARCHIVE // 全局双语工作台切换</div>
+      <div class="bookshelf-label">📚 切换刊物与专著工作台</div>
       <select class="bookshelf-select" id="bookshelfSelect" onchange="switchBook(this.value)">
-        <option value="global_biz_intel" selected>🌐 全球商业硬核信源（FT / Bloomberg / Stratechery）</option>
+        <option value="global_biz_intel" selected>🌐 全球商业硬核信源（每日评分榜）</option>
         <option value="economist_2026_10_24">📰 《经济学人》The Economist · 2026.10.24</option>
         <option value="anthropic_s1">📑 《Anthropic 招股说明书：Form S-1》（2026）</option>
         <option value="the_infinity_machine">⚡ 《无限机器：哈萨比斯与 DeepMind》（2026）</option>
@@ -773,40 +947,53 @@
     </div>
 
     <div class="sidebar-header">
-      <div class="intel-badge">GLOBAL BIZ INTEL · 每日同步</div>
+      <div class="intel-badge" id="sidebarBadge">GLOBAL BIZ INTEL · 每日同步</div>
       <div class="sidebar-title" id="issueTitle">全球商业硬核信源双语工作台</div>
-      <div class="sidebar-sub" id="issueSubtitle">FT · Bloomberg · The Information · Nikkei · Stratechery · Construction Physics</div>
+      <div class="sidebar-sub" id="issueSubtitle">点选下方任意文章进入双语伴读</div>
     </div>
 
     <div class="filter-bar">
       <button class="filter-btn active" id="btnFilterAll" onclick="setFilter('all', this)">全部</button>
-      <button class="filter-btn" onclick="setFilter('ready', this)">全文伴读</button>
-      <button class="filter-btn" onclick="setFilter('radar', this)">选题雷达</button>
-      <button class="filter-btn" onclick="setFilter('starred', this)">★ 待精读</button>
+      <button class="filter-btn" id="btnFilterReady" onclick="setFilter('ready', this)">📖 全文伴读</button>
+      <button class="filter-btn" id="btnFilterRadar" onclick="setFilter('radar', this)">📡 选题雷达</button>
+      <button class="filter-btn" id="btnFilterStar" onclick="setFilter('starred', this)">★ 待精读</button>
     </div>
     <div class="catalog-list" id="catalogList"></div>
   </aside>
 
-  <main class="main-area" id="mainArea">
+  <!-- 右侧/全屏阅读视图 -->
+  <main class="main-area mode-stack" id="mainArea">
+    <!-- 电脑端顶栏 -->
     <header class="topbar">
       <div class="topbar-left">
         <button class="tool-btn" onclick="toggleSidebar()">☰ 目录</button>
         <div class="divider"></div>
         <button class="tool-btn active" id="btnModeSide" onclick="setViewMode('side')">左右对照</button>
-        <button class="tool-btn" id="btnModeZh" onclick="setViewMode('zh')">纯中文畅读</button>
-        <button class="tool-btn" id="btnModeStack" onclick="setViewMode('stack')">上下对照</button>
+        <button class="tool-btn" id="btnModeStack" onclick="setViewMode('stack')">逐段上下</button>
+        <button class="tool-btn" id="btnModeZh" onclick="setViewMode('zh')">纯中文(点段看英)</button>
+        <button class="tool-btn" id="btnModeEn" onclick="setViewMode('en')">纯英文</button>
       </div>
       <div class="topbar-right">
-        <button class="tool-btn" id="btnTheme" onclick="toggleTheme()">📰 风格：FT 鲑鱼粉</button>
+        <button class="tool-btn" id="btnTheme" onclick="cycleTheme()">📰 风格：FT 鲑鱼粉</button>
         <button class="tool-btn" id="btnFont" onclick="toggleZhFont()">字体：清爽黑体</button>
         <div class="divider"></div>
         <button class="tool-btn" onclick="setFontSize('sm', this)">小</button>
         <button class="tool-btn active" onclick="setFontSize('md', this)">标准</button>
         <button class="tool-btn" onclick="setFontSize('lg', this)">大</button>
+        <button class="tool-btn" onclick="setFontSize('xl', this)">特大</button>
         <div class="divider"></div>
         <button class="tool-btn star-main" id="btnStarCurrent" onclick="toggleStarCurrent()">☆ 记入待精读</button>
         <button class="tool-btn" onclick="openShareCardModal(-1)">📤 分享卡片</button>
         <button class="tool-btn" id="btnBasket" onclick="toggleBasket()">🗂 生词篮 (0)</button>
+      </div>
+    </header>
+
+    <!-- 手机端专属极简顶栏 -->
+    <header class="mobile-topbar">
+      <button class="mob-back-btn" onclick="showMobileCatalog()">← 榜单列表</button>
+      <div class="mob-top-title" id="mobTopTitle">#01 · 双语伴读</div>
+      <div class="mob-top-actions">
+        <button class="mob-back-btn" id="mobTopStarBtn" onclick="toggleStarCurrent()">☆ 标星</button>
       </div>
     </header>
 
@@ -821,32 +1008,86 @@
       </div>
       <div class="basket-body" id="basketBody"></div>
       <div class="basket-footer">
-        <button class="tool-btn active" onclick="copyBasketToClipboard()">📋 一键复制（发给助手精讲/制卡）</button>
+        <button class="tool-btn active" onclick="copyBasketToClipboard()">📋 一键复制清单</button>
         <button class="tool-btn" onclick="clearBasket()">清空</button>
       </div>
     </aside>
   </main>
 
-  <div class="mobile-backdrop" id="mobileBackdrop" onclick="closeSidebarOnMobile()"></div>
-
+  <!-- 手机端底部 5 键单手操作栏 -->
   <nav class="mobile-bottom-bar">
-    <button class="mob-btn" onclick="toggleSidebar()"><span>☰</span><span>目录</span></button>
-    <button class="mob-btn" id="mobBtnMode" onclick="cycleMobileViewMode()"><span>🔄</span><span id="mobModeLabel">上英下中</span></button>
-    <button class="mob-btn" id="mobBtnStar" onclick="toggleStarCurrent()"><span id="mobStarIcon">☆</span><span>待精读</span></button>
-    <button class="mob-btn" onclick="openShareCardModal(-1)"><span>📤</span><span>分享卡片</span></button>
+    <button class="mob-btn" onclick="showMobileCatalog()">
+      <span class="mob-ico">📋</span>
+      <span>今日榜单</span>
+    </button>
+    <button class="mob-btn" id="mobBtnMode" onclick="cycleMobileViewMode()">
+      <span class="mob-ico">🔄</span>
+      <span id="mobModeLabel">逐段双语</span>
+    </button>
+    <button class="mob-btn" onclick="openSettingsSheet()">
+      <span class="mob-ico">Aa</span>
+      <span>字号/护眼</span>
+    </button>
+    <button class="mob-btn" onclick="toggleBasket()">
+      <span class="mob-ico">🗂</span>
+      <span id="mobBasketLabel">生词篮</span>
+    </button>
+    <button class="mob-btn" onclick="openShareCardModal(-1)">
+      <span class="mob-ico">📤</span>
+      <span>分享卡</span>
+    </button>
   </nav>
 
+  <!-- 手机端字号与主题设置抽屉 -->
+  <div class="settings-sheet-overlay" id="settingsSheet" onclick="if(event.target===this)closeSettingsSheet()">
+    <div class="settings-sheet">
+      <div class="sheet-row">
+        <span class="sheet-label">对照模式</span>
+        <div class="sheet-group">
+          <button class="tool-btn" id="sheetModeStack" onclick="setViewMode('stack')">逐段双语</button>
+          <button class="tool-btn" id="sheetModeZh" onclick="setViewMode('zh')">纯中文(点看英)</button>
+          <button class="tool-btn" id="sheetModeEn" onclick="setViewMode('en')">纯英文</button>
+        </div>
+      </div>
+      <div class="sheet-row">
+        <span class="sheet-label">字号大小</span>
+        <div class="sheet-group">
+          <button class="tool-btn" id="sheetSizeSm" onclick="setFontSize('sm')">小</button>
+          <button class="tool-btn active" id="sheetSizeMd" onclick="setFontSize('md')">标准</button>
+          <button class="tool-btn" id="sheetSizeLg" onclick="setFontSize('lg')">大</button>
+          <button class="tool-btn" id="sheetSizeXl" onclick="setFontSize('xl')">特大</button>
+        </div>
+      </div>
+      <div class="sheet-row">
+        <span class="sheet-label">背景主题</span>
+        <div class="sheet-group">
+          <button class="tool-btn active" id="sheetThemeWarm" onclick="setTheme('warm')">FT 鲑鱼粉</button>
+          <button class="tool-btn" id="sheetThemeLight" onclick="setTheme('light')">清爽白纸</button>
+          <button class="tool-btn" id="sheetThemeDark" onclick="setTheme('dark')">🌙 夜间深色</button>
+        </div>
+      </div>
+      <div class="sheet-row">
+        <span class="sheet-label">中文字体</span>
+        <div class="sheet-group">
+          <button class="tool-btn active" id="sheetFontSans" onclick="setZhFont(false)">清爽黑体</button>
+          <button class="tool-btn" id="sheetFontSerif" onclick="setZhFont(true)">书卷宋体</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 微信金句分享卡片弹窗 -->
   <div class="share-modal-overlay" id="shareModal" onclick="if(event.target===this)closeShareModal()">
     <div class="share-modal-box">
       <div class="share-modal-head">
-        <span>📤 微信双语分享卡（长按图片直接转发/保存）</span>
+        <span>📤 微信双语分享卡（长按图片转发）</span>
         <button class="fn-pop-close" onclick="closeShareModal()">✕</button>
       </div>
       <div class="share-modal-body">
         <img id="shareCardImg" src="" alt="分享卡片预览">
       </div>
       <div class="share-modal-foot">
-        <span>📱 微信内可长按上方图片转发</span>
+        <span>📱 微信内长按图片即可发给朋友</span>
         <button class="tool-btn active" onclick="copyShareSummary()">📋 复制文字+链接</button>
       </div>
     </div>
@@ -855,20 +1096,54 @@
   <div class="vocab-popover" id="vocabPopover"></div>
   <div class="footnote-popover" id="footnotePopover"></div>
 
+  <script src="../01-期刊杂志/economist_2026_10_24_data.js"></script>
   <script src="global_biz_intel_data.js"></script>
   <script>
-    const DATA = window.READER_DATA || { storageKey: 'global_biz_intel', catalog: [], articles: {} };
+    window.BOOKSHELF_REGISTRY = window.BOOKSHELF_REGISTRY || {};
+    let currentBookKey = 'global_biz_intel';
+    let DATA = window.BOOKSHELF_REGISTRY['global_biz_intel'] || window.READER_DATA || { storageKey: 'global_biz_intel', catalog: [], articles: {} };
+
     const BASKET_STORAGE_KEY = 'bilingual_global_vocab_basket';
     let vocabBasket = JSON.parse(localStorage.getItem(BASKET_STORAGE_KEY) || '[]');
-    let starredIds = JSON.parse(localStorage.getItem(DATA.storageKey + '_starred_ids') || '[]');
+    let starredIds = [];
     let currentFilter = 'all';
     let currentArticleId = 1;
     let activePopoverContext = null;
 
+    function fixEconomistImgPath(src) {
+      if (!src) return '';
+      if (src.startsWith('economist_2026_10_24_assets/')) {
+        return '../01-期刊杂志/' + src;
+      }
+      return src;
+    }
+
+    function loadBookData(bookKey) {
+      currentBookKey = bookKey;
+      DATA = window.BOOKSHELF_REGISTRY[bookKey] || DATA;
+      starredIds = JSON.parse(localStorage.getItem((DATA.storageKey || bookKey) + '_starred_ids') || '[]');
+      document.getElementById('issueTitle').textContent = DATA.issueTitle || '双语伴读工作台';
+      document.getElementById('issueSubtitle').textContent = DATA.issueSubtitle || '';
+      document.getElementById('sidebarBadge').textContent = bookKey === 'economist_2026_10_24'
+        ? 'THE ECONOMIST · 2026.10.24'
+        : 'GLOBAL BIZ INTEL · 每日同步';
+
+      const savedId = parseInt(localStorage.getItem((DATA.storageKey || bookKey) + '_last_id') || '0', 10);
+      const firstReady = (DATA.catalog.find(c => c.ready) || DATA.catalog[0] || { id: 1 }).id;
+      currentArticleId = (savedId && DATA.articles[savedId]) ? savedId : firstReady;
+      currentFilter = 'all';
+      document.querySelectorAll('.filter-bar .filter-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('btnFilterAll').classList.add('active');
+      renderCatalog();
+      selectArticle(currentArticleId, false);
+    }
+
     function switchBook(bookKey) {
+      if (window.BOOKSHELF_REGISTRY && window.BOOKSHELF_REGISTRY[bookKey]) {
+        loadBookData(bookKey);
+        return;
+      }
       const routes = {
-        global_biz_intel: 'global_biz_intel_reader.html',
-        economist_2026_10_24: '../01-期刊杂志/economist_2026_10_24_reader.html',
         wired_2026_10: '../01-期刊杂志/wired_2026_10_reader.html',
         anthropic_s1: '../02-英文书籍/Anthropic S-1 Prospectus/anthropic_s1_reader.html',
         the_infinity_machine: '../02-英文书籍/The Infinity Machine/the_infinity_machine_reader.html',
@@ -876,7 +1151,7 @@
         classic_essays: '../05-经典美文/classic_essays_reader.html',
         bookshelf_hub: '../02-英文书籍/bookshelf.html'
       };
-      if (routes[bookKey] && bookKey !== 'global_biz_intel') {
+      if (routes[bookKey]) {
         window.location.href = routes[bookKey];
       }
     }
@@ -885,15 +1160,15 @@
       const s = (sec || '').toLowerCase();
       if (s.includes('stratechery')) return 'sec-stratechery';
       if (s.includes('physics')) return 'sec-physics';
-      if (s.includes('ft')) return 'sec-ft';
+      if (s.includes('ft') || s.includes('leader')) return 'sec-ft';
       if (s.includes('bloomberg') || s.includes('money stuff')) return 'sec-bloomberg';
-      if (s.includes('information')) return 'sec-theinfo';
+      if (s.includes('information') || s.includes('business')) return 'sec-theinfo';
       if (s.includes('nikkei')) return 'sec-nikkei';
       return '';
     }
 
     function saveStarred() {
-      localStorage.setItem(DATA.storageKey + '_starred_ids', JSON.stringify(starredIds));
+      localStorage.setItem((DATA.storageKey || currentBookKey) + '_starred_ids', JSON.stringify(starredIds));
     }
 
     function toggleStar(id, event) {
@@ -909,15 +1184,16 @@
     function toggleStarCurrent() { toggleStar(currentArticleId); }
 
     function updateCurrentStarBtn() {
-      const btn = document.getElementById('btnStarCurrent');
       const isStar = starredIds.includes(currentArticleId);
-      btn.classList.toggle('starred', isStar);
-      btn.textContent = isStar ? '★ 已记入待精读' : '☆ 记入待精读';
-      const mobBtn = document.getElementById('mobBtnStar');
-      const mobIcon = document.getElementById('mobStarIcon');
-      if (mobBtn && mobIcon) {
-        mobBtn.classList.toggle('starred', isStar);
-        mobIcon.textContent = isStar ? '★' : '☆';
+      const btn = document.getElementById('btnStarCurrent');
+      if (btn) {
+        btn.classList.toggle('starred', isStar);
+        btn.textContent = isStar ? '★ 已记入待精读' : '☆ 记入待精读';
+      }
+      const mobTopStar = document.getElementById('mobTopStarBtn');
+      if (mobTopStar) {
+        mobTopStar.textContent = isStar ? '★ 已标星' : '☆ 标星';
+        mobTopStar.style.color = isStar ? '#D48806' : '';
       }
     }
 
@@ -932,7 +1208,7 @@
       const listEl = document.getElementById('catalogList');
       listEl.innerHTML = '';
       document.getElementById('btnFilterAll').textContent = `全部 (${DATA.catalog.length})`;
-      DATA.catalog.forEach(item => {
+      DATA.catalog.forEach((item, idx) => {
         const isStar = starredIds.includes(item.id);
         if (currentFilter === 'ready' && !item.ready) return;
         if (currentFilter === 'radar' && item.ready) return;
@@ -942,9 +1218,9 @@
         div.className = 'catalog-item' +
           (item.id === currentArticleId ? ' active' : '') +
           (!item.ready ? ' radar-only' : '');
-        div.onclick = () => selectArticle(item.id);
+        div.onclick = () => selectArticle(item.id, true);
 
-        const numStr = String(item.id).padStart(2, '0');
+        const numStr = String(idx + 1).padStart(2, '0');
         const secClass = getSectionClass(item.section);
         const modeTag = item.rewritten ? '✅ 已精编' : (item.ready ? '📖 全文' : '📡 雷达');
         const sc = item.score ? item.score.total : 0;
@@ -981,46 +1257,96 @@
       return result;
     }
 
-    function selectArticle(id) {
+    function showMobileCatalog() {
+      document.body.classList.remove('mobile-reading');
+    }
+
+    function selectArticle(id, enterMobileReader) {
       hideFootnotePopover();
       hideVocabPopover();
       currentArticleId = id;
-      localStorage.setItem(DATA.storageKey + '_last_id', String(id));
+      localStorage.setItem((DATA.storageKey || currentBookKey) + '_last_id', String(id));
       renderCatalog();
       updateCurrentStarBtn();
       renderArticleContent(id);
       document.getElementById('readerScroll').scrollTop = 0;
-      if (window.innerWidth <= 768) {
-        closeSidebarOnMobile();
+      if (enterMobileReader && window.innerWidth <= 768) {
+        document.body.classList.add('mobile-reading');
+      }
+    }
+
+    function toggleSubPairEn(btnEl) {
+      const row = btnEl.closest('.sub-pair-row');
+      if (row) {
+        const expanded = row.classList.toggle('expand-en');
+        btnEl.textContent = expanded ? '收起原文' : 'EN 原文';
       }
     }
 
     function renderArticleContent(id) {
       const container = document.getElementById('articleContainer');
       const article = DATA.articles[id];
-      const numStr = String(id).padStart(2, '0');
       if (!article) return;
+
+      const catIdx = DATA.catalog.findIndex(c => c.id === id);
+      const rankNum = catIdx >= 0 ? catIdx + 1 : id;
+      const numStr = String(rankNum).padStart(2, '0');
+
+      const mobTitle = document.getElementById('mobTopTitle');
+      if (mobTitle) {
+        const scText = (article.score && article.score.total) ? ` (${article.score.total}分)` : '';
+        mobTitle.textContent = `#${numStr}${scText} · ${article.zhTitle}`;
+      }
 
       const vocabList = article.vocab || [];
       let pairsHtml = '';
       (article.pairs || []).forEach((pair, pIdx) => {
-        const enPs = pair.en.map(p => `<p>${highlightVocabInText(p, vocabList)}</p>`).join('');
-        const zhPs = pair.zh.map(p => {
-          const text = p.replace(/〔注(\d+)〕/g, '<sup class="fn-badge" onclick="showFootnotePopover(event, \'$1\')">〔注$1〕</sup>');
-          return `<p>${text}</p>`;
-        }).join('');
+        const enArr = pair.en || [];
+        const zhArr = pair.zh || [];
+        const maxLen = Math.max(enArr.length, zhArr.length);
+        let subRowsHtml = '';
+
+        for (let i = 0; i < maxLen; i++) {
+          const enP = enArr[i] ? `<p>${highlightVocabInText(enArr[i], vocabList)}</p>` : '';
+          let zhP = '';
+          if (zhArr[i]) {
+            const formattedZh = zhArr[i].replace(
+              /〔注(\d+)〕/g,
+              '<sup class="fn-badge" onclick="showFootnotePopover(event, \'$1\')">〔注$1〕</sup>'
+            );
+            const enToggleBtn = enArr[i]
+              ? `<button class="toggle-en-pill" onclick="toggleSubPairEn(this)">EN 原文</button>`
+              : '';
+            zhP = `<p>${formattedZh}${enToggleBtn}</p>`;
+          }
+          subRowsHtml += `
+            <div class="sub-pair-row">
+              <div class="col-en">${enP}</div>
+              <div class="col-zh">${zhP}</div>
+            </div>
+          `;
+        }
+
         pairsHtml += `
           <div class="pair-block">
-            <div class="pair-row">
-              <div class="col-en">${enPs}</div>
-              <div class="col-zh">${zhPs}</div>
-            </div>
+            ${subRowsHtml}
             <div class="pair-actions">
               <button class="pair-share-btn" onclick="openShareCardModal(${pIdx})">📤 制成双语金句卡</button>
             </div>
           </div>
         `;
       });
+
+      let heroHtml = '';
+      if (article.heroImage && article.heroImage.src) {
+        const imgSrc = fixEconomistImgPath(article.heroImage.src);
+        heroHtml = `
+          <figure class="hero-figure">
+            <img src="${imgSrc}" alt="" loading="lazy">
+            ${article.heroImage.caption ? `<figcaption class="fig-cap">${article.heroImage.caption}</figcaption>` : ''}
+          </figure>
+        `;
+      }
 
       let footnotesHtml = '';
       if (article.footnotes && Object.keys(article.footnotes).length > 0) {
@@ -1038,8 +1364,8 @@
         `;
       }
 
-      const prevId = id > 1 ? id - 1 : null;
-      const nextId = id < DATA.catalog.length ? id + 1 : null;
+      const prevItem = catIdx > 0 ? DATA.catalog[catIdx - 1] : null;
+      const nextItem = (catIdx >= 0 && catIdx < DATA.catalog.length - 1) ? DATA.catalog[catIdx + 1] : null;
       const s = article.score;
       const scorePanelHtml = s ? `
         <div class="score-panel">
@@ -1048,10 +1374,10 @@
             <span>相关性(30%)：<b>${s.rel}</b></span>
             <span>质量与机制(25%)：<b>${s.qual}</b></span>
             <span>写作技巧(20%)：<b>${s.craft}</b></span>
-            <span>行业影响力(15%)：<b>${s.impact}</b></span>
-            <span>讨论热度(10%)：<b>${s.buzz}</b></span>
+            <span>影响力(15%)：<b>${s.impact}</b></span>
+            <span>热度(10%)：<b>${s.buzz}</b></span>
           </div>
-          <div style="color:var(--text-muted);font-size:13px;">📌 <b>评分与排序依据</b>：${s.reason}</div>
+          <div style="color:var(--text-muted);font-size:12.5px;">📌 <b>评分依据</b>：${s.reason}</div>
         </div>
       ` : '';
 
@@ -1060,8 +1386,8 @@
           <header class="article-header">
             <div class="article-kicker-bar">
               <span class="kicker-badge">#${numStr} // ${article.section}</span>
-              <span class="kicker-author">${article.author || ''} · ${article.date || ''}</span>
-              ${article.link ? `<a class="kicker-link" href="${article.link}" target="_blank">打开原文链接 ↗</a>` : ''}
+              <span class="kicker-author">${article.author || ''} ${article.date ? '· ' + article.date : ''}</span>
+              ${article.link ? `<a class="kicker-link" href="${article.link}" target="_blank">原文链接 ↗</a>` : ''}
             </div>
             <h1 class="article-title-zh">${article.zhTitle}</h1>
             <div class="article-title-en">${article.enTitle}</div>
@@ -1070,17 +1396,18 @@
               <div>${article.zhDeck}</div>
               ${article.enDeck ? `<div class="article-deck-en">${article.enDeck}</div>` : ''}
             </div>
+            ${heroHtml}
           </header>
           <section class="pairs-body">${pairsHtml}</section>
           ${footnotesHtml}
           <footer class="footer-nav">
-            <div>${prevId ? `<button class="tool-btn" onclick="selectArticle(${prevId})">← 上一篇 (#${String(prevId).padStart(2, '0')})</button>` : ''}</div>
+            <div>${prevItem ? `<button class="tool-btn" onclick="selectArticle(${prevItem.id}, true)">← 上一篇 (#${String(catIdx).padStart(2, '0')})</button>` : ''}</div>
             <div>
               <button class="tool-btn star-main ${starredIds.includes(id) ? 'starred' : ''}" onclick="toggleStarCurrent()">
-                ${starredIds.includes(id) ? '★ 已记入待精读清单' : '☆ 记入待精读清单'}
+                ${starredIds.includes(id) ? '★ 已记入待精读' : '☆ 记入待精读'}
               </button>
             </div>
-            <div>${nextId ? `<button class="tool-btn" onclick="selectArticle(${nextId})">下一篇 (#${String(nextId).padStart(2, '0')}) →</button>` : ''}</div>
+            <div>${nextItem ? `<button class="tool-btn" onclick="selectArticle(${nextItem.id}, true)">下一篇 (#${String(catIdx + 2).padStart(2, '0')}) →</button>` : ''}</div>
           </footer>
         </article>
       `;
@@ -1113,12 +1440,14 @@
           <button class="fn-pop-close" onclick="hideVocabPopover()">✕</button>
         </div>
         <div style="font-weight:600;margin-bottom:6px;">${info.pos ? '[' + info.pos + '] ' : ''}${info.meaning}</div>
-        ${info.note ? `<div style="font-size:12.5px;color:#D0CBBF;margin-bottom:10px;">${info.note}</div>` : ''}
-        <button class="tool-btn active" style="width:100%;" onclick="addActiveToBasket()">+ 收进生词篮</button>
+        ${info.note ? `<div style="font-size:13px;color:#D0CBBF;margin-bottom:12px;">${info.note}</div>` : ''}
+        <button class="tool-btn active" style="width:100%;padding:8px;" onclick="addActiveToBasket()">+ 收进生词篮</button>
       `;
       pop.classList.add('visible');
-      pop.style.top = Math.min(window.innerHeight - 200, rect.bottom + 8) + 'px';
-      pop.style.left = Math.min(window.innerWidth - 420, Math.max(16, rect.left)) + 'px';
+      if (window.innerWidth > 768) {
+        pop.style.top = Math.min(window.innerHeight - 220, rect.bottom + 8) + 'px';
+        pop.style.left = Math.min(window.innerWidth - 420, Math.max(16, rect.left)) + 'px';
+      }
     }
 
     function hideVocabPopover() {
@@ -1133,17 +1462,17 @@
           term: activePopoverContext.term,
           meaning: activePopoverContext.meaning,
           context: activePopoverContext.context,
-          articleTitle: meta ? `#${String(meta.id).padStart(2, '0')} ${meta.zhTitle}` : ''
+          articleTitle: meta ? meta.zhTitle : ''
         });
         localStorage.setItem(BASKET_STORAGE_KEY, JSON.stringify(vocabBasket));
         renderBasket();
       }
       hideVocabPopover();
-      document.getElementById('basketDrawer').classList.add('open');
     }
 
     function showFootnotePopover(e, fnKey) {
       if (e) e.stopPropagation();
+      hideVocabPopover();
       const article = DATA.articles[currentArticleId];
       if (!article || !article.footnotes || !article.footnotes[fnKey]) return;
       const fn = article.footnotes[fnKey];
@@ -1156,59 +1485,111 @@
         <div>${fn.content}</div>
       `;
       pop.classList.add('visible');
-      const rect = e.currentTarget.getBoundingClientRect();
-      pop.style.top = Math.min(window.innerHeight - 220, rect.bottom + 8) + 'px';
-      pop.style.left = Math.min(window.innerWidth - 420, Math.max(16, rect.left - 20)) + 'px';
+      if (window.innerWidth > 768) {
+        const rect = e.currentTarget.getBoundingClientRect();
+        pop.style.top = Math.min(window.innerHeight - 220, rect.bottom + 8) + 'px';
+        pop.style.left = Math.min(window.innerWidth - 420, Math.max(16, rect.left - 20)) + 'px';
+      }
     }
 
     function hideFootnotePopover() {
       document.getElementById('footnotePopover').classList.remove('visible');
     }
 
-    function toggleTheme() {
-      const isWarm = document.body.classList.toggle('theme-warm');
-      document.getElementById('btnTheme').textContent = isWarm ? '📰 风格：FT 鲑鱼粉' : '⚡ 风格：冷峻白纸';
-    }
-
-    function toggleZhFont() {
-      const isSerif = document.body.classList.toggle('font-serif-zh');
-      document.getElementById('btnFont').textContent = isSerif ? '字体：书卷宋体' : '字体：清爽黑体';
-    }
-
-    function setFontSize(size, btnEl) {
-      document.body.classList.remove('size-sm', 'size-md', 'size-lg');
-      document.body.classList.add('size-' + size);
-      document.querySelectorAll('.topbar-right .tool-btn').forEach(b => {
-        if (['小', '标准', '大'].includes(b.textContent)) b.classList.remove('active');
-      });
-      if (btnEl) btnEl.classList.add('active');
-    }
-
-    function toggleSidebar() {
-      const sb = document.getElementById('sidebar');
-      const bd = document.getElementById('mobileBackdrop');
-      const isCollapsed = sb.classList.toggle('collapsed');
-      if (window.innerWidth <= 768 && bd) {
-        bd.classList.toggle('open', !isCollapsed);
+    function setTheme(themeName) {
+      document.body.classList.remove('theme-warm', 'theme-dark');
+      if (themeName === 'warm') document.body.classList.add('theme-warm');
+      if (themeName === 'dark') document.body.classList.add('theme-dark');
+      document.getElementById('sheetThemeWarm').classList.toggle('active', themeName === 'warm');
+      document.getElementById('sheetThemeLight').classList.toggle('active', themeName === 'light');
+      document.getElementById('sheetThemeDark').classList.toggle('active', themeName === 'dark');
+      const btn = document.getElementById('btnTheme');
+      if (btn) {
+        btn.textContent = themeName === 'warm' ? '📰 风格：FT 鲑鱼粉' : (themeName === 'dark' ? '🌙 风格：夜间深色' : '⚡ 风格：清爽白纸');
       }
     }
 
-    function closeSidebarOnMobile() {
-      const sb = document.getElementById('sidebar');
-      const bd = document.getElementById('mobileBackdrop');
-      sb.classList.add('collapsed');
-      if (bd) bd.classList.remove('open');
+    function cycleTheme() {
+      if (document.body.classList.contains('theme-warm')) setTheme('light');
+      else if (document.body.classList.contains('theme-dark')) setTheme('warm');
+      else setTheme('dark');
+    }
+
+    function setZhFont(useSerif) {
+      document.body.classList.toggle('font-serif-zh', useSerif);
+      document.getElementById('sheetFontSans').classList.toggle('active', !useSerif);
+      document.getElementById('sheetFontSerif').classList.toggle('active', useSerif);
+      const btn = document.getElementById('btnFont');
+      if (btn) btn.textContent = useSerif ? '字体：书卷宋体' : '字体：清爽黑体';
+    }
+
+    function toggleZhFont() {
+      setZhFont(!document.body.classList.contains('font-serif-zh'));
+    }
+
+    function setFontSize(size, btnEl) {
+      document.body.classList.remove('size-sm', 'size-md', 'size-lg', 'size-xl');
+      document.body.classList.add('size-' + size);
+      ['Sm', 'Md', 'Lg', 'Xl'].forEach(s => {
+        const el = document.getElementById('sheetSize' + s);
+        if (el) el.classList.toggle('active', s.toLowerCase() === size);
+      });
+      if (btnEl) {
+        document.querySelectorAll('.topbar-right .tool-btn').forEach(b => {
+          if (['小', '标准', '大', '特大'].includes(b.textContent)) b.classList.remove('active');
+        });
+        btnEl.classList.add('active');
+      }
+    }
+
+    function openSettingsSheet() {
+      document.getElementById('settingsSheet').classList.add('open');
+    }
+    function closeSettingsSheet() {
+      document.getElementById('settingsSheet').classList.remove('open');
+    }
+
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('collapsed');
+    }
+
+    function setViewMode(mode) {
+      const main = document.getElementById('mainArea');
+      main.classList.remove('mode-zh', 'mode-stack', 'mode-en');
+      ['btnModeSide', 'btnModeZh', 'btnModeStack', 'btnModeEn', 'sheetModeStack', 'sheetModeZh', 'sheetModeEn'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('active');
+      });
+
+      const lbl = document.getElementById('mobModeLabel');
+      if (mode === 'zh') {
+        main.classList.add('mode-zh');
+        if (document.getElementById('btnModeZh')) document.getElementById('btnModeZh').classList.add('active');
+        if (document.getElementById('sheetModeZh')) document.getElementById('sheetModeZh').classList.add('active');
+        if (lbl) lbl.textContent = '纯中文';
+      } else if (mode === 'en') {
+        main.classList.add('mode-en');
+        if (document.getElementById('btnModeEn')) document.getElementById('btnModeEn').classList.add('active');
+        if (document.getElementById('sheetModeEn')) document.getElementById('sheetModeEn').classList.add('active');
+        if (lbl) lbl.textContent = '纯英文';
+      } else if (mode === 'stack') {
+        main.classList.add('mode-stack');
+        if (document.getElementById('btnModeStack')) document.getElementById('btnModeStack').classList.add('active');
+        if (document.getElementById('sheetModeStack')) document.getElementById('sheetModeStack').classList.add('active');
+        if (lbl) lbl.textContent = '逐段双语';
+      } else {
+        if (document.getElementById('btnModeSide')) document.getElementById('btnModeSide').classList.add('active');
+      }
     }
 
     function cycleMobileViewMode() {
       const main = document.getElementById('mainArea');
-      const lbl = document.getElementById('mobModeLabel');
-      if (main.classList.contains('mode-zh')) {
-        setViewMode('stack');
-        if (lbl) lbl.textContent = '上英下中';
-      } else {
+      if (main.classList.contains('mode-stack')) {
         setViewMode('zh');
-        if (lbl) lbl.textContent = '纯中文';
+      } else if (main.classList.contains('mode-zh')) {
+        setViewMode('en');
+      } else {
+        setViewMode('stack');
       }
     }
 
@@ -1242,8 +1623,8 @@
         ? article.pairs[pairIdx]
         : (article.pairs && article.pairs[0] ? article.pairs[0] : { en: [article.enDeck || ''], zh: [article.zhDeck || ''] });
 
-      const enText = (pair.en || []).join('\n').replace(/<[^>]+>/g, '').slice(0, 420);
-      const zhText = (pair.zh || []).join('\n').replace(/〔注\d+〕/g, '').slice(0, 420);
+      const enText = (pair.en || []).slice(0, 2).join('\n').replace(/<[^>]+>/g, '').slice(0, 380);
+      const zhText = (pair.zh || []).slice(0, 2).join('\n').replace(/〔注\d+〕/g, '').slice(0, 380);
 
       const canvas = document.createElement('canvas');
       const dpr = 2;
@@ -1266,11 +1647,9 @@
       canvas.height = totalHeight * dpr;
       ctx.scale(dpr, dpr);
 
-      // FT 鲑鱼粉底色
       ctx.fillStyle = '#FFF1E5';
       ctx.fillRect(0, 0, width, totalHeight);
 
-      // 顶部装饰线与铭牌
       ctx.fillStyle = '#990F3D';
       ctx.fillRect(pad, 40, contentWidth, 5);
       ctx.fillRect(pad, 58, 220, 30);
@@ -1280,59 +1659,53 @@
 
       if (article.score && article.score.total) {
         ctx.fillStyle = '#990F3D';
-        ctx.font = 'bold 16px "PingFang SC", sans-serif';
-        ctx.fillText(`五维加权分：${article.score.total} / 100`, width - pad - 185, 78);
+        ctx.font = 'bold 17px monospace';
+        ctx.fillText(`五维评分: ${article.score.total} / 100`, width - pad - 185, 78);
       }
 
-      let y = 128;
-      ctx.fillStyle = '#141413';
+      let curY = 132;
+      ctx.fillStyle = '#1A1817';
       ctx.font = 'bold 30px "PingFang SC", sans-serif';
-      titleLines.forEach(l => {
-        ctx.fillText(l, pad, y);
-        y += 44;
+      titleLines.forEach(line => {
+        ctx.fillText(line, pad, curY);
+        curY += 44;
       });
 
-      y += 8;
-      ctx.fillStyle = '#66605C';
-      ctx.font = '18px Charter, Georgia, serif';
-      ctx.fillText((article.enTitle || '').slice(0, 62), pad, y);
-      y += 32;
-
-      // 英文原句框
+      curY += 16;
       const enBoxH = enLines.length * 34 + 28;
-      ctx.fillStyle = '#FFF9F5';
-      ctx.fillRect(pad, y, contentWidth, enBoxH);
+      ctx.fillStyle = '#F9E8D9';
+      ctx.fillRect(pad, curY, contentWidth, enBoxH);
       ctx.fillStyle = '#990F3D';
-      ctx.fillRect(pad, y, 4, enBoxH);
+      ctx.fillRect(pad, curY, 5, enBoxH);
 
-      y += 28;
       ctx.fillStyle = '#2F2E2C';
       ctx.font = '21px Charter, Georgia, serif';
-      enLines.forEach(l => {
-        ctx.fillText(l, pad + 18, y);
-        y += 34;
+      let enY = curY + 32;
+      enLines.forEach(line => {
+        ctx.fillText(line, pad + 20, enY);
+        enY += 34;
       });
 
-      y += 28;
-      ctx.fillStyle = '#1E1E1C';
+      curY += enBoxH + 38;
+      ctx.fillStyle = '#1A1817';
       ctx.font = '23px "PingFang SC", sans-serif';
-      zhLines.forEach(l => {
-        ctx.fillText(l, pad, y);
-        y += 40;
+      zhLines.forEach(line => {
+        ctx.fillText(line, pad, curY);
+        curY += 40;
       });
 
-      // 底部来源栏
-      y += 16;
+      curY += 24;
       ctx.strokeStyle = '#DFC8B4';
+      ctx.lineWidth = 1.5;
       ctx.beginPath();
-      ctx.moveTo(pad, y);
-      ctx.lineTo(width - pad, y);
+      ctx.moveTo(pad, curY);
+      ctx.lineTo(width - pad, curY);
       ctx.stroke();
 
-      y += 32;
+      curY += 34;
       ctx.fillStyle = '#66605C';
-      ctx.font = '16px "PingFang SC", sans-serif';
-      ctx.fillText(`来源：${article.section} · ${article.author || ''}`, pad, y);
+      ctx.font = 'bold 16px "PingFang SC", sans-serif';
+      ctx.fillText(`${article.section} · ${article.author || '硬核商业双语工作台'}`, pad, curY);
 
       document.getElementById('shareCardImg').src = canvas.toDataURL('image/png');
       document.getElementById('shareModal').classList.add('open');
@@ -1353,25 +1726,8 @@
       const scoreStr = article.score ? `（五维评分：${article.score.total}分）` : '';
       const text = `【${article.zhTitle}】${scoreStr}\n${article.enTitle}\n\n${zhSnippet}\n\nEN: ${enSnippet}\n${article.link ? '\n原文：' + article.link : ''}`;
       navigator.clipboard.writeText(text).then(() => {
-        alert('已复制双语金句与原文链接，可直接粘贴发送至微信！');
+        alert('已复制双语金句与原文链接！');
       });
-    }
-
-    function setViewMode(mode) {
-      const main = document.getElementById('mainArea');
-      main.classList.remove('mode-zh', 'mode-stack');
-      document.getElementById('btnModeSide').classList.remove('active');
-      document.getElementById('btnModeZh').classList.remove('active');
-      document.getElementById('btnModeStack').classList.remove('active');
-      if (mode === 'zh') {
-        main.classList.add('mode-zh');
-        document.getElementById('btnModeZh').classList.add('active');
-      } else if (mode === 'stack') {
-        main.classList.add('mode-stack');
-        document.getElementById('btnModeStack').classList.add('active');
-      } else {
-        document.getElementById('btnModeSide').classList.add('active');
-      }
     }
 
     function toggleBasket() {
@@ -1392,10 +1748,15 @@
     }
 
     function renderBasket() {
-      document.getElementById('btnBasket').textContent = `🗂 生词篮 (${vocabBasket.length})`;
+      const count = vocabBasket.length;
+      const btn = document.getElementById('btnBasket');
+      if (btn) btn.textContent = `🗂 生词篮 (${count})`;
+      const mobLbl = document.getElementById('mobBasketLabel');
+      if (mobLbl) mobLbl.textContent = count > 0 ? `生词(${count})` : '生词篮';
+
       const body = document.getElementById('basketBody');
-      if (!vocabBasket.length) {
-        body.innerHTML = '<p style="color:var(--text-muted); font-size:13px; text-align:center; margin-top:40px;">生词篮为空。</p>';
+      if (!count) {
+        body.innerHTML = '<p style="color:var(--text-muted); font-size:13px; text-align:center; margin-top:40px;">点击英文虚线高亮词即可加入生词篮。</p>';
         return;
       }
       body.innerHTML = vocabBasket.map(item => `<div class="basket-item"><b>${item.term}</b><div>${item.meaning}</div></div>`).join('');
@@ -1406,21 +1767,24 @@
       if (fnPop && !fnPop.contains(e.target) && !e.target.classList.contains('fn-badge')) {
         hideFootnotePopover();
       }
+      const vPop = document.getElementById('vocabPopover');
+      if (vPop && !vPop.contains(e.target) && !e.target.classList.contains('vocab-inline')) {
+        hideVocabPopover();
+      }
     });
 
-    if (DATA.issueTitle) document.getElementById('issueTitle').textContent = DATA.issueTitle;
-    if (DATA.issueSubtitle) document.getElementById('issueSubtitle').textContent = DATA.issueSubtitle;
-    if (window.innerWidth <= 768) {
-      document.getElementById('sidebar').classList.add('collapsed');
+    // 初始化：电脑默认左右对照，手机默认『逐段双语』+ 先展示全屏榜单页（若URL带 ?id= 则直接进入对应文章阅读页）
+    loadBookData('global_biz_intel');
+    if (window.innerWidth > 768) {
+      setViewMode('side');
+    } else {
       setViewMode('stack');
     }
     const urlParams = new URLSearchParams(window.location.search);
     const paramId = parseInt(urlParams.get('id'), 10);
     if (paramId && DATA.articles && DATA.articles[paramId]) {
-      currentArticleId = paramId;
+      selectArticle(paramId, true);
     }
-    renderCatalog();
-    if (DATA.catalog.length) selectArticle(currentArticleId);
     renderBasket();
   </script>
 </body>
